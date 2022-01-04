@@ -1,22 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang=fr>
   <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="css/dist/style.min.css" rel="stylesheet" type="text/css" /> Minified stylesheet for production -->
+    <link href="./public/css/style.css" rel="stylesheet" type="text/css" />
+
     <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+
     <title>Fisheye</title>
   </head>
-  <body>
-    <header>
-        <img src="assets/images/logo.png" class="logo" />
-        <h1>Nos photographes</h1>
+
+  <body class="main-wrapper">
+    <header id="header" class="header">
+      <nav class="header-navigation-section">
+        <a href="index.html">
+          <img class="logo" src="assets/images/logo.png" alt="Logo de FishEye"/>
+        </a>
+      </nav>
+
+      <h1 class="header__heading">Nos photographes</h1>
     </header>
+    
     <main id="main">
-        <div class="photographer_section"></div>
+        <div class="photographer-section">
+          <article class="thumb-photographer">
+            <a href="./photographer.html">
+              <img class="thumb-photographer__user" src="assets/photographers/account.png" alt="">
+              
+              <h2 class="thumb-photographer__heading">Nom du photographe</h2>
+            </a>
+
+            <div class="thumb-photographer__location">
+              <p>
+                City, Nation
+              </p>
+            </div>
+          </article>
+        </div>
     </main>
-    <script src="scripts/factories/Photographer.js"></script>
+
+    <!-- <script src="scripts/factories/Photographer.js"></script>
+
     <script src="scripts/pages/index.js"></script>
-    <script src="scripts/pages/photographer.js"></script>
+
+    <script src="scripts/pages/photographer.js"></script> -->
   </body>
 </html>

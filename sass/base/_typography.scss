@@ -1,0 +1,19 @@
+body {
+    font-family: "DM Sans", sans-serif;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 400;
+    color: $primary-color;
+}
+
+h2 {
+    color: $primary-color-alternative;
+}
+
+a {
+    &:hover {   
+        color: black;
+    }
+}
