@@ -3,17 +3,27 @@ body {
 }
 
 h1 {
-    font-size: 36px;
-    font-weight: 400;
+    font-size: $headings-default-font-size;
+
+    font-weight: $fw-medium;
+    font-style: normal;
+
     color: $primary-color;
 }
 
 h2 {
+    font-size: $headings-default-font-size;
+
+    font-weight: $fw-medium;
+    font-style: normal;
+
     color: $primary-color-alternative;
 }
 
 a {
-    &:hover {   
-        color: black;
+    text-decoration: none;
+    
+    &:visited {
+        color: $primary-color;
     }
 }

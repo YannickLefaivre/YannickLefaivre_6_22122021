@@ -2,9 +2,21 @@
 
 $zero-value: 0;
 
+/* Font sizes */
+
+$headings-default-font-size: 2.25rem;
+$headings-tablette-font-size: 1.7rem;
+$headings-mobile-landscape-orientation-font-size: 1.5rem;
+$headings-md-mobile-font-size: 1.3rem;
+
+/* Font weights */
+
+$fw-medium: 400;
+
 /* Colors variables */
 
 $default-background-color: #fff;
+$default-text-color: #000;
 
 $primary-color: #901C1C;
 $primary-color-alternative: #D3573C;
@@ -16,15 +28,21 @@ $secondary-color-alternative-3: #901C1C;
 
 /* Selector sizes */
 
-$company-logo-height: 50px;
+$main-wrapper-width: 1920px;
+
+$header-height: 8rem;
+
+$company-logo-height: 3.125rem;
+$company-logo-height-tablette: 2.188rem;
+$company-logo-height-mobile-landscape-orientation: 2rem;
+$company-logo-height-md-mobile: 1.8rem;
 
 /* Margins variables */
 
-$company-logo-margin-top: 42px;
-$company-logo-margin-left: 100px;
-
-$header__heading-margin-top: 44px;
-$header__heading-margin-right: 100px;
+$main-wrapper-sides-margin: 6.25rem;
+$main-wrapper-sides-margin-tablette: 4.375rem;
+$main-wrapper-sides-margin-mobile-landscape-orientation: 3rem;
+$main-wrapper-sides-margin-lg-mobile: 1.5rem;
 
 /* Padding variables */
 

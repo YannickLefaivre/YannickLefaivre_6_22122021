@@ -1,4 +1,15 @@
 .logo {
     height: $company-logo-height;
-    margin: $company-logo-margin;
+
+    @include from-tablette-and-less {
+        height: $company-logo-height-tablette;
+    }
+
+    @include for-mobile-in-landscape-orientation {
+        height: $company-logo-height-mobile-landscape-orientation;
+    }
+
+    @include from-large-mobile-and-less {
+        height: $company-logo-height-md-mobile;
+    }
 }

@@ -1,0 +1,64 @@
+.header {
+    height: $header-height;
+
+    display: flex;
+
+    flex-flow: row wrap;
+
+    justify-content: space-between;
+    align-items: center;
+
+    @include from-small-mobile-and-less {
+        justify-content: center;
+        align-content: center;
+
+        gap: 1rem 3rem;
+    }
+
+    &__heading {
+        margin-right: $main-wrapper-sides-margin;
+
+        
+        @include from-tablette-and-less {
+            margin-right: $main-wrapper-sides-margin-tablette;
+
+            font-size: $first-heading-tablette-font-size;
+        }
+
+        @include for-mobile-in-landscape-orientation {
+            margin-right: $main-wrapper-sides-margin-mobile-landscape-orientation;
+
+            font-size: $first-heading-mobile-landscape-orientation-font-size;
+        }
+
+        @include from-large-mobile-and-less {
+            margin-right: $main-wrapper-sides-margin-lg-mobile;
+
+            font-size: $first-heading-md-mobile-font-size;
+        }
+
+        @include from-small-mobile-and-less {
+            margin: initial;
+        }
+    }
+}
+
+.header-navigation-section {
+    margin-left: $main-wrapper-sides-margin;
+
+    @include from-tablette-and-less {
+        margin-left: $main-wrapper-sides-margin-tablette;
+    }
+
+    @include for-mobile-in-landscape-orientation {
+        margin-left: $main-wrapper-sides-margin-mobile-landscape-orientation;
+    }
+
+    @include from-large-mobile-and-less {
+        margin-left: $main-wrapper-sides-margin-lg-mobile;
+    }
+
+    @include from-small-mobile-and-less {
+        margin: initial;
+    }
+}

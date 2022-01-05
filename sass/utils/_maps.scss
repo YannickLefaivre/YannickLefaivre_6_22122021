@@ -1,30 +1,12 @@
-/* Column of the grid built with flexbox */
-
-$grid-col: (
-    col-12: 100%,
-    col-11: 91.66%,
-    col-10: 83.33%,
-    col-9: 75%,
-    col-8: 66.66%,
-    col-7: 58.33%,
-    col-6: 50%,
-    col-5: 41.66%,
-    col-4: 33.33%,
-    col-3: 25%,
-    col-2: 16.66%,
-    col-1: 8.33%
-);
-
 /* Breakpoints */
 
 $breakpoints: (
-    sm-mobile: 280px,
-    md-mobile: 320px,
+    sm-mobile: 320px,
+    md-mobile: 375px,
     lg-mobile: 480px,
-    lg-mobile-480w: 480px,
-    lg-mobile-500w: 500px,
-    tablette: 700px,
-    computer: 992px,
+    mobile-landscape-orientation: 599px,
+    tablette: 992px,
+    computer: 1200px,
     large-screen: 1440px
 );
 

@@ -1,43 +1,43 @@
 /* Breakpoints mixins */
 
-@mixin from-extra-small-mobile-and-more {
-	@media screen and (min-width: map-get($breakpoints, sm-mobile)) {
+@mixin from-small-mobile-and-less {
+	@media screen and (max-width: map-get($breakpoints, sm-mobile)) {
 		@content;
 	}
 }
 
-@mixin from-medium-mobile-and-more {
-	@media screen and (min-width: map-get($breakpoints, md-mobile)) {
+@mixin from-medium-mobile-and-less {
+	@media screen and (max-width: map-get($breakpoints, md-mobile)) {
 		@content;
 	}
 }
 
-@mixin from-large-mobile-and-more {
-	@media screen and (min-width: map-get($breakpoints, lg-mobile)) {
+@mixin from-large-mobile-and-less {
+	@media screen and (max-width: map-get($breakpoints, lg-mobile)) {
 		@content;
 	}
 }
 
-@mixin for-lg-mobile-between-480px-and-500px {
-	@media screen and (min-width: map-get($breakpoints, lg-mobile-480w)) and (max-width: map-get($breakpoints, lg-mobile-500w)) {
+@mixin for-mobile-in-landscape-orientation {
+	@media screen and (max-width: map-get($breakpoints, mobile-landscape-orientation)) {
 		@content;
 	}
 }
 
-@mixin from-tablette-and-more {
-	@media screen and (min-width: map-get($breakpoints, tablette)) {
+@mixin from-tablette-and-less {
+	@media screen and (max-width: map-get($breakpoints, tablette)) {
 		@content;
 	}
 }
 
-@mixin from-computer-and-more {
-	@media screen and (min-width: map-get($breakpoints, computer)) {
+@mixin from-computer-and-less {
+	@media screen and (max-width: map-get($breakpoints, computer)) {
 		@content;
 	}
 }
 
-@mixin from-large-screen-and-more {
-	@media screen and (min-width: map-get($breakpoints, large-screen)) {
+@mixin from-large-screen-and-less {
+	@media screen and (max-width: map-get($breakpoints, large-screen)) {
 		@content;
 	}
 }
