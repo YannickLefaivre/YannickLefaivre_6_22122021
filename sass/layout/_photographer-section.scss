@@ -6,11 +6,23 @@
 
     gap: $photographer-section-gutter;
 
+    @include from-computer-and-less {
+        margin: $photographer-section-margin-computer;
+        
+        gap: $photographer-section-gutter-computer;
+    }
+
     @include from-tablette-and-less {
+        margin: $photographer-section-margin-tablette;
+        
         grid-template-columns: $two-column;
     }
 
-    @include from-large-mobile-and-less {
+    @include for-mobile-in-large-landscape-orientation {
+        margin: $photographer-section-margin-small-landscape-orientation;
+    }
+
+    @include for-mobile-in-small-landscape-orientation {
         margin: $photographer-section-margin-mobile;
 
         grid-template-columns: $one-column;
@@ -34,8 +46,16 @@
     align-items: center;
 
     &__heading {
-        @include from-large-mobile-and-less {
-            font-size: $second-heading-mobile-font-size;
+        @include from-tablette-and-less {
+            font-size: $thumb-photographer__heading-font-size-tablette;
+        }
+
+        @include for-mobile-in-large-landscape-orientation {
+            font-size: $thumb-photographer__heading-font-size-sm-landscape-orientation-font-size;
+        }
+
+        @include for-mobile-in-small-landscape-orientation {
+            font-size: $thumb-photographer__heading-font-size-mobile;
         }
     }
 }

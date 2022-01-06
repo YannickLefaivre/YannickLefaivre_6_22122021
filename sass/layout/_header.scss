@@ -25,7 +25,7 @@
             font-size: $first-heading-tablette-font-size;
         }
 
-        @include for-mobile-in-landscape-orientation {
+        @include for-mobile-in-large-landscape-orientation {
             margin-right: $main-wrapper-sides-margin-mobile-landscape-orientation;
 
             font-size: $first-heading-mobile-landscape-orientation-font-size;
@@ -35,6 +35,10 @@
             margin-right: $main-wrapper-sides-margin-lg-mobile;
 
             font-size: $first-heading-md-mobile-font-size;
+        }
+
+        @include from-medium-mobile-and-less {
+            margin-right: $main-wrapper-sides-margin-md-mobile;
         }
 
         @include from-small-mobile-and-less {
@@ -50,12 +54,16 @@
         margin-left: $main-wrapper-sides-margin-tablette;
     }
 
-    @include for-mobile-in-landscape-orientation {
+    @include for-mobile-in-large-landscape-orientation {
         margin-left: $main-wrapper-sides-margin-mobile-landscape-orientation;
     }
 
     @include from-large-mobile-and-less {
         margin-left: $main-wrapper-sides-margin-lg-mobile;
+    }
+
+    @include from-medium-mobile-and-less {
+        margin-left: $main-wrapper-sides-margin-md-mobile;
     }
 
     @include from-small-mobile-and-less {

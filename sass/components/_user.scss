@@ -4,9 +4,23 @@
     
     object-fit: cover;
 
+    background-color: $alternative-background-color;
+
     border-radius: $user-radius;
 
-    @include from-large-mobile-and-less {
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+
+    @include from-tablette-and-less {
+        width: $user-sizes-tablette;
+        height: $user-sizes-tablette;
+    }
+
+    @include for-mobile-in-large-landscape-orientation {
+        width: $user-sizes-mobile-small-landscape-orientation;
+        height: $user-sizes-mobile-small-landscape-orientation;
+    }
+
+    @include for-mobile-in-small-landscape-orientation {
         width: $user-sizes-mobile;
         height: $user-sizes-mobile;
     }

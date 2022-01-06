@@ -18,8 +18,21 @@
 	}
 }
 
-@mixin for-mobile-in-landscape-orientation {
-	@media screen and (max-width: map-get($breakpoints, mobile-landscape-orientation)) {
+@mixin from-large-mobile-of-470px-and-less {
+	@media screen and (max-width: map-get($breakpoints, lg-mobile-470w)) {
+		@content;
+	}
+}
+
+/* Small landscape orientation means 490px-529px in viewport width */
+@mixin for-mobile-in-small-landscape-orientation {
+	@media screen and (max-width: map-get($breakpoints,  mobile-small-landscape-orientation)) {
+		@content;
+	}
+}
+
+@mixin for-mobile-in-large-landscape-orientation {
+	@media screen and (max-width: map-get($breakpoints, mobile-large-landscape-orientation)) {
 		@content;
 	}
 }

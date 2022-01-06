@@ -14,14 +14,18 @@ $company-logo-height-mobile-landscape-orientation: 2rem;
 $company-logo-height-md-mobile: 1.8rem;
 
 $user-sizes: 12.5rem;
+$user-sizes-tablette: 11.75rem;
+$user-sizes-mobile-small-landscape-orientation: 11.55rem; 
 $user-sizes-mobile: 11.75rem;
 
 /* Margins variables */
 
-$main-wrapper-sides-margin: 6.25rem;
+$main-wrapper-sides-margin: 4.5rem;
+$main-wrapper-sides-margin-computer: 6.25rem;
 $main-wrapper-sides-margin-tablette: 4.375rem;
 $main-wrapper-sides-margin-mobile-landscape-orientation: 3rem;
-$main-wrapper-sides-margin-lg-mobile: 1.5rem;
+$main-wrapper-sides-margin-lg-mobile: 1.8rem;
+$main-wrapper-sides-margin-md-mobile: 1.5rem;
 
 /* Padding variables */
 
@@ -35,7 +39,9 @@ $first-heading-tablette-font-size: 1.7rem;
 $first-heading-mobile-landscape-orientation-font-size: 1.5rem;
 $first-heading-md-mobile-font-size: 1.3rem;
 
-$second-heading-mobile-font-size: 1.5rem;
+$thumb-photographer__heading-font-size-tablette: 1.5rem;
+$thumb-photographer__heading-font-size-sm-landscape-orientation-font-size: 1.3rem;
+$thumb-photographer__heading-font-size-mobile: 1.5rem;
 
 /* Line height variables */
 
@@ -46,6 +52,7 @@ $second-heading-line-height: 1.5;
 $default-background-color: #fff;
 $default-text-color: #000;
 
+$alternative-background-color: #C4C4C4;
 $text-alternative-color: #757575;
 
 $primary-color: #901C1C;
@@ -63,7 +70,7 @@ $three-column: repeat(3, 1fr);
 
 /* Gap variables */
 
-$photographer-section-gutter: 4.375rem;
+$photographer-section-gutter-computer: 4.375rem;
 
 $photographer-page-link-gutter: 0.5rem;
 
