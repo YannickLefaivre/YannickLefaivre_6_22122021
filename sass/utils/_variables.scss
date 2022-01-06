@@ -2,30 +2,6 @@
 
 $zero-value: 0;
 
-/* Font sizes */
-
-$headings-default-font-size: 2.25rem;
-$headings-tablette-font-size: 1.7rem;
-$headings-mobile-landscape-orientation-font-size: 1.5rem;
-$headings-md-mobile-font-size: 1.3rem;
-
-/* Font weights */
-
-$fw-medium: 400;
-
-/* Colors variables */
-
-$default-background-color: #fff;
-$default-text-color: #000;
-
-$primary-color: #901C1C;
-$primary-color-alternative: #D3573C;
-
-$secondary-color: #D3573C;
-$secondary-color-alternative-1: #525252;
-$secondary-color-alternative-2: #FAFAFA;
-$secondary-color-alternative-3: #901C1C;
-
 /* Selector sizes */
 
 $main-wrapper-width: 1920px;
@@ -37,6 +13,9 @@ $company-logo-height-tablette: 2.188rem;
 $company-logo-height-mobile-landscape-orientation: 2rem;
 $company-logo-height-md-mobile: 1.8rem;
 
+$user-sizes: 12.5rem;
+$user-sizes-mobile: 11.75rem;
+
 /* Margins variables */
 
 $main-wrapper-sides-margin: 6.25rem;
@@ -45,6 +24,52 @@ $main-wrapper-sides-margin-mobile-landscape-orientation: 3rem;
 $main-wrapper-sides-margin-lg-mobile: 1.5rem;
 
 /* Padding variables */
+
+
+
+/* Font sizes */
+
+$headings-default-font-size: 2.25rem;
+
+$first-heading-tablette-font-size: 1.7rem;
+$first-heading-mobile-landscape-orientation-font-size: 1.5rem;
+$first-heading-md-mobile-font-size: 1.3rem;
+
+$second-heading-mobile-font-size: 1.5rem;
+
+/* Line height variables */
+
+$second-heading-line-height: 1.5;
+
+/* Colors variables */
+
+$default-background-color: #fff;
+$default-text-color: #000;
+
+$text-alternative-color: #757575;
+
+$primary-color: #901C1C;
+$primary-color-alternative: #D3573C;
+
+$secondary-color: #D3573C;
+$secondary-color-alternative-1: #525252;
+$secondary-color-alternative-2: #FAFAFA;
+
+/* Grid template columns variables */
+
+$one-column: 1fr;
+$two-column: repeat(2, 1fr);
+$three-column: repeat(3, 1fr);
+
+/* Gap variables */
+
+$photographer-section-gutter: 4.375rem;
+
+$photographer-page-link-gutter: 0.5rem;
+
+/* Radius variables */
+
+$user-radius: 50%;
 
 /* Transitions variables */
 

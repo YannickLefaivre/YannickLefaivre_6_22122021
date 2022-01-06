@@ -1,23 +1,26 @@
 body {
     font-family: "DM Sans", sans-serif;
+    font-weight: normal;
+    font-style: normal;
 }
 
 h1 {
     font-size: $headings-default-font-size;
-
-    font-weight: $fw-medium;
-    font-style: normal;
 
     color: $primary-color;
 }
 
 h2 {
     font-size: $headings-default-font-size;
-
-    font-weight: $fw-medium;
-    font-style: normal;
+    line-height: $second-heading-line-height;
 
     color: $primary-color-alternative;
+}
+
+p {
+    font-weight: bold;
+    
+    color: $default-text-color;
 }
 
 a {

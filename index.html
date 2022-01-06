@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang=fr>
   <head>
-    <!-- <link href="css/dist/style.min.css" rel="stylesheet" type="text/css" /> Minified stylesheet for production -->
-    <link href="./public/css/style.css" rel="stylesheet" type="text/css" />
-
     <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <link href="css/dist/style.min.css" rel="stylesheet" type="text/css" /> Minified version of the application custom stylesheet -->
+    <link href="./public/css/style.css" rel="stylesheet" type="text/css" />
 
     <link rel="icon" type="image/png" href="assets/images/logo.png">
 
@@ -13,11 +17,11 @@
     <title>Fisheye</title>
   </head>
 
-  <body class="main-wrapper">
-    <header id="header" class="header">
+  <body>
+    <header class="header">
       <nav class="header-navigation-section">
         <a href="index.html">
-          <img class="logo" src="assets/images/logo.png" alt="Logo de FishEye"/>
+          <img class="logo" src="assets/images/logo.png" alt="Page d'accueil de Fisheye"/>
         </a>
       </nav>
 
@@ -26,16 +30,141 @@
     
     <main id="main">
         <div class="photographer-section">
+
+          <!-- Photographer thumbnail Mimi Keel -->
           <article class="thumb-photographer">
-            <a href="./photographer.html">
-              <img class="thumb-photographer__user" src="assets/photographers/account.png" alt="">
+            <a href="./pages/mimi-keel.html">
+              <img class="user" src="./assets/photographers/mimi/pictures/Portrait_Nora.jpg" alt="Portrait d'une jeune femme noir qui porte des lunnetes.">
               
-              <h2 class="thumb-photographer__heading">Nom du photographe</h2>
+              <h2 class="thumb-photographer__heading">Mimi Keel</h2>
             </a>
 
-            <div class="thumb-photographer__location">
-              <p>
-                City, Nation
+            <div class="thumb-photographer-datas">
+              <p class="thumb-photographer-datas__location">
+                London, UK
+              </p>
+
+              <p class="thumb-photographer-datas__tagline">
+                Voir le beau dans le quotidien
+              </p>
+
+              <p class="thumb-photographer-datas__price-per-day">
+                400&euro;/jour
+              </p>
+            </div>
+          </article>
+
+          <!-- Photographer thumbnail Ellie-Rose Wilkens -->
+          <article class="thumb-photographer">
+            <a href="./pages/ellie-rose-wilkens.html">
+              <img class="user" src="./assets/photographers/ellie-rose/pictures/Architecture_Horseshoe.jpg" alt="Une architecture en forme de fer à cheval.">
+              
+              <h2 class="thumb-photographer__heading">Ellie-Rose Wilkens</h2>
+            </a>
+
+            <div class="thumb-photographer-datas">
+              <p class="thumb-photographer-datas__location">
+                Paris, France
+              </p>
+
+              <p class="thumb-photographer-datas__tagline">
+                Travaille sur des compositions complexe
+              </p>
+
+              <p class="thumb-photographer-datas__price-per-day">
+                250&euro;/jour
+              </p>
+            </div>
+          </article>
+
+          <!-- Photographer thumbnail Tracy Galindo -->
+          <article class="thumb-photographer">
+            <a href="./pages/tracy-galindo.html">
+              <img class="user" src="./assets/photographers/tracy/pictures/Fashion_Urban_Jungle.jpg" alt="">
+              
+              <h2 class="thumb-photographer__heading">Tracy Galindo</h2>
+            </a>
+
+            <div class="thumb-photographer-datas">
+              <p class="thumb-photographer-datas__location">
+                Montreal, Canada
+              </p>
+
+              <p class="thumb-photographer-datas__tagline">
+                Photographe freelance
+              </p>
+
+              <p class="thumb-photographer-datas__price-per-day">
+                500&euro;/jour
+              </p>
+            </div>
+          </article>
+
+          <!-- Photographer thumbnail Nabeel Bradford -->
+          <article class="thumb-photographer">
+            <a href="./pages/nabeel-bradford.html">
+              <img class="user" src="./assets/photographers/nabeel/pictures/Travel_Outdoor_Baths.jpg" alt="">
+              
+              <h2 class="thumb-photographer__heading">Nabeel Bradford</h2>
+            </a>
+
+            <div class="thumb-photographer-datas">
+              <p class="thumb-photographer-datas__location">
+                Mexico City, Mexico
+              </p>
+
+              <p class="thumb-photographer-datas__tagline">
+                Je vais toujours de l’avant
+              </p>
+
+              <p class="thumb-photographer-datas__price-per-day">
+                300&euro;/jour
+              </p>
+            </div>
+          </article>
+
+          <!-- Photographer thumbnail Rhode Dubois -->
+          <article class="thumb-photographer">
+            <a href="./pages/rhode-dubois.html">
+              <img class="user" src="./assets/photographers/rhode/pictures/Fashion_Melody_Red_on_Stripes.jpg" alt="">
+              
+              <h2 class="thumb-photographer__heading">Rhode Dubois</h2>
+            </a>
+
+            <div class="thumb-photographer-datas">
+              <p class="thumb-photographer-datas__location">
+                Barcelona, Spain
+              </p>
+
+              <p class="thumb-photographer-datas__tagline">
+                Créatrice de souvenis
+              </p>
+
+              <p class="thumb-photographer-datas__price-per-day">
+                375&euro;/jour
+              </p>
+            </div>
+          </article>
+
+          <!-- Photographer thumbnail Marcel Nikolic -->
+          <article class="thumb-photographer">
+            <a href="./pages/marcel-nikolic.html">
+              <img class="user" src="./assets/photographers/marcel/pictures/Travel_Tower.jpg" alt="">
+              
+              <h2 class="thumb-photographer__heading">Marcel Nikolic</h2>
+            </a>
+
+            <div class="thumb-photographer-datas">
+              <p class="thumb-photographer-datas__location">
+                Berlin, Germany
+              </p>
+
+              <p class="thumb-photographer-datas__tagline">
+                Toujours à la recherche de LA photo
+              </p>
+
+              <p class="thumb-photographer-datas__price-per-day">
+                300&euro;/jour
               </p>
             </div>
           </article>

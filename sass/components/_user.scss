@@ -1,0 +1,13 @@
+.user {
+    width: $user-sizes;
+    height: $user-sizes;
+    
+    object-fit: cover;
+
+    border-radius: $user-radius;
+
+    @include from-large-mobile-and-less {
+        width: $user-sizes-mobile;
+        height: $user-sizes-mobile;
+    }
+}

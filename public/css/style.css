@@ -1,10 +1,13 @@
 /* Null and zero value variables */
-/* Font sizes */
-/* Font weights */
-/* Colors variables */
 /* Selector sizes */
 /* Margins variables */
 /* Padding variables */
+/* Font sizes */
+/* Line height variables */
+/* Colors variables */
+/* Grid template columns variables */
+/* Gap variables */
+/* Radius variables */
 /* Transitions variables */
 /* Animations variables */
 /* Margin lists */
@@ -383,20 +386,24 @@ a {
 
 body {
   font-family: "DM Sans", sans-serif;
+  font-weight: normal;
+  font-style: normal;
 }
 
 h1 {
   font-size: 2.25rem;
-  font-weight: 400;
-  font-style: normal;
   color: #901C1C;
 }
 
 h2 {
   font-size: 2.25rem;
-  font-weight: 400;
-  font-style: normal;
+  line-height: 1.5;
   color: #D3573C;
+}
+
+p {
+  font-weight: bold;
+  color: #000;
 }
 
 a {
@@ -422,6 +429,20 @@ a:visited {
 @media screen and (max-width: 480px) {
   .logo {
     height: 1.8rem;
+  }
+}
+
+.user {
+  width: 12.5rem;
+  height: 12.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+@media screen and (max-width: 480px) {
+  .user {
+    width: 11.75rem;
+    height: 11.75rem;
   }
 }
 
@@ -504,28 +525,39 @@ a:visited {
 }
 
 .photographer-section {
+  margin: 6.25rem 6.25rem;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 70px;
-  margin-top: 100px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4.375rem;
+}
+@media screen and (max-width: 992px) {
+  .photographer-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 480px) {
+  .photographer-section {
+    margin: 3rem 1.5rem;
+    grid-template-columns: 1fr;
+  }
 }
 .photographer-section a {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  justify-self: center;
+  gap: 0.5rem;
 }
 
 .thumb-photographer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
 }
-.thumb-photographer__user {
-  height: 200px;
-  width: 200px;
+@media screen and (max-width: 480px) {
+  .thumb-photographer__heading {
+    font-size: 1.5rem;
+  }
 }
 
 .thumb-photographer-datas {
@@ -534,10 +566,24 @@ a:visited {
   justify-content: space-evenly;
   align-items: center;
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 320px) {
   .thumb-photographer-datas {
-    margin-left: 70px;
+    margin: initial;
   }
+}
+.thumb-photographer-datas__location {
+  font-size: 0.8125rem;
+  color: #901C1C;
+  margin-bottom: 0.1875rem;
+}
+.thumb-photographer-datas__tagline {
+  font-size: 0.625rem;
+  margin-bottom: 0.3rem;
+}
+.thumb-photographer-datas__price-per-day {
+  font-weight: normal;
+  font-size: 0.5625rem;
+  color: #757575;
 }
 
 #contact-modal {
