@@ -10,7 +10,7 @@
     <!-- <link href="../public/dist/style.min.css" rel="stylesheet" type="text/css" /> Minified version of the application custom stylesheet -->
     <link href="../public/css/style.css" rel="stylesheet" type="text/css" />
 
-    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="icon" type="image/png" href="../assets/images/logo.png">
 
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
 
@@ -19,14 +19,20 @@
 
   <body>
 
-    <header>
-      <img src="assets/images/logo.png" class="logo" alt="Logo de FishEye"/>
+    <header class="header">
+      <nav class="header-navigation-section">
+        <a href="../index.html">
+          <img class="logo" src="../assets/images/logo.png" alt="Page d'accueil de FishEye"/>
+        </a>
+      </nav>
     </header>
 
     <main id="main">
-      <div class="photograph-header">
+      <section class="photograph-header">
+        <h1>Mimi Keel</h1>
+
         <button class="contact-button" onclick="displayModal()">Contactez-moi</button>
-      </div>
+      </section>
     </main>
 
     <div id="contact-modal">
@@ -34,7 +40,7 @@
 				<header>
           <h2>Contactez-moi</h2>
           
-          <img src="assets/icons/close.svg" onclick="closeModal()" alt=""/>
+          <img src="../assets/icons/close.svg" onclick="closeModal()" alt=""/>
         </header>
 
 				<form>
