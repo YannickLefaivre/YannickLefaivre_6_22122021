@@ -7,7 +7,7 @@
     gap: $photographer-section-gutter;
 
     @include from-computer-and-less {
-        margin: $photographer-section-margin-computer;
+        margin: $photographer-section-margin;
         
         gap: $photographer-section-gutter-computer;
     }
@@ -16,10 +16,14 @@
         margin: $photographer-section-margin-tablette;
         
         grid-template-columns: $two-column;
+
+        gap: $photographer-section-gutter-tablette;
     }
 
     @include for-mobile-in-large-landscape-orientation {
         margin: $photographer-section-margin-small-landscape-orientation;
+
+        gap: $photographer-section-gutter-mobile-sm-landscape-orientation;
     }
 
     @include for-mobile-in-small-landscape-orientation {

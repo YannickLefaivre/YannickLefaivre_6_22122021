@@ -21,7 +21,6 @@ $user-sizes-mobile: 11.75rem;
 /* Margins variables */
 
 $main-wrapper-sides-margin: 4.5rem;
-$main-wrapper-sides-margin-computer: 6.25rem;
 $main-wrapper-sides-margin-tablette: 4.375rem;
 $main-wrapper-sides-margin-mobile-landscape-orientation: 3rem;
 $main-wrapper-sides-margin-lg-mobile: 1.8rem;
@@ -70,9 +69,9 @@ $three-column: repeat(3, 1fr);
 
 /* Gap variables */
 
-$photographer-section-gutter-computer: 4.375rem;
+$photographer-section-gutter-computer: 7rem;
 
-$photographer-page-link-gutter: 0.5rem;
+$photographer-page-link-gutter: 1rem;
 
 /* Radius variables */
 

@@ -1,7 +1,6 @@
 /* Margin lists */
 
 $photographer-section-margin: 6.25rem $main-wrapper-sides-margin;
-$photographer-section-margin-computer: 6.25rem $main-wrapper-sides-margin-computer;
 $photographer-section-margin-tablette: 3rem $main-wrapper-sides-margin-tablette;
 $photographer-section-margin-small-landscape-orientation: 3rem 3rem;
 $photographer-section-margin-mobile: 3rem $main-wrapper-sides-margin-lg-mobile;
@@ -9,6 +8,7 @@ $photographer-section-margin-mobile: 3rem $main-wrapper-sides-margin-lg-mobile;
 /* Gap lists */
 
 /* length of the gutter on mobile when it is in landscape orientation and the width of the viewport does not exceed the maximum width indicated by the number */
-$photographer-section-gutter-mobile-landscape-orientation-of-599px-max: $photographer-section-gutter-computer 3rem;
+$photographer-section-gutter-mobile-sm-landscape-orientation: 4.375rem 3rem;
 
-$photographer-section-gutter: 5rem 14rem;
+$photographer-section-gutter: 5rem 10rem;
+$photographer-section-gutter-tablette: 5rem 4rem;

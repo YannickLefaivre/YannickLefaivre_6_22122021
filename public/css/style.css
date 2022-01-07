@@ -388,7 +388,6 @@ a {
 
 body {
   font-family: "DM Sans", sans-serif;
-  font-weight: normal;
   font-style: normal;
 }
 
@@ -558,23 +557,25 @@ a:visited {
   margin: 6.25rem 4.5rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 5rem 14rem;
+  gap: 5rem 10rem;
 }
 @media screen and (max-width: 1200px) {
   .photographer-section {
-    margin: 6.25rem 6.25rem;
-    gap: 4.375rem;
+    margin: 6.25rem 4.5rem;
+    gap: 7rem;
   }
 }
 @media screen and (max-width: 992px) {
   .photographer-section {
     margin: 3rem 4.375rem;
     grid-template-columns: repeat(2, 1fr);
+    gap: 5rem 4rem;
   }
 }
 @media screen and (max-width: 599px) {
   .photographer-section {
     margin: 3rem 3rem;
+    gap: 4.375rem 3rem;
   }
 }
 @media screen and (max-width: 529px) {
@@ -588,7 +589,7 @@ a:visited {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 .thumb-photographer {
