@@ -1,0 +1,37 @@
+body {
+    font-family: "DM Sans", sans-serif;
+    font-style: normal;
+}
+
+h1 {
+    font-weight: normal;
+    font-size: $headings-default-font-size;
+
+    color: $primary-color;
+}
+
+h2 {
+    font-weight: normal;
+    font-size: $headings-default-font-size;
+
+    line-height: $second-heading-line-height;
+    text-align: center;
+
+    color: $primary-color-alternative;
+}
+
+p {
+    font-weight: normal;
+
+    text-align: center;
+    
+    color: $default-text-color;
+}
+
+a {
+    text-decoration: none;
+    
+    &:visited {
+        color: $primary-color;
+    }
+}

@@ -1,0 +1,15 @@
+.logo {
+    height: $company-logo-height;
+
+    @include from-tablette-and-less {
+        height: $company-logo-height-tablette;
+    }
+
+    @include for-mobile-in-large-landscape-orientation {
+        height: $company-logo-height-mobile-landscape-orientation;
+    }
+
+    @include from-large-mobile-and-less {
+        height: $company-logo-height-md-mobile;
+    }
+}
