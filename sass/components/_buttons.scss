@@ -1,12 +1,24 @@
 .contact-button {
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    padding: 11px;
-    width: 170px;
-    height: 70px;
-    border: none;
-    background-color: #901C1C;
-    border-radius: 5px;
-    cursor: pointer;
+    @include set-sizes($contact-button-sizes);
+    padding: $contact-button-padding;
+    
+    font-size: $contact-button-font-size;
+
+    order: 2;
+    
+    @include from-computer-and-less {
+        margin: 0 auto;
+
+        order: 3;
+    }
+
+    @include from-tablette-and-less {
+        font-size: $contact-button-font-size-mobile;
+    }
+
+    @include for-mobile-in-large-landscape-orientation {
+        @include set-sizes($contact-button-sizes-mobile);
+
+        font-size: $contact-button-font-size-mobile;
+    }
 }

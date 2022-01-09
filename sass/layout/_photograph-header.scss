@@ -1,0 +1,96 @@
+.photograph-header {
+    margin: $photograph-header-margin;
+    @include set-padding($photograph-header-padding);
+
+    display: flex;
+    flex-flow: row wrap;
+
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: $secondary-color-alternative-2;
+
+    border-radius: $small-beveled-border;
+
+    @include from-computer-and-less {
+        gap: $photograph-header-gutter-computer;
+    }
+
+    @include from-tablette-and-less {
+        @include set-padding($photograph-header-padding-tablette);
+
+        gap: $photograph-header-gutter-tablette;
+    }
+
+    @include for-mobile-in-extra-large-landscape-orientation-and-small-tablette {
+        margin: 0;
+
+        gap: $photograph-header-gutter-xl-mobile-landscape-orientation;
+    }
+
+    @include for-mobile-in-large-landscape-orientation {
+        @include set-padding($photograph-header-padding);
+        
+        flex-direction: column;
+
+        justify-content: center;
+
+        gap: unset;
+    }
+
+    @include for-mobile-in-medium-landscape-orientation {
+        margin: initial;
+    }
+}
+
+.photograph-profil {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    order: 1;
+
+    @include for-mobile-in-large-landscape-orientation {
+        margin-bottom: $photograph-profil-margin-bottom-sm-mobile;
+
+        align-items: center;
+
+        text-align: center;
+    }
+
+    &__name {
+        font-size: $photograph-profil__name-font-size;
+
+        line-height: $minimum-accessibility-line-height;
+
+        color: $primary-color-alternative;
+
+        @include from-tablette-and-less {
+            font-size: $photograph-profil__name-font-size-sm-mobile;
+        }
+    }
+
+    &__location {
+        margin-bottom: $photograph-profil__location-margin-bottom;
+        
+        font-size: $photograph-profil__location-font-size;
+
+        color: $primary-color;
+
+        @include from-tablette-and-less {
+            font-size: $photograph-profil__location-font-size-sm-mobile;
+        }
+    }
+
+    &__tagline {
+        font-size: $photograph-profil__tagline-font-size;
+
+        color: $text-alternative-color;
+
+        @include from-tablette-and-less {
+            font-size: $photograph-profil__tagline-font-size-sm-mobile;
+        }
+    }
+}

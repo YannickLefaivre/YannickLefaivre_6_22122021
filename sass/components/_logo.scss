@@ -5,7 +5,7 @@
         height: $company-logo-height-tablette;
     }
 
-    @include for-mobile-in-large-landscape-orientation {
+    @include for-mobile-in-medium-landscape-orientation {
         height: $company-logo-height-mobile-landscape-orientation;
     }
 

@@ -6,8 +6,6 @@ $zero-value: 0;
 
 $main-wrapper-width: 1920px;
 
-$header-height: 8rem;
-
 $company-logo-height: 3.125rem;
 $company-logo-height-tablette: 2.188rem;
 $company-logo-height-mobile-landscape-orientation: 2rem;
@@ -18,7 +16,12 @@ $user-sizes-tablette: 11.75rem;
 $user-sizes-mobile-small-landscape-orientation: 11.55rem; 
 $user-sizes-mobile: 11.75rem;
 
+$website-header-height: 8rem;
+$website-header--photograph-page-height: 6rem;
+
 /* Margins variables */
+
+$user--photograph-header-id-photo-margin-bottom: 1rem;
 
 $main-wrapper-sides-margin: 4.5rem;
 $main-wrapper-sides-margin-tablette: 4.375rem;
@@ -26,13 +29,23 @@ $main-wrapper-sides-margin-mobile-landscape-orientation: 3rem;
 $main-wrapper-sides-margin-lg-mobile: 1.8rem;
 $main-wrapper-sides-margin-md-mobile: 1.5rem;
 
+$photograph-profil-margin-bottom-sm-mobile: 2rem;
+
+$photograph-profil__location-margin-bottom: 1.1875rem;
+
 /* Padding variables */
 
+$contact-button-padding: 0.6875rem;
 
+$photograph-header-padding-top: 3.5rem;
+$photograph-header-padding-bottom: 2.625rem;
 
 /* Font sizes */
 
 $headings-default-font-size: 2.25rem;
+
+$contact-button-font-size: 1.25rem;
+$contact-button-font-size-mobile: 1.0625rem;
 
 $first-heading-tablette-font-size: 1.7rem;
 $first-heading-mobile-landscape-orientation-font-size: 1.5rem;
@@ -42,9 +55,18 @@ $thumb-photographer__heading-font-size-tablette: 1.5rem;
 $thumb-photographer__heading-font-size-sm-landscape-orientation-font-size: 1.3rem;
 $thumb-photographer__heading-font-size-mobile: 1.5rem;
 
+$photograph-profil__name-font-size: 4rem;
+$photograph-profil__name-font-size-sm-mobile: 2.3rem;
+
+$photograph-profil__location-font-size: 1.5rem;
+$photograph-profil__location-font-size-sm-mobile: 1.3125rem;
+
+$photograph-profil__tagline-font-size: 1.125rem;
+$photograph-profil__tagline-font-size-sm-mobile: 0.9375rem;
+
 /* Line height variables */
 
-$second-heading-line-height: 1.5;
+$minimum-accessibility-line-height: 1.5;
 
 /* Colors variables */
 
@@ -73,9 +95,14 @@ $photographer-section-gutter-computer: 7rem;
 
 $photographer-page-link-gutter: 1rem;
 
+$photograph-header-row-gutter: 3rem;
+$photograph-header-gutter-xl-mobile-landscape-orientation: 3rem;
+
 /* Radius variables */
 
-$user-radius: 50%;
+$user-border-radius: 50%;
+
+$small-beveled-border: 0.3125rem;
 
 /* Transitions variables */
 

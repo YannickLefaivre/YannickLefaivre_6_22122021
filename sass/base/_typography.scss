@@ -14,7 +14,7 @@ h2 {
     font-weight: normal;
     font-size: $headings-default-font-size;
 
-    line-height: $second-heading-line-height;
+    line-height: $minimum-accessibility-line-height;
     text-align: center;
 
     color: $primary-color-alternative;
@@ -34,4 +34,9 @@ a {
     &:visited {
         color: $primary-color;
     }
+}
+
+button {
+    font-weight: bold;
+    color: white;
 }

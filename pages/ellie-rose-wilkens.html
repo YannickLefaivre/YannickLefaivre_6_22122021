@@ -19,8 +19,8 @@
 
   <body>
 
-    <header class="header">
-      <nav class="header-navigation-section">
+    <header class="website-header website-header--photograph-page">
+      <nav class="website-header-navigation-section website-header-navigation-section--photograph-page">
         <a href="../index.html">
           <img class="logo" src="../assets/images/logo.png" alt="Page d'accueil de FishEye"/>
         </a>
@@ -28,11 +28,23 @@
     </header>
 
     <main id="main">
-      <section class="photograph-header">
-        <h1>Mimi Keel</h1>
+      <header class="photograph-header">
+        <section class="photograph-profil">
+          <h1 class="photograph-profil__name">Ellie-Rose Wilkens</h1>
+
+          <p class="photograph-profil__location">
+            Paris, France
+          </p>
+
+          <p class="photograph-profil__tagline">
+            Travaille sur des compositions complexes
+          </p>
+        </section>
 
         <button class="contact-button" onclick="displayModal()">Contactez-moi</button>
-      </section>
+
+        <img class="user user--photograph-header-id-photo" src="../assets/photographers/photographers-id-photos/EllieRoseWilkens.jpg" alt="Ellie-Rose Wilkens">
+      </header>
     </main>
 
     <div id="contact-modal">

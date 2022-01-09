@@ -1,5 +1,5 @@
-.header {
-    height: $header-height;
+.website-header {
+    height: $website-header-height;
 
     display: flex;
 
@@ -7,12 +7,20 @@
 
     justify-content: space-between;
     align-items: center;
-
+    
     @include from-small-mobile-and-less {
         justify-content: center;
         align-content: center;
 
         gap: 1rem 3rem;
+    }
+    
+    &--photograph-page {
+        @include for-mobile-in-medium-landscape-orientation {
+            height: $website-header--photograph-page-height;
+            
+            justify-content: center;
+        }
     }
 
     &__heading {
@@ -25,7 +33,7 @@
             font-size: $first-heading-tablette-font-size;
         }
 
-        @include for-mobile-in-large-landscape-orientation {
+        @include for-mobile-in-medium-landscape-orientation {
             margin-right: $main-wrapper-sides-margin-mobile-landscape-orientation;
 
             font-size: $first-heading-mobile-landscape-orientation-font-size;
@@ -47,14 +55,14 @@
     }
 }
 
-.header-navigation-section {
+.website-header-navigation-section {
     margin-left: $main-wrapper-sides-margin;
 
     @include from-tablette-and-less {
         margin-left: $main-wrapper-sides-margin-tablette;
     }
 
-    @include for-mobile-in-large-landscape-orientation {
+    @include for-mobile-in-medium-landscape-orientation {
         margin-left: $main-wrapper-sides-margin-mobile-landscape-orientation;
     }
 
@@ -68,5 +76,11 @@
 
     @include from-small-mobile-and-less {
         margin: initial;
+    }
+    
+    &--photograph-page {
+        @include for-mobile-in-medium-landscape-orientation {
+            margin: initial;
+        }
     }
 }

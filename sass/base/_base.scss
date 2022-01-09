@@ -24,3 +24,12 @@ li {
 a {
     display: block;
 }
+
+button {
+    background-color: #901C1C;
+
+    border: none;
+    border-radius: $small-beveled-border;
+
+    cursor: pointer;
+}

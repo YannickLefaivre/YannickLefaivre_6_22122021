@@ -6,7 +6,7 @@
 
     background-color: $alternative-background-color;
 
-    border-radius: $user-radius;
+    border-radius: $user-border-radius;
 
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
 
@@ -15,7 +15,7 @@
         height: $user-sizes-tablette;
     }
 
-    @include for-mobile-in-large-landscape-orientation {
+    @include for-mobile-in-medium-landscape-orientation {
         width: $user-sizes-mobile-small-landscape-orientation;
         height: $user-sizes-mobile-small-landscape-orientation;
     }
@@ -23,5 +23,18 @@
     @include for-mobile-in-small-landscape-orientation {
         width: $user-sizes-mobile;
         height: $user-sizes-mobile;
+    }
+    
+    &--photograph-header-id-photo {
+        order: 3;
+    
+        @include from-computer-and-less {
+            order: 2;
+        }
+
+        @include for-mobile-in-large-landscape-orientation {
+            margin-bottom: $user--photograph-header-id-photo-margin-bottom;
+            order: -1;
+        }
     }
 }

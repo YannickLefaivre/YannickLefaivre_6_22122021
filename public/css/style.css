@@ -11,12 +11,16 @@
 /* Transitions variables */
 /* Animations variables */
 /* Margin lists */
+/* Padding lists */
 /* Gap lists */
 /* length of the gutter on mobile when it is in landscape orientation and the width of the viewport does not exceed the maximum width indicated by the number */
 /* Breakpoints */
 /* Selector sizes */
 /* Breakpoints mixins */
-/* Small landscape orientation means 490px-529px in viewport width */
+/* Mobile with a landscape orientation width between 480px and 529px */
+/* Mobile with a landscape orientation width between 530px and 599px */
+/* Mobile with a landscape orientation width between 600px and 699px */
+/* Small tablette and mobile with a landscape orientation width between 700px and 850px */
 /* Sets the selector sizes */
 /* Sets the selector margin */
 /* Sets the selctor padding */
@@ -386,6 +390,13 @@ a {
   display: block;
 }
 
+button {
+  background-color: #901C1C;
+  border: none;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+}
+
 body {
   font-family: "DM Sans", sans-serif;
   font-style: normal;
@@ -416,6 +427,11 @@ a {
 }
 a:visited {
   color: #901C1C;
+}
+
+button {
+  font-weight: bold;
+  color: white;
 }
 
 .logo {
@@ -464,21 +480,48 @@ a:visited {
     height: 11.75rem;
   }
 }
-
-.contact-button {
-  font-size: 20px;
-  font-weight: bold;
-  color: white;
-  padding: 11px;
-  width: 170px;
-  height: 70px;
-  border: none;
-  background-color: #901C1C;
-  border-radius: 5px;
-  cursor: pointer;
+.user--photograph-header-id-photo {
+  order: 3;
+}
+@media screen and (max-width: 1200px) {
+  .user--photograph-header-id-photo {
+    order: 2;
+  }
+}
+@media screen and (max-width: 699px) {
+  .user--photograph-header-id-photo {
+    margin-bottom: 1rem;
+    order: -1;
+  }
 }
 
-.header {
+.contact-button {
+  width: auto;
+  height: 4.375rem;
+  padding: 0.6875rem;
+  font-size: 1.25rem;
+  order: 2;
+}
+@media screen and (max-width: 1200px) {
+  .contact-button {
+    margin: 0 auto;
+    order: 3;
+  }
+}
+@media screen and (max-width: 992px) {
+  .contact-button {
+    font-size: 1.0625rem;
+  }
+}
+@media screen and (max-width: 699px) {
+  .contact-button {
+    width: auto;
+    height: 3.5rem;
+    font-size: 1.0625rem;
+  }
+}
+
+.website-header {
   height: 8rem;
   display: flex;
   flex-flow: row wrap;
@@ -486,70 +529,166 @@ a:visited {
   align-items: center;
 }
 @media screen and (max-width: 320px) {
-  .header {
+  .website-header {
     justify-content: center;
     align-content: center;
     gap: 1rem 3rem;
   }
 }
-.header__heading {
+@media screen and (max-width: 599px) {
+  .website-header--photograph-page {
+    height: 6rem;
+    justify-content: center;
+  }
+}
+.website-header__heading {
   margin-right: 4.5rem;
 }
 @media screen and (max-width: 992px) {
-  .header__heading {
+  .website-header__heading {
     margin-right: 4.375rem;
     font-size: 1.7rem;
   }
 }
 @media screen and (max-width: 599px) {
-  .header__heading {
+  .website-header__heading {
     margin-right: 3rem;
     font-size: 1.5rem;
   }
 }
 @media screen and (max-width: 480px) {
-  .header__heading {
+  .website-header__heading {
     margin-right: 1.8rem;
     font-size: 1.3rem;
   }
 }
 @media screen and (max-width: 400px) {
-  .header__heading {
+  .website-header__heading {
     margin-right: 1.5rem;
   }
 }
 @media screen and (max-width: 320px) {
-  .header__heading {
+  .website-header__heading {
     margin: initial;
   }
 }
 
-.header-navigation-section {
+.website-header-navigation-section {
   margin-left: 4.5rem;
 }
 @media screen and (max-width: 992px) {
-  .header-navigation-section {
+  .website-header-navigation-section {
     margin-left: 4.375rem;
   }
 }
 @media screen and (max-width: 599px) {
-  .header-navigation-section {
+  .website-header-navigation-section {
     margin-left: 3rem;
   }
 }
 @media screen and (max-width: 480px) {
-  .header-navigation-section {
+  .website-header-navigation-section {
     margin-left: 1.8rem;
   }
 }
 @media screen and (max-width: 400px) {
-  .header-navigation-section {
+  .website-header-navigation-section {
     margin-left: 1.5rem;
   }
 }
 @media screen and (max-width: 320px) {
-  .header-navigation-section {
+  .website-header-navigation-section {
     margin: initial;
+  }
+}
+@media screen and (max-width: 599px) {
+  .website-header-navigation-section--photograph-page {
+    margin: initial;
+  }
+}
+
+.photograph-header {
+  margin: 2.5rem 4.5rem;
+  padding: 3.5rem 3.125rem 2.625rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FAFAFA;
+  border-radius: 0.3125rem;
+}
+@media screen and (max-width: 1200px) {
+  .photograph-header {
+    gap: 3rem 0.8rem;
+  }
+}
+@media screen and (max-width: 992px) {
+  .photograph-header {
+    padding: 3.5rem 4.375rem 2.625rem;
+    gap: 3rem 4rem;
+  }
+}
+@media screen and (max-width: 872px) {
+  .photograph-header {
+    margin: 0;
+    gap: 3rem;
+  }
+}
+@media screen and (max-width: 699px) {
+  .photograph-header {
+    padding: 3.5rem 3.125rem 2.625rem;
+    flex-direction: column;
+    justify-content: center;
+    gap: unset;
+  }
+}
+@media screen and (max-width: 599px) {
+  .photograph-header {
+    margin: initial;
+  }
+}
+
+.photograph-profil {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  order: 1;
+}
+@media screen and (max-width: 699px) {
+  .photograph-profil {
+    margin-bottom: 2rem;
+    align-items: center;
+    text-align: center;
+  }
+}
+.photograph-profil__name {
+  font-size: 4rem;
+  line-height: 1.5;
+  color: #D3573C;
+}
+@media screen and (max-width: 992px) {
+  .photograph-profil__name {
+    font-size: 2.3rem;
+  }
+}
+.photograph-profil__location {
+  margin-bottom: 1.1875rem;
+  font-size: 1.5rem;
+  color: #901C1C;
+}
+@media screen and (max-width: 992px) {
+  .photograph-profil__location {
+    font-size: 1.3125rem;
+  }
+}
+.photograph-profil__tagline {
+  font-size: 1.125rem;
+  color: #757575;
+}
+@media screen and (max-width: 992px) {
+  .photograph-profil__tagline {
+    font-size: 0.9375rem;
   }
 }
 

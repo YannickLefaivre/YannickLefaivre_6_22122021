@@ -1,5 +1,11 @@
 /* Breakpoints mixins */
 
+@mixin from-extra-small-mobile-and-less {
+	@media screen and (max-width: map-get($breakpoints, xs-mobile)) {
+		@content;
+	}
+}
+
 @mixin from-small-mobile-and-less {
 	@media screen and (max-width: map-get($breakpoints, sm-mobile)) {
 		@content;
@@ -24,15 +30,30 @@
 	}
 }
 
-/* Small landscape orientation means 490px-529px in viewport width */
+/* Mobile with a landscape orientation width between 480px and 529px */
 @mixin for-mobile-in-small-landscape-orientation {
-	@media screen and (max-width: map-get($breakpoints,  mobile-small-landscape-orientation)) {
+	@media screen and (max-width: map-get($breakpoints,  mobile-sm-landscape-orientation)) {
 		@content;
 	}
 }
 
+/* Mobile with a landscape orientation width between 530px and 599px */
+@mixin for-mobile-in-medium-landscape-orientation {
+	@media screen and (max-width: map-get($breakpoints, mobile-md-landscape-orientation)) {
+		@content;
+	}
+}
+
+/* Mobile with a landscape orientation width between 600px and 699px */
 @mixin for-mobile-in-large-landscape-orientation {
-	@media screen and (max-width: map-get($breakpoints, mobile-large-landscape-orientation)) {
+	@media screen and (max-width: map-get($breakpoints, mobile-lg-landscape-orientation)) {
+		@content;
+	}
+}
+
+/* Small tablette and mobile with a landscape orientation width between 700px and 850px */
+@mixin for-mobile-in-extra-large-landscape-orientation-and-small-tablette {
+	@media screen and (max-width: map-get($breakpoints, mobile-xl-landscape-orientation)) {
 		@content;
 	}
 }

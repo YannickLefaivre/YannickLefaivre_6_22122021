@@ -1,14 +1,20 @@
 /* Breakpoints */
 
 $breakpoints: (
+    xs-mobile: 280px,
     sm-mobile: 320px,
     md-mobile: 400px,
     lg-mobile: 480px, 
-    mobile-small-landscape-orientation: 529px, 
-    mobile-large-landscape-orientation: 599px,
+    mobile-sm-landscape-orientation: 529px, 
+    mobile-md-landscape-orientation: 599px,
+    mobile-lg-landscape-orientation: 699px,
+    mobile-xl-landscape-orientation: 872px,
     tablette: 992px,
     computer: 1200px,
     large-screen: 1440px
 );
 
 /* Selector sizes */
+
+$contact-button-sizes: (width: auto, height: 4.375rem);
+$contact-button-sizes-mobile: (width: auto, height: 3.5rem);

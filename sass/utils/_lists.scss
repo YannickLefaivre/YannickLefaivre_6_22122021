@@ -5,6 +5,13 @@ $photographer-section-margin-tablette: 3rem $main-wrapper-sides-margin-tablette;
 $photographer-section-margin-small-landscape-orientation: 3rem 3rem;
 $photographer-section-margin-mobile: 3rem $main-wrapper-sides-margin-lg-mobile;
 
+$photograph-header-margin: 2.5rem $main-wrapper-sides-margin;
+
+/* Padding lists */
+
+$photograph-header-padding: $photograph-header-padding-top 3.125rem $photograph-header-padding-bottom;
+$photograph-header-padding-tablette: $photograph-header-padding-top $main-wrapper-sides-margin-tablette $photograph-header-padding-bottom;
+
 /* Gap lists */
 
 /* length of the gutter on mobile when it is in landscape orientation and the width of the viewport does not exceed the maximum width indicated by the number */
@@ -12,3 +19,6 @@ $photographer-section-gutter-mobile-sm-landscape-orientation: 4.375rem 3rem;
 
 $photographer-section-gutter: 5rem 10rem;
 $photographer-section-gutter-tablette: 5rem 4rem;
+
+$photograph-header-gutter-computer: $photograph-header-row-gutter 0.8rem;
+$photograph-header-gutter-tablette: $photograph-header-row-gutter 4rem;
