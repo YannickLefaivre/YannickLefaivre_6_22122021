@@ -35,7 +35,7 @@ $photograph-profil__location-margin-bottom: 1.1875rem;
 
 /* Padding variables */
 
-$contact-button-padding: 0.6875rem;
+$button-padding: 0.6875rem;
 
 $photograph-header-padding-top: 3.5rem;
 $photograph-header-padding-bottom: 2.625rem;
@@ -46,6 +46,8 @@ $headings-default-font-size: 2.25rem;
 
 $contact-button-font-size: 1.25rem;
 $contact-button-font-size-mobile: 1.0625rem;
+
+$filters-section-font-size: 1.125rem;
 
 $first-heading-tablette-font-size: 1.7rem;
 $first-heading-mobile-landscape-orientation-font-size: 1.5rem;
@@ -71,9 +73,11 @@ $minimum-accessibility-line-height: 1.5;
 /* Colors variables */
 
 $default-background-color: #fff;
-$default-text-color: #000;
-
 $alternative-background-color: #C4C4C4;
+
+$secondary-background-color: #DB8876;
+
+$default-text-color: #000;
 $text-alternative-color: #757575;
 
 $primary-color: #901C1C;
@@ -97,6 +101,8 @@ $photographer-page-link-gutter: 1rem;
 
 $photograph-header-row-gutter: 3rem;
 $photograph-header-gutter-xl-mobile-landscape-orientation: 3rem;
+
+$filters-section-gutter: 0 1.5625rem;
 
 /* Radius variables */
 

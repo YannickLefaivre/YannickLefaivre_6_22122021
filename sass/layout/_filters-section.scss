@@ -1,0 +1,45 @@
+.filters-section {
+    position: relative;
+
+    margin: $filters-section-margin;
+
+    font-size: $filters-section-font-size;
+    font-weight: bold;
+
+    display: grid;
+    grid-template-columns: 4.625rem 10.625rem;
+
+    gap: $filters-section-gutter;
+
+    &__label {
+        grid-column: 1;
+    }
+}
+
+.filters {
+    grid-column: 1;
+    grid-row: 1;
+    width: 10.625rem;
+    padding: 8px 10px 6px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+
+    li {
+        display: none;
+        
+        width: 100%;
+        padding: 14px 10px;
+    }
+
+    li:nth-child(1) {
+        display: block;
+    }
+
+    li:nth-child(3) {
+        border: none;
+    }
+}

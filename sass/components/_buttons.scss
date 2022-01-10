@@ -1,9 +1,11 @@
-.contact-button {
+.button {
     @include set-sizes($contact-button-sizes);
-    padding: $contact-button-padding;
+    padding: $button-padding;
     
     font-size: $contact-button-font-size;
+}
 
+.contact-button {
     order: 2;
     
     @include from-computer-and-less {
@@ -21,4 +23,16 @@
 
         font-size: $contact-button-font-size-mobile;
     }
+}
+
+.dropdown-menu-button {
+    grid-column: 1;
+    grid-row: 1;
+    width: 10.625rem;
+    font-size: 18px;
+    opacity: 0;
+    order: unset;
+    text-align: left;
+    padding: 0 20px;
+    z-index: 1;
 }

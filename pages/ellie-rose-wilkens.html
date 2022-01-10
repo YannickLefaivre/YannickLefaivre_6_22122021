@@ -14,6 +14,8 @@
 
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
 
+    <script src="https://kit.fontawesome.com/9809ccf456.js" crossorigin="anonymous"></script>
+
     <title>Ellie-Rose Wilkens - FishEye</title>
   </head>
 
@@ -41,10 +43,24 @@
           </p>
         </section>
 
-        <button class="contact-button" onclick="displayModal()">Contactez-moi</button>
+        <button class="button contact-button" onclick="displayModal()">Contactez-moi</button>
 
         <img class="user user--photograph-header-id-photo" src="../assets/photographers/photographers-id-photos/EllieRoseWilkens.jpg" alt="Ellie-Rose Wilkens">
       </header>
+
+      <nav class="filters-section">
+        <p class="filters-section__label">Trier par</p>
+
+        <div class="dropdown-menu">
+          <button type="button" id="dropdown-menu-button" class="button dropdown-menu-button"></button>
+          <span class="dropdown-menu__icon fa fas-chevron-down"></span>
+          <ul class="filters">
+            <li class="selected-filter">Popularité</li>
+            <li>Date</li>
+            <li>Titre</li>
+          </ul>
+        </div>
+      </nav>
     </main>
 
     <div id="contact-modal">

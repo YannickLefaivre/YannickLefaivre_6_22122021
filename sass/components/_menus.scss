@@ -1,0 +1,49 @@
+.dropdown-menu {
+    position: absolute;
+    top: -15px;
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 10.625rem;
+    grid-column: 2;
+    line-height: 1.5;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+
+    &--open {
+        li {
+            display: block;
+            border-bottom: 1px solid white;
+        }
+    }
+
+    &:hover li:hover, 
+    &:focus li:focus {
+        color: black;
+        background-color: #DB8876;
+    }
+
+    /* Hover and focus effect style for the items of the dropdown menu
+    
+    &:hover,
+    &:focus {
+        .dropdown-menu__icon {
+            color: black;
+            background-color: #DB8876;
+        }
+    } */
+
+    &__icon {
+        position: absolute;
+        top: 25px;
+        right: 15px;
+        grid-column: 1;
+        grid-row: 1;
+        z-index: 1;
+        color: white;
+    }
+
+    .selected-filter {
+        color: white;
+        background-color: #901C1C;
+    }
+}

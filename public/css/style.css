@@ -390,11 +390,19 @@ a {
   display: block;
 }
 
-button {
+button,
+select {
   background-color: #901C1C;
   border: none;
   border-radius: 0.3125rem;
   cursor: pointer;
+}
+
+a:hover, a:focus,
+button:hover,
+button:focus {
+  color: #000;
+  background-color: #DB8876;
 }
 
 body {
@@ -429,7 +437,8 @@ a:visited {
   color: #901C1C;
 }
 
-button {
+button,
+select {
   font-weight: bold;
   color: white;
 }
@@ -495,11 +504,14 @@ button {
   }
 }
 
-.contact-button {
+.button {
   width: auto;
   height: 4.375rem;
   padding: 0.6875rem;
   font-size: 1.25rem;
+}
+
+.contact-button {
   order: 2;
 }
 @media screen and (max-width: 1200px) {
@@ -519,6 +531,60 @@ button {
     height: 3.5rem;
     font-size: 1.0625rem;
   }
+}
+
+.dropdown-menu-button {
+  grid-column: 1;
+  grid-row: 1;
+  width: 10.625rem;
+  font-size: 18px;
+  opacity: 0;
+  order: unset;
+  text-align: left;
+  padding: 0 20px;
+  z-index: 1;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: -15px;
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 10.625rem;
+  grid-column: 2;
+  line-height: 1.5;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  /* Hover and focus effect style for the items of the dropdown menu
+
+  &:hover,
+  &:focus {
+      .dropdown-menu__icon {
+          color: black;
+          background-color: #DB8876;
+      }
+  } */
+}
+.dropdown-menu--open li {
+  display: block;
+  border-bottom: 1px solid white;
+}
+.dropdown-menu:hover li:hover, .dropdown-menu:focus li:focus {
+  color: black;
+  background-color: #DB8876;
+}
+.dropdown-menu__icon {
+  position: absolute;
+  top: 25px;
+  right: 15px;
+  grid-column: 1;
+  grid-row: 1;
+  z-index: 1;
+  color: white;
+}
+.dropdown-menu .selected-filter {
+  color: white;
+  background-color: #901C1C;
 }
 
 .website-header {
@@ -608,7 +674,7 @@ button {
 }
 
 .photograph-header {
-  margin: 2.5rem 4.5rem;
+  margin: 2.5rem 4.5rem 1.6rem;
   padding: 3.5rem 3.125rem 2.625rem;
   display: flex;
   flex-flow: row wrap;
@@ -690,6 +756,101 @@ button {
   .photograph-profil__tagline {
     font-size: 0.9375rem;
   }
+}
+
+.filters-section {
+  position: relative;
+  margin: 0 67.125rem 0 4.5rem;
+  font-size: 1.125rem;
+  font-weight: bold;
+  display: grid;
+  grid-template-columns: 4.625rem 10.625rem;
+  gap: 0 1.5625rem;
+}
+.filters-section__label {
+  grid-column: 1;
+}
+
+.filters {
+  grid-column: 1;
+  grid-row: 1;
+  width: 10.625rem;
+  padding: 8px 10px 6px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-color: #901C1C;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.filters li {
+  display: none;
+  width: 100%;
+  padding: 14px 10px;
+}
+.filters li:nth-child(1) {
+  display: block;
+}
+.filters li:nth-child(3) {
+  border: none;
+}
+
+#contact-modal {
+  display: none;
+}
+
+.modal {
+  border-radius: 5px;
+  background-color: #DB8876;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px;
+  margin: auto;
+}
+
+.modal header {
+  justify-content: space-between;
+  width: 100%;
+}
+
+.modal header img {
+  cursor: pointer;
+}
+
+.modal header h2 {
+  font-size: 64px;
+  font-weight: normal;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+form label {
+  color: #312E2E;
+  font-size: 36px;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: self-start;
+  margin-bottom: 26px;
+}
+
+form input {
+  width: 100%;
+  height: 68px;
+  border: none;
+  border-radius: 5px;
 }
 
 .photographer-section {
@@ -776,62 +937,4 @@ button {
   font-weight: normal;
   font-size: 0.5625rem;
   color: #757575;
-}
-
-#contact-modal {
-  display: none;
-}
-
-.modal {
-  border-radius: 5px;
-  background-color: #DB8876;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 35px;
-  margin: auto;
-}
-
-.modal header {
-  justify-content: space-between;
-  width: 100%;
-}
-
-.modal header img {
-  cursor: pointer;
-}
-
-.modal header h2 {
-  font-size: 64px;
-  font-weight: normal;
-  text-align: center;
-}
-
-form {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-form label {
-  color: #312E2E;
-  font-size: 36px;
-}
-
-form div {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: self-start;
-  margin-bottom: 26px;
-}
-
-form input {
-  width: 100%;
-  height: 68px;
-  border: none;
-  border-radius: 5px;
 }/*# sourceMappingURL=style.css.map */
