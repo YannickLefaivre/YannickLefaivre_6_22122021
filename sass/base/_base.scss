@@ -39,7 +39,6 @@ a,
 button {
     &:hover,
     &:focus {
-        color: $default-text-color;
         background-color: $secondary-background-color;
     }
 }

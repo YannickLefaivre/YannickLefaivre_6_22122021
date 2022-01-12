@@ -11,13 +11,16 @@ $company-logo-height-tablette: 2.188rem;
 $company-logo-height-mobile-landscape-orientation: 2rem;
 $company-logo-height-md-mobile: 1.8rem;
 
-$user-sizes: 12.5rem;
-$user-sizes-tablette: 11.75rem;
-$user-sizes-mobile-small-landscape-orientation: 11.55rem; 
-$user-sizes-mobile: 11.75rem;
+$user-size: 12.5rem;
+$user-size-tablette: 11.75rem;
+$user-size-mobile-small-landscape-orientation: 11.55rem; 
+$user-size-mobile: 11.75rem;
+
+$select-item-1-height: 3.75rem;
 
 $website-header-height: 8rem;
 $website-header--photograph-page-height: 6rem;
+
 
 /* Margins variables */
 
@@ -35,10 +38,13 @@ $photograph-profil__location-margin-bottom: 1.1875rem;
 
 /* Padding variables */
 
-$button-padding: 0.6875rem;
+$buttons-padding: 0.6875rem;
+
+$select-menu__selected-items-vertical-padding: 1.4375rem;
 
 $photograph-header-padding-top: 3.5rem;
 $photograph-header-padding-bottom: 2.625rem;
+
 
 /* Font sizes */
 
@@ -46,6 +52,8 @@ $headings-default-font-size: 2.25rem;
 
 $contact-button-font-size: 1.25rem;
 $contact-button-font-size-mobile: 1.0625rem;
+
+$select-menu-font-size: 1.125rem;
 
 $filters-section-font-size: 1.125rem;
 
@@ -109,6 +117,9 @@ $filters-section-gutter: 0 1.5625rem;
 $user-border-radius: 50%;
 
 $small-beveled-border: 0.3125rem;
+
+$small-beveled-border-on-top: $small-beveled-border $small-beveled-border 0 0;
+$small-beveled-border-on-bottom: 0 0 $small-beveled-border $small-beveled-border;
 
 /* Transitions variables */
 

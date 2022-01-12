@@ -51,11 +51,16 @@
       <nav class="filters-section">
         <p class="filters-section__label">Trier par</p>
 
-        <div class="dropdown-menu">
-          <button type="button" id="dropdown-menu-button" class="button dropdown-menu-button"></button>
-          <span class="dropdown-menu__icon fa fas-chevron-down"></span>
-          <ul class="filters">
-            <li class="selected-filter">Popularité</li>
+        <div class="select-menu">
+          <button type="button" id="select-menu-selected-item" class="select-menu__selected-item">
+            Popularité
+            <span class="fas fa-chevron-down select-menu__arrow"></span>
+          </button>
+          <ul class="select-items select-hide">
+            <li>
+              Popularité
+              <span class="fas fa-chevron-up select-menu__arrow"></span>
+            </li>
             <li>Date</li>
             <li>Titre</li>
           </ul>

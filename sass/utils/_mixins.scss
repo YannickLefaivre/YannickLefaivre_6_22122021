@@ -79,65 +79,85 @@
 
 /* Sets the selector sizes */
 
-@mixin set-sizes($sizes, $option: 0) {
+@mixin set-size($size, $option: 0) {
 	@if ($option == width) or ($option == height) {
 		@if ($option == width) {
-			width: $sizes;
+			width: $size;
 		} @else if ($option == height) {
-			height: $sizes;
+			height: $size;
 		} @else {
-			$sizes: 0;
+			$size: 0;
 		}
 	} @else {
-		width: map-get($sizes, width);
-		height: map-get($sizes, height);
+		width: map-get($size, width);
+		height: map-get($size, height);
 	}
 }
 
 /* Sets the selector margin */
 
-@mixin set-margin($sizes, $optional-sides: 0) {
+@mixin set-margin($size, $optional-sides: 0) {
 	@if (use-shorthand-property($optional-sides) == "no") {
 		@if ($optional-sides == top) {
-			margin-top: $sizes;
+			margin-top: $size;
 		}
 
 		@if ($optional-sides == bottom) {
-			margin-bottom: $sizes;
+			margin-bottom: $size;
 		}
 
 		@if ($optional-sides == right) {
-			margin-right: $sizes;
+			margin-right: $size;
 		}
 
 		@if ($optional-sides == left) {
-			margin-left: $sizes;
+			margin-left: $size;
 		}
 	} @else {
-		margin: $sizes;
+		margin: $size;
 	}
 }
 
 /* Sets the selctor padding */
 
-@mixin set-padding($sizes, $optional-sides: 0) {
+@mixin set-padding($size, $optional-sides: 0) {
 	@if (use-shorthand-property($optional-sides) == "no") {
 		@if ($optional-sides == top) {
-			padding-top: $sizes;
+			padding-top: $size;
 		}
 
 		@if ($optional-sides == bottom) {
-			padding-bottom: $sizes;
+			padding-bottom: $size;
 		}
 
 		@if ($optional-sides == right) {
-			padding-right: $sizes;
+			padding-right: $size;
 		}
 
 		@if ($optional-sides == left) {
-			padding-left: $sizes;
+			padding-left: $size;
 		}
 	} @else {
-		padding: $sizes;
+		padding: $size;
 	}
+}
+
+/* Select menu items style (select items and selected item) */
+@mixin select-menu-items-appearance {
+	display: flex;
+
+	align-items: center;
+
+    color: white;
+    background-color: $primary-color;
+
+    font-size: $select-menu-font-size;
+
+    cursor: pointer;
+    user-select: none;
+}
+
+@mixin select-menu-items-hover-and-focus-effect() {
+	color: $default-text-color;
+	background-color: $secondary-background-color;
 }

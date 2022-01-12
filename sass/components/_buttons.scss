@@ -1,6 +1,6 @@
 .button {
-    @include set-sizes($contact-button-sizes);
-    padding: $button-padding;
+    @include set-size($buttons-size);
+    padding: $buttons-padding;
     
     font-size: $contact-button-font-size;
 }
@@ -19,20 +19,8 @@
     }
 
     @include for-mobile-in-large-landscape-orientation {
-        @include set-sizes($contact-button-sizes-mobile);
+        @include set-size($contact-button-size-mobile);
 
         font-size: $contact-button-font-size-mobile;
     }
-}
-
-.dropdown-menu-button {
-    grid-column: 1;
-    grid-row: 1;
-    width: 10.625rem;
-    font-size: 18px;
-    opacity: 0;
-    order: unset;
-    text-align: left;
-    padding: 0 20px;
-    z-index: 1;
 }

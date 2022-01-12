@@ -14,6 +14,18 @@ $filters-section-margin: 0 67.125rem 0 $main-wrapper-sides-margin;
 $photograph-header-padding: $photograph-header-padding-top 3.125rem $photograph-header-padding-bottom;
 $photograph-header-padding-tablette: $photograph-header-padding-top $main-wrapper-sides-margin-tablette $photograph-header-padding-bottom;
 
+$select-menu__selected-items-padding: $select-menu__selected-items-vertical-padding 1.125rem $select-menu__selected-items-vertical-padding 1.25rem;
+
+$select-menu-items-padding: 0.875rem 1.125rem 0.875rem 1.25rem;
+
+$select-item-1-padding: 23px 20px 14px;
+$select-item-3-padding: 14px 20px 20px;
+
+
+/* Grid columns length */
+
+$filters-section-grid-columns-length: 4.625rem 10.625rem;
+
 /* Gap lists */
 
 /* length of the gutter on mobile when it is in landscape orientation and the width of the viewport does not exceed the maximum width indicated by the number */

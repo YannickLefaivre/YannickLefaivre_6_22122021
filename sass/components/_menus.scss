@@ -1,49 +1,92 @@
-.dropdown-menu {
-    position: absolute;
+.select-menu {
+    position: relative;
     top: -15px;
-    display: grid;
-    grid-template-columns: 1fr;
-    width: 10.625rem;
-    grid-column: 2;
     line-height: 1.5;
-    background-color: rgba(0, 0, 0, 0);
-    cursor: pointer;
-
-    &--open {
-        li {
-            display: block;
-            border-bottom: 1px solid white;
-        }
-    }
-
-    &:hover li:hover, 
-    &:focus li:focus {
-        color: black;
-        background-color: #DB8876;
-    }
-
-    /* Hover and focus effect style for the items of the dropdown menu
     
-    &:hover,
-    &:focus {
-        .dropdown-menu__icon {
-            color: black;
-            background-color: #DB8876;
-        }
-    } */
+    &__selected-item {
+        @include set-size($select-menu__selected-item-size);
+        
+        padding: $select-menu__selected-items-padding;
 
-    &__icon {
+        @include select-menu-items-appearance();
+   }
+
+    &__arrow {
         position: absolute;
-        top: 25px;
-        right: 15px;
-        grid-column: 1;
-        grid-row: 1;
+        right: 18px;
         z-index: 1;
-        color: white;
     }
 
-    .selected-filter {
-        color: white;
-        background-color: #901C1C;
+    .select-items {
+        position: absolute;
+        top: 0;
+        z-index: 99;
+
+        li {
+            @include set-size($select-menu-items-size);
+
+            padding: $select-menu-items-padding;
+
+            @include select-menu-items-appearance();
+
+            position: relative;
+
+            flex-direction: row;
+
+            align-items: center;
+            
+            &::after {
+                content: "";
+                position: absolute;
+                display: block;
+                left: 5%;
+                bottom: 0;
+                width: 150px;
+                height: 1px;
+                background-color: white;
+            }
+
+            &:hover {
+                @include select-menu-items-hover-and-focus-effect();
+            }
+
+            &:focus {
+                @include select-menu-items-hover-and-focus-effect();
+            }
+
+            &:nth-child(1) {
+                height: $select-item-1-height;
+                padding: $select-item-1-padding;
+                border-radius: $small-beveled-border-on-top;
+            }
+
+            &:nth-child(3) {
+                padding: $select-item-3-padding;
+                border-radius: $small-beveled-border-on-bottom;
+            }
+
+            &:nth-child(3)::after {
+                display: none;
+            }
+        }
+
+        li.same-as-selected {
+            @include select-menu-items-hover-and-focus-effect();
+        }
     }
+
+    /*hide the items when the select box is closed:*/
+    .select-hide {
+        display: none;
+    }
+}
+
+/* Placement of the arrow when select box is close */
+.fa-chevron-down.select-menu__arrow {
+    top: 25px;
+}
+
+/* Placement of the arrow when the select box is open */
+.fa-chevron-up.select-menu__arrow {
+    top: 24px;
 }

@@ -7,7 +7,7 @@
     font-weight: bold;
 
     display: grid;
-    grid-template-columns: 4.625rem 10.625rem;
+    grid-template-columns: $filters-section-grid-columns-length;
 
     gap: $filters-section-gutter;
 
@@ -20,26 +20,54 @@
     grid-column: 1;
     grid-row: 1;
     width: 10.625rem;
-    padding: 8px 10px 6px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     color: white;
-    background-color: #901C1C;
-    border-radius: 5px;
+    background-color: $primary-color;
+    border-radius: $small-beveled-border;
     cursor: pointer;
+
+    &:hover,
+    &:focus {
+        + .dropdown-menu__icon {
+            color: black;
+            background-color: #DB8876;
+        }
+    }
 
     li {
         display: none;
         
         width: 100%;
-        padding: 14px 10px;
+        padding: 14px 15px;
+        border-radius: 5px;
+
+        /* Make disapear the line separator of the filters when hovering on it */
+        &:hover::after {
+            display: none;
+        }
+    }
+
+    li:hover, 
+    li:focus {
+        color: black;
+        background-color: $secondary-background-color;
+        border-radius: 0;
     }
 
     li:nth-child(1) {
-        display: block;
+        display: flex;
+        padding-top: 20px;
+        border-radius: $small-beveled-border-on-top;
     }
 
     li:nth-child(3) {
-        border: none;
+        border-radius: 0 0 5px 5px;
+
+        /* Remove the separator for the last filter because it doesn't have one on the mockup */
+        &::after {
+            display: none;
+        }
     }
 }

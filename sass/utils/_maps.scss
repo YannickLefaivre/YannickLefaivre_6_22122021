@@ -16,5 +16,11 @@ $breakpoints: (
 
 /* Selector sizes */
 
-$contact-button-sizes: (width: auto, height: 4.375rem);
-$contact-button-sizes-mobile: (width: auto, height: 3.5rem);
+$buttons-size: (width: auto, height: 4.375rem);
+
+$contact-button-size-mobile: (width: auto, height: 3.5rem);
+
+$select-menu__selected-item-size: (width: 10.625rem,
+height: 4.3125rem);
+$select-menu-items-size: (width: 10.625rem,
+height: 3.5rem);

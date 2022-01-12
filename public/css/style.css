@@ -12,6 +12,7 @@
 /* Animations variables */
 /* Margin lists */
 /* Padding lists */
+/* Grid columns length */
 /* Gap lists */
 /* length of the gutter on mobile when it is in landscape orientation and the width of the viewport does not exceed the maximum width indicated by the number */
 /* Breakpoints */
@@ -24,6 +25,7 @@
 /* Sets the selector sizes */
 /* Sets the selector margin */
 /* Sets the selctor padding */
+/* Select menu items style (select items and selected item) */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
   ========================================================================== */
@@ -401,7 +403,6 @@ select {
 a:hover, a:focus,
 button:hover,
 button:focus {
-  color: #000;
   background-color: #DB8876;
 }
 
@@ -435,6 +436,18 @@ a {
 }
 a:visited {
   color: #901C1C;
+}
+a:visited h2 {
+  color: #D3573C;
+}
+a:hover h2, a:focus h2 {
+  color: #000;
+}
+
+a:hover, a:focus,
+button:hover,
+button:focus {
+  color: #000;
 }
 
 button,
@@ -533,58 +546,101 @@ select {
   }
 }
 
-.dropdown-menu-button {
-  grid-column: 1;
-  grid-row: 1;
-  width: 10.625rem;
-  font-size: 18px;
-  opacity: 0;
-  order: unset;
-  text-align: left;
-  padding: 0 20px;
-  z-index: 1;
-}
-
-.dropdown-menu {
-  position: absolute;
+.select-menu {
+  position: relative;
   top: -15px;
-  display: grid;
-  grid-template-columns: 1fr;
-  width: 10.625rem;
-  grid-column: 2;
   line-height: 1.5;
-  background-color: rgba(0, 0, 0, 0);
-  cursor: pointer;
-  /* Hover and focus effect style for the items of the dropdown menu
-
-  &:hover,
-  &:focus {
-      .dropdown-menu__icon {
-          color: black;
-          background-color: #DB8876;
-      }
-  } */
+  /*hide the items when the select box is closed:*/
 }
-.dropdown-menu--open li {
-  display: block;
-  border-bottom: 1px solid white;
-}
-.dropdown-menu:hover li:hover, .dropdown-menu:focus li:focus {
-  color: black;
-  background-color: #DB8876;
-}
-.dropdown-menu__icon {
-  position: absolute;
-  top: 25px;
-  right: 15px;
-  grid-column: 1;
-  grid-row: 1;
-  z-index: 1;
-  color: white;
-}
-.dropdown-menu .selected-filter {
+.select-menu__selected-item {
+  width: 10.625rem;
+  height: 4.3125rem;
+  padding: 1.4375rem 1.125rem 1.4375rem 1.25rem;
+  display: flex;
+  align-items: center;
   color: white;
   background-color: #901C1C;
+  font-size: 1.125rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.select-menu__arrow {
+  position: absolute;
+  right: 18px;
+  z-index: 1;
+}
+.select-menu .select-items {
+  position: absolute;
+  top: 0;
+  z-index: 99;
+}
+.select-menu .select-items li {
+  width: 10.625rem;
+  height: 3.5rem;
+  padding: 0.875rem 1.125rem 0.875rem 1.25rem;
+  display: flex;
+  align-items: center;
+  color: white;
+  background-color: #901C1C;
+  font-size: 1.125rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+}
+.select-menu .select-items li::after {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 5%;
+  bottom: 0;
+  width: 150px;
+  height: 1px;
+  background-color: white;
+}
+.select-menu .select-items li:hover {
+  color: #000;
+  background-color: #DB8876;
+}
+.select-menu .select-items li:focus {
+  color: #000;
+  background-color: #DB8876;
+}
+.select-menu .select-items li:nth-child(1) {
+  height: 3.75rem;
+  padding: 23px 20px 14px;
+  border-radius: 0.3125rem 0.3125rem 0 0;
+}
+.select-menu .select-items li:nth-child(3) {
+  padding: 14px 20px 20px;
+  border-radius: 0 0 0.3125rem 0.3125rem;
+}
+.select-menu .select-items li:nth-child(3)::after {
+  display: none;
+}
+.select-menu .select-items li.same-as-selected {
+  color: #000;
+  background-color: #DB8876;
+}
+.select-menu .select-hide {
+  display: none;
+}
+
+/* Placement of the arrow when select box is close */
+.fa-chevron-down.select-menu__arrow {
+  top: 25px;
+}
+
+/* Placement of the arrow when the select box is open */
+.fa-chevron-up.select-menu__arrow {
+  top: 24px;
 }
 
 .website-header {
@@ -775,24 +831,45 @@ select {
   grid-column: 1;
   grid-row: 1;
   width: 10.625rem;
-  padding: 8px 10px 6px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   color: white;
   background-color: #901C1C;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   cursor: pointer;
+}
+.filters:hover + .dropdown-menu__icon, .filters:focus + .dropdown-menu__icon {
+  color: black;
+  background-color: #DB8876;
 }
 .filters li {
   display: none;
   width: 100%;
-  padding: 14px 10px;
+  padding: 14px 15px;
+  border-radius: 5px;
+  /* Make disapear the line separator of the filters when hovering on it */
+}
+.filters li:hover::after {
+  display: none;
+}
+.filters li:hover,
+.filters li:focus {
+  color: black;
+  background-color: #DB8876;
+  border-radius: 0;
 }
 .filters li:nth-child(1) {
-  display: block;
+  display: flex;
+  padding-top: 20px;
+  border-radius: 0.3125rem 0.3125rem 0 0;
 }
 .filters li:nth-child(3) {
-  border: none;
+  border-radius: 0 0 5px 5px;
+  /* Remove the separator for the last filter because it doesn't have one on the mockup */
+}
+.filters li:nth-child(3)::after {
+  display: none;
 }
 
 #contact-modal {
@@ -890,6 +967,7 @@ form input {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  border-radius: 0.3125rem;
 }
 
 .thumb-photographer {
