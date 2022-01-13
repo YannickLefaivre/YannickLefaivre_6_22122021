@@ -1,0 +1,101 @@
+.select-menu {
+    @include set-size($select-menu-size);
+    position: relative;
+    line-height: 1.5;
+    
+    @include from-tablette-and-less() {
+        @include set-size($select-menu-size-sm-mobile);
+    }
+
+    &__selected-item {
+        width: 100%;
+        padding: $select-menu__selected-item-padding;
+
+        @include select-menu-items-appearance();
+
+        @include from-tablette-and-less() {
+            padding: $select-menu__selected-item-padding-sm-mobile;
+        }
+   }
+
+    &__arrow {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        z-index: 1;
+    }
+
+    .select-items {
+        position: absolute;
+        top: 0;
+        z-index: 99;
+
+        li {
+            @include set-size($select-menu-items-size);
+
+            padding: $select-menu-items-padding;
+
+            @include select-menu-items-appearance();
+
+            position: relative;
+
+            flex-direction: row;
+
+            align-items: center;
+
+            @include from-tablette-and-less() {
+                @include set-size($select-menu-items-size-sm-mobile);
+            }
+            
+            &::after {
+                content: "";
+                position: absolute;
+                display: block;
+                left: 5%;
+                bottom: 0;
+                width: 150px;
+                height: 1px;
+                background-color: white;
+            }
+
+            &:hover {
+                @include select-menu-items-hover-and-focus-effect();
+            }
+
+            &:focus {
+                @include select-menu-items-hover-and-focus-effect();
+            }
+
+            &:nth-child(1) {
+                height: $select-item-1-height;
+                padding: $select-item-1-padding;
+                border-radius: $small-beveled-border-on-top;
+
+                @include from-tablette-and-less() {
+                    height: $select-item-1-height-sm-mobile;
+                    padding: $select-item-1-padding-sm-mobile;
+                }
+            }
+
+            &:nth-child(3) {
+                padding: $select-item-3-padding;
+                border-radius: $small-beveled-border-on-bottom;
+            }
+
+            &:nth-child(3)::after {
+                display: none;
+            }
+        }
+
+        li.same-as-selected {
+            @include select-menu-items-hover-and-focus-effect();
+        }
+    }
+
+    /*hide the items when the select box is closed:*/
+    .select-hide {
+        display: none;
+    }
+}

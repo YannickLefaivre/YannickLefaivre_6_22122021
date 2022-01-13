@@ -1,9 +1,11 @@
-.contact-button {
-    @include set-sizes($contact-button-sizes);
-    padding: $contact-button-padding;
+.button {
+    @include set-size($buttons-size);
+    padding: $buttons-padding;
     
     font-size: $contact-button-font-size;
+}
 
+.contact-button {
     order: 2;
     
     @include from-computer-and-less {
@@ -17,7 +19,7 @@
     }
 
     @include for-mobile-in-large-landscape-orientation {
-        @include set-sizes($contact-button-sizes-mobile);
+        @include set-size($contact-button-size-mobile);
 
         font-size: $contact-button-font-size-mobile;
     }

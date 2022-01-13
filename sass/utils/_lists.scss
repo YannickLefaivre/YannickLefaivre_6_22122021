@@ -5,12 +5,46 @@ $photographer-section-margin-tablette: 3rem $main-wrapper-sides-margin-tablette;
 $photographer-section-margin-small-landscape-orientation: 3rem 3rem;
 $photographer-section-margin-mobile: 3rem $main-wrapper-sides-margin-lg-mobile;
 
-$photograph-header-margin: 2.5rem $main-wrapper-sides-margin;
+$photograph-header-margin: 2.5rem $main-wrapper-sides-margin 1rem;
+
+$filters-section-margin: $zero-value $main-wrapper-sides-margin;
+$filters-section-margin-sm-mobile: 1.25rem 1rem $zero-value;
 
 /* Padding lists */
 
 $photograph-header-padding: $photograph-header-padding-top 3.125rem $photograph-header-padding-bottom;
 $photograph-header-padding-tablette: $photograph-header-padding-top $main-wrapper-sides-margin-tablette $photograph-header-padding-bottom;
+
+$select-menu__selected-item-padding: 
+    $select-menu__selected-item-vertical-padding
+    $select-menu__selected-item-right-padding
+    $select-menu__selected-item-vertical-padding
+    $select-menu__selected-item-left-padding;
+
+$select-menu__selected-item-padding-sm-mobile: 
+    $select-menu__selected-item-vertical-padding-sm-mobile
+    $select-menu__selected-item-right-padding
+    $select-menu__selected-item-vertical-padding-sm-mobile
+    $select-menu__selected-item-left-padding;
+
+$select-menu-items-padding: 0.875rem 1.125rem 0.875rem 1.25rem;
+
+$select-item-1-padding: 23px 20px 14px;
+$select-item-1-padding-sm-mobile: 0.875rem 1.25rem 0.6875rem;
+
+$select-item-3-padding: 14px 20px 20px;
+$select-item-3-padding-sm-mobile: 11px 20px 10px;
+
+/* Grid templates */
+
+$filters-section-grid-columns-width: 0.8fr $select-menu-items-width-sm-mobile;
+$filters-section-grid-rows-height: 2.5rem 1fr;
+
+$filters-section-grid-template-sm-mobile: $filters-section-grid-rows-height / $filters-section-grid-columns-width;
+
+/* Grid columns length */
+
+$filters-section-grid-columns-width: 4.625rem 10.625rem;
 
 /* Gap lists */
 
@@ -20,5 +54,5 @@ $photographer-section-gutter-mobile-sm-landscape-orientation: 4.375rem 3rem;
 $photographer-section-gutter: 5rem 10rem;
 $photographer-section-gutter-tablette: 5rem 4rem;
 
-$photograph-header-gutter-computer: $photograph-header-row-gutter 0.8rem;
+$photograph-header-gutter-sm-computer: $photograph-header-row-gutter 0.8rem;
 $photograph-header-gutter-tablette: $photograph-header-row-gutter 4rem;

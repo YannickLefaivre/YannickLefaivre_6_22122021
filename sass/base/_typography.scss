@@ -33,10 +33,30 @@ a {
     
     &:visited {
         color: $primary-color;
+
+        h2 {
+            color: $primary-color-alternative;
+        }
+    }
+
+    &:hover,
+    &:focus {
+        h2 {
+            color: $default-text-color;
+        }
     }
 }
 
+a,
 button {
+    &:hover,
+    &:focus {
+        color: $default-text-color;
+    }
+}
+
+button,
+select {
     font-weight: bold;
     color: white;
 }

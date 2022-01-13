@@ -10,11 +10,23 @@ $breakpoints: (
     mobile-lg-landscape-orientation: 699px,
     mobile-xl-landscape-orientation: 872px,
     tablette: 992px,
+    sm-computer: 1160px,
     computer: 1200px,
     large-screen: 1440px
 );
 
 /* Selector sizes */
 
-$contact-button-sizes: (width: auto, height: 4.375rem);
-$contact-button-sizes-mobile: (width: auto, height: 3.5rem);
+$buttons-size: (width: auto, height: 4.375rem);
+
+$contact-button-size-mobile: (width: auto, height: 3.5rem);
+
+$select-menu-size: (width: 10.625rem,
+height: 4.3125rem);
+$select-menu-size-sm-mobile: (width: 8.814rem, height: 3.5rem);
+
+$select-menu-items-size: (width: 10.625rem,
+height: 3.5rem);
+$select-menu-items-size-sm-mobile: (width: $select-menu-items-width-sm-mobile, height: 2.6875rem);
+
+$thumbnails-size: (width: 21.875rem, height: 18.75rem);

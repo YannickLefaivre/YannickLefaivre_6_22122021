@@ -1,0 +1,29 @@
+.filters-section {
+    position: relative;
+
+    margin: $filters-section-margin;
+
+    font-size: $filters-section-font-size;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    @include from-tablette-and-less {
+        margin: 1.2rem $main-wrapper-sides-margin-tablette 0;
+        
+        font-size: $filters-section-font-size-tablette;
+    }
+    
+    @include for-mobile-in-medium-landscape-orientation() {
+        margin: $filters-section-margin-sm-mobile;
+
+        justify-content: center;
+    }
+
+    &__label {
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+    }
+}

@@ -11,13 +11,21 @@ $company-logo-height-tablette: 2.188rem;
 $company-logo-height-mobile-landscape-orientation: 2rem;
 $company-logo-height-md-mobile: 1.8rem;
 
-$user-sizes: 12.5rem;
-$user-sizes-tablette: 11.75rem;
-$user-sizes-mobile-small-landscape-orientation: 11.55rem; 
-$user-sizes-mobile: 11.75rem;
+$user-size: 12.5rem;
+$user-size-tablette: 11.75rem;
+$user-size-mobile-small-landscape-orientation: 11.55rem; 
+$user-size-mobile: 11.75rem;
+
+$select-menu-items-width-sm-mobile: 8.814rem;
+
+$select-item-1-height: 3.75rem;
+$select-item-1-height-sm-mobile: 2.9375rem;
 
 $website-header-height: 8rem;
 $website-header--photograph-page-height: 6rem;
+
+$thumbnails-width: 21.9375rem;
+
 
 /* Margins variables */
 
@@ -35,10 +43,17 @@ $photograph-profil__location-margin-bottom: 1.1875rem;
 
 /* Padding variables */
 
-$contact-button-padding: 0.6875rem;
+$buttons-padding: 0.6875rem;
+
+$select-menu__selected-item-vertical-padding: 1.4375rem;
+$select-menu__selected-item-vertical-padding-sm-mobile: 1.0625rem;
+
+$select-menu__selected-item-left-padding: 1.25rem;
+$select-menu__selected-item-right-padding: 1.125rem;
 
 $photograph-header-padding-top: 3.5rem;
 $photograph-header-padding-bottom: 2.625rem;
+
 
 /* Font sizes */
 
@@ -46,6 +61,12 @@ $headings-default-font-size: 2.25rem;
 
 $contact-button-font-size: 1.25rem;
 $contact-button-font-size-mobile: 1.0625rem;
+
+$select-menu-font-size: 1.125rem;
+$select-menu-font-size-sm-mobile: 0.9375rem;
+
+$filters-section-font-size: 1.125rem;
+$filters-section-font-size-tablette: 0.9375rem;
 
 $first-heading-tablette-font-size: 1.7rem;
 $first-heading-mobile-landscape-orientation-font-size: 1.5rem;
@@ -71,9 +92,11 @@ $minimum-accessibility-line-height: 1.5;
 /* Colors variables */
 
 $default-background-color: #fff;
-$default-text-color: #000;
-
 $alternative-background-color: #C4C4C4;
+
+$secondary-background-color: #DB8876;
+
+$default-text-color: #000;
 $text-alternative-color: #757575;
 
 $primary-color: #901C1C;
@@ -89,6 +112,8 @@ $one-column: 1fr;
 $two-column: repeat(2, 1fr);
 $three-column: repeat(3, 1fr);
 
+$filters-section-second-column-width: 8.814rem;
+
 /* Gap variables */
 
 $photographer-section-gutter-computer: 7rem;
@@ -98,11 +123,16 @@ $photographer-page-link-gutter: 1rem;
 $photograph-header-row-gutter: 3rem;
 $photograph-header-gutter-xl-mobile-landscape-orientation: 3rem;
 
+$filters-section-gutter: 0 1.5625rem;
+
 /* Radius variables */
 
 $user-border-radius: 50%;
 
 $small-beveled-border: 0.3125rem;
+
+$small-beveled-border-on-top: $small-beveled-border $small-beveled-border 0 0;
+$small-beveled-border-on-bottom: 0 0 $small-beveled-border $small-beveled-border;
 
 /* Transitions variables */
 

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- <link href="../public/dist/style.min.css" rel="stylesheet" type="text/css" /> Minified version of the application custom stylesheet -->
+    <link href="../public/css/style.css" rel="stylesheet" type="text/css" />
+
+    <link rel="icon" type="image/png" href="../assets/images/logo.png">
+
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/9809ccf456.js" crossorigin="anonymous"></script>
+
+    <title>Ellie-Rose Wilkens - FishEye</title>
+  </head>
+
+  <body>
+
+    <header class="website-header website-header--photograph-page">
+      <nav class="website-header-navigation-section website-header-navigation-section--photograph-page">
+        <a href="../index.html">
+          <img class="logo" src="../assets/images/logo.png" alt="Page d'accueil de FishEye"/>
+        </a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <header class="photograph-header">
+        <section class="photograph-profil">
+          <h1 class="photograph-profil__name">Ellie-Rose Wilkens</h1>
+
+          <p class="photograph-profil__location">
+            Paris, France
+          </p>
+
+          <p class="photograph-profil__tagline">
+            Travaille sur des compositions complexes
+          </p>
+        </section>
+
+        <button class="button contact-button" onclick="displayModal()">Contactez-moi</button>
+
+        <img class="user user--photograph-header-id-photo" src="../assets/photographers/photographers-id-photos/EllieRoseWilkens.jpg" alt="Ellie-Rose Wilkens">
+      </header>
+
+      <nav class="filters-section">
+        <p class="filters-section__label">Trier par</p>
+
+        <div class="select-menu">
+          <button type="button" id="select-menu-selected-item" class="select-menu__selected-item">
+            Popularité
+            <span class="fas fa-chevron-down select-menu__arrow"></span>
+          </button>
+          <ul class="select-items select-hide">
+            <li>
+              Popularité
+              <span class="fas fa-chevron-up select-menu__arrow"></span>
+            </li>
+            <li>Date</li>
+            <li>Titre</li>
+          </ul>
+        </div>
+      </nav>
+      
+      <div class="photograph-gallery">
+        <div class="thumbnail-card">
+          <a class="thumbnail-card__lightbox-link" href="#">
+            <video src="../assets/photographers/ellie-rose/videos/Sport_Tricks_in_the_air.mp4"></video>
+          </a>
+          
+          <div class="thumbnail-card-details">
+            <p class="thumbnail-card__title">Tricks in te air</p>
+          
+            <button class="likes-button">
+              150
+              <span class="likes-button__icon fas fa-heart"></span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="thumbnail-card">
+          <a href="#" class="thumbnail__lightbox-link">
+            <img src="../assets/photographers/ellie-rose/pictures/Architecture_Connected_Curves.jpg" alt="">
+          </a>
+          
+          <div class="thumbnail-card-details">
+            <p class="thumbnail__title">Courbes connectées</p>
+          
+            <button class="likes-button">
+              79
+              <span class="fas fa-heart"></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="thumbnail-card">
+          <a href="#" class="thumbnail__lightbox-link">
+            <img src="../assets/photographers/ellie-rose/pictures/Architecture_Cross_Bar.jpg" alt="">
+          </a>
+          
+          <div class="thumbnail-card-details">
+            <p class="thumbnail__title">Barre transversale</p>
+          
+            <button class="likes-button">
+              66
+              <span class="fas fa-heart"></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="thumbnail-card">
+          <a href="#" class="thumbnail__lightbox-link">
+
+          </a>
+          <img src="../assets/photographers/ellie-rose/pictures/Architecture_Horseshoe.jpg" alt="">
+          
+          <div class="thumbnail-card-details">
+
+          </div>
+          <p class="thumbnail__title"></p>
+        
+          <button class="likes-button">
+            11
+            <span class="fas fa-heart"></span>
+          </button>
+        </div>
+
+        <div class="thumbnail-card">
+          <a href="#" class="thumbnail__lightbox-link">
+
+          </a>
+          <img src="../assets/photographers/ellie-rose/pictures/Architecture_Water_on_Modern.jpg" alt="">
+          
+          <div class="thumbnail-card-details">
+
+          </div>
+          <p class="thumbnail__title">De l'eau sur un batîment moderne</p>
+        
+          <button class="likes-button">
+            85
+            <span class="fas fa-heart"></span>
+          </button>
+        </div>
+
+        <div class="thumbnail-card">
+          <a href="#" class="thumbnail__lightbox-link">
+
+          </a>
+          <img src="../assets/photographers/ellie-rose/pictures/Architecture_White_Light.jpg" alt="">
+          
+          <div class="thumbnail-card-details">
+
+          </div>
+          <p class="thumbnail__title">Lumière blanche</p>
+        
+          <button class="likes-button">
+            52
+            <span class="fas fa-heart"></span>
+          </button>
+        </div>
+
+        <div class="thumbnail-card">
+          <a href="#" class="thumbnail__lightbox-link">
+
+          </a>
+          <img src="../assets/photographers/ellie-rose/pictures/Sport_Next_Hold.jpg" alt="">
+          
+          <div class="thumbnail-card-details">
+
+          </div>
+          <p class="thumbnail__title">Grimpeur</p>
+        
+          <button class="likes-button">
+            101
+            <span class="fas fa-heart"></span>
+          </button>
+        </div>
+
+        <div class="thumbnail-card">
+          <a href="#" class="thumbnail__lightbox-link">
+
+          </a>
+          <img src="../assets/photographers/ellie-rose/pictures/Sport_Race_End.jpg" alt="">
+          
+          <div class="thumbnail-card-details">
+
+          </div>
+          <p class="thumbnail__title">Fin de course</p>
+        
+          <button class="likes-button">
+            88
+            <span class="fas fa-heart"></span>
+          </button>
+        </div>
+
+        <div class="thumbnail-card">
+          <a href="#" class="thumbnail__lightbox-link">
+
+          </a>
+          <img src="../assets/photographers/ellie-rose/pictures/Sport_Sky_Cross.jpg" alt="">
+          
+          <div class="thumbnail-card-details">
+
+          </div>
+          <p class="thumbnail__title">Skieur</p>
+        
+          <button class="likes-button">
+            77
+            <span class="fas fa-heart"></span>
+          </button>
+        </div>
+
+        <div class="thumbnail-card">
+          <a href="#" class="thumbnail__lightbox-link">
+
+          </a>
+          <img src="../assets/photographers/ellie-rose/pictures/sport_water_tunnel.jpg" alt="">
+          
+          <div class="thumbnail-card-details">
+            
+          </div>
+          <p class="thumbnail__title">Surfer</p>
+        
+          <button class="likes-button">
+            103
+            <span class="fas fa-heart"></span>
+          </button>
+        </div>
+
+        <div class="thumbnail-card">
+          <a href="#" class="thumbnail__lightbox-link">
+
+          </a>
+          <img src="../assets/photographers/ellie-rose/pictures/Sport_Jump.jpg" alt="">
+          
+          <p class="thumbnail__title">Saute !</p>
+        
+          <button class="likes-button">
+            95
+            <span class="fas fa-heart"></span>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <div id="contact-modal">
+			<div class="modal">
+				<header>
+          <h2>Contactez-moi</h2>
+          
+          <img src="../assets/icons/close.svg" onclick="closeModal()" alt=""/>
+        </header>
+
+				<form>
+					<div>
+						<label>Prénom</label>
+						<input />
+					</div>
+
+          <button class="contact-button">Envoyer</button>
+				</form>
+			</div>
+		</div>
+    <!-- <script src="/scripts/utils/contactForm.js"></script> -->
+  </body>
+</html>

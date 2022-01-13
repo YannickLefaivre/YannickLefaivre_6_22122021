@@ -25,11 +25,20 @@ a {
     display: block;
 }
 
-button {
+button,
+select {
     background-color: #901C1C;
 
     border: none;
     border-radius: $small-beveled-border;
 
     cursor: pointer;
+}
+
+a,
+button {
+    &:hover,
+    &:focus {
+        background-color: $secondary-background-color;
+    }
 }
