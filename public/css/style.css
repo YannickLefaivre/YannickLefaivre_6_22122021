@@ -10,13 +10,14 @@
 /* Radius variables */
 /* Transitions variables */
 /* Animations variables */
+/* Breakpoints */
+/* Selector sizes */
 /* Margin lists */
 /* Padding lists */
+/* Grid templates */
 /* Grid columns length */
 /* Gap lists */
 /* length of the gutter on mobile when it is in landscape orientation and the width of the viewport does not exceed the maximum width indicated by the number */
-/* Breakpoints */
-/* Selector sizes */
 /* Breakpoints mixins */
 /* Mobile with a landscape orientation width between 480px and 529px */
 /* Mobile with a landscape orientation width between 530px and 599px */
@@ -546,17 +547,37 @@ select {
   }
 }
 
+.likes-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: initial;
+  color: #901C1C;
+  font-size: 1.5rem;
+}
+.likes-button__icon {
+  margin-left: 0.39875rem;
+}
+
 .select-menu {
+  width: 10.625rem;
+  height: 4.3125rem;
   position: relative;
-  top: -15px;
   line-height: 1.5;
   /*hide the items when the select box is closed:*/
 }
+@media screen and (max-width: 992px) {
+  .select-menu {
+    width: 8.814rem;
+    height: 3.5rem;
+  }
+}
 .select-menu__selected-item {
-  width: 10.625rem;
-  height: 4.3125rem;
+  width: 100%;
   padding: 1.4375rem 1.125rem 1.4375rem 1.25rem;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   color: white;
   background-color: #901C1C;
@@ -567,9 +588,21 @@ select {
       -ms-user-select: none;
           user-select: none;
 }
+@media screen and (max-width: 992px) {
+  .select-menu__selected-item {
+    font-size: 0.9375rem;
+  }
+}
+@media screen and (max-width: 992px) {
+  .select-menu__selected-item {
+    padding: 1.0625rem 1.125rem 1.0625rem 1.25rem;
+  }
+}
 .select-menu__arrow {
-  position: absolute;
-  right: 18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   z-index: 1;
 }
 .select-menu .select-items {
@@ -582,6 +615,7 @@ select {
   height: 3.5rem;
   padding: 0.875rem 1.125rem 0.875rem 1.25rem;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   color: white;
   background-color: #901C1C;
@@ -594,6 +628,17 @@ select {
   position: relative;
   flex-direction: row;
   align-items: center;
+}
+@media screen and (max-width: 992px) {
+  .select-menu .select-items li {
+    font-size: 0.9375rem;
+  }
+}
+@media screen and (max-width: 992px) {
+  .select-menu .select-items li {
+    width: 8.814rem;
+    height: 2.6875rem;
+  }
 }
 .select-menu .select-items li::after {
   content: "";
@@ -618,6 +663,12 @@ select {
   padding: 23px 20px 14px;
   border-radius: 0.3125rem 0.3125rem 0 0;
 }
+@media screen and (max-width: 992px) {
+  .select-menu .select-items li:nth-child(1) {
+    height: 2.9375rem;
+    padding: 0.875rem 1.25rem 0.6875rem;
+  }
+}
 .select-menu .select-items li:nth-child(3) {
   padding: 14px 20px 20px;
   border-radius: 0 0 0.3125rem 0.3125rem;
@@ -631,16 +682,6 @@ select {
 }
 .select-menu .select-hide {
   display: none;
-}
-
-/* Placement of the arrow when select box is close */
-.fa-chevron-down.select-menu__arrow {
-  top: 25px;
-}
-
-/* Placement of the arrow when the select box is open */
-.fa-chevron-up.select-menu__arrow {
-  top: 24px;
 }
 
 .website-header {
@@ -730,7 +771,7 @@ select {
 }
 
 .photograph-header {
-  margin: 2.5rem 4.5rem 1.6rem;
+  margin: 2.5rem 4.5rem 1rem;
   padding: 3.5rem 3.125rem 2.625rem;
   display: flex;
   flex-flow: row wrap;
@@ -740,6 +781,11 @@ select {
   border-radius: 0.3125rem;
 }
 @media screen and (max-width: 1200px) {
+  .photograph-header {
+    gap: 3rem;
+  }
+}
+@media screen and (max-width: 1160px) {
   .photograph-header {
     gap: 3rem 0.8rem;
   }
@@ -816,60 +862,73 @@ select {
 
 .filters-section {
   position: relative;
-  margin: 0 67.125rem 0 4.5rem;
+  margin: 0 4.5rem;
   font-size: 1.125rem;
   font-weight: bold;
-  display: grid;
-  grid-template-columns: 4.625rem 10.625rem;
-  gap: 0 1.5625rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+@media screen and (max-width: 992px) {
+  .filters-section {
+    margin: 1.2rem 4.375rem 0;
+    font-size: 0.9375rem;
+  }
+}
+@media screen and (max-width: 599px) {
+  .filters-section {
+    margin: 1.25rem 1rem 0;
+    justify-content: center;
+  }
 }
 .filters-section__label {
-  grid-column: 1;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
 }
 
-.filters {
-  grid-column: 1;
-  grid-row: 1;
-  width: 10.625rem;
+.photograph-gallery {
+  margin: 3.625rem 4.5rem 0;
+  display: grid;
+  grid-template-columns: repeat(3, 21.9375rem);
+  gap: 4.4375rem 5.9375rem;
+}
+
+.thumbnail-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: white;
-  background-color: #901C1C;
-  border-radius: 0.3125rem;
-  cursor: pointer;
+  align-items: flex-start;
 }
-.filters:hover + .dropdown-menu__icon, .filters:focus + .dropdown-menu__icon {
-  color: black;
-  background-color: #DB8876;
+.thumbnail-card__title {
+  color: #901C1C;
 }
-.filters li {
-  display: none;
-  width: 100%;
-  padding: 14px 15px;
-  border-radius: 5px;
-  /* Make disapear the line separator of the filters when hovering on it */
-}
-.filters li:hover::after {
-  display: none;
-}
-.filters li:hover,
-.filters li:focus {
-  color: black;
-  background-color: #DB8876;
-  border-radius: 0;
-}
-.filters li:nth-child(1) {
+.thumbnail-card__lightbox-link {
   display: flex;
-  padding-top: 20px;
-  border-radius: 0.3125rem 0.3125rem 0 0;
+  justify-content: center;
+  align-items: center;
 }
-.filters li:nth-child(3) {
-  border-radius: 0 0 5px 5px;
-  /* Remove the separator for the last filter because it doesn't have one on the mockup */
+.thumbnail-card img {
+  width: 21.875rem;
+  height: 18.75rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.3125rem;
 }
-.filters li:nth-child(3)::after {
-  display: none;
+.thumbnail-card video {
+  width: 21.875rem;
+  height: 18.75rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.3125rem;
+}
+
+.thumbnail-card-details {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
 }
 
 #contact-modal {

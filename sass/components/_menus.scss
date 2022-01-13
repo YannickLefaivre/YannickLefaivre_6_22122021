@@ -1,19 +1,29 @@
 .select-menu {
+    @include set-size($select-menu-size);
     position: relative;
-    top: -15px;
     line-height: 1.5;
     
+    @include from-tablette-and-less() {
+        @include set-size($select-menu-size-sm-mobile);
+    }
+
     &__selected-item {
-        @include set-size($select-menu__selected-item-size);
-        
-        padding: $select-menu__selected-items-padding;
+        width: 100%;
+        padding: $select-menu__selected-item-padding;
 
         @include select-menu-items-appearance();
+
+        @include from-tablette-and-less() {
+            padding: $select-menu__selected-item-padding-sm-mobile;
+        }
    }
 
     &__arrow {
-        position: absolute;
-        right: 18px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
         z-index: 1;
     }
 
@@ -34,6 +44,10 @@
             flex-direction: row;
 
             align-items: center;
+
+            @include from-tablette-and-less() {
+                @include set-size($select-menu-items-size-sm-mobile);
+            }
             
             &::after {
                 content: "";
@@ -58,6 +72,11 @@
                 height: $select-item-1-height;
                 padding: $select-item-1-padding;
                 border-radius: $small-beveled-border-on-top;
+
+                @include from-tablette-and-less() {
+                    height: $select-item-1-height-sm-mobile;
+                    padding: $select-item-1-padding-sm-mobile;
+                }
             }
 
             &:nth-child(3) {
@@ -79,14 +98,4 @@
     .select-hide {
         display: none;
     }
-}
-
-/* Placement of the arrow when select box is close */
-.fa-chevron-down.select-menu__arrow {
-    top: 25px;
-}
-
-/* Placement of the arrow when the select box is open */
-.fa-chevron-up.select-menu__arrow {
-    top: 24px;
 }

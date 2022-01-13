@@ -13,7 +13,11 @@
     border-radius: $small-beveled-border;
 
     @include from-computer-and-less {
-        gap: $photograph-header-gutter-computer;
+        gap: $photograph-header-row-gutter;
+    }
+
+    @include from-small-computer-and-less {
+        gap: $photograph-header-gutter-sm-computer;
     }
 
     @include from-tablette-and-less {

@@ -6,68 +6,24 @@
     font-size: $filters-section-font-size;
     font-weight: bold;
 
-    display: grid;
-    grid-template-columns: $filters-section-grid-columns-length;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 
-    gap: $filters-section-gutter;
+    @include from-tablette-and-less {
+        margin: 1.2rem $main-wrapper-sides-margin-tablette 0;
+        
+        font-size: $filters-section-font-size-tablette;
+    }
+    
+    @include for-mobile-in-medium-landscape-orientation() {
+        margin: $filters-section-margin-sm-mobile;
+
+        justify-content: center;
+    }
 
     &__label {
-        grid-column: 1;
-    }
-}
-
-.filters {
-    grid-column: 1;
-    grid-row: 1;
-    width: 10.625rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: white;
-    background-color: $primary-color;
-    border-radius: $small-beveled-border;
-    cursor: pointer;
-
-    &:hover,
-    &:focus {
-        + .dropdown-menu__icon {
-            color: black;
-            background-color: #DB8876;
-        }
-    }
-
-    li {
-        display: none;
-        
-        width: 100%;
-        padding: 14px 15px;
-        border-radius: 5px;
-
-        /* Make disapear the line separator of the filters when hovering on it */
-        &:hover::after {
-            display: none;
-        }
-    }
-
-    li:hover, 
-    li:focus {
-        color: black;
-        background-color: $secondary-background-color;
-        border-radius: 0;
-    }
-
-    li:nth-child(1) {
-        display: flex;
-        padding-top: 20px;
-        border-radius: $small-beveled-border-on-top;
-    }
-
-    li:nth-child(3) {
-        border-radius: 0 0 5px 5px;
-
-        /* Remove the separator for the last filter because it doesn't have one on the mockup */
-        &::after {
-            display: none;
-        }
+        margin-right: 1rem;
+        margin-bottom: 1rem;
     }
 }

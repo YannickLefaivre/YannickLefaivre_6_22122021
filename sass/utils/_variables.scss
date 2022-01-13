@@ -16,10 +16,15 @@ $user-size-tablette: 11.75rem;
 $user-size-mobile-small-landscape-orientation: 11.55rem; 
 $user-size-mobile: 11.75rem;
 
+$select-menu-items-width-sm-mobile: 8.814rem;
+
 $select-item-1-height: 3.75rem;
+$select-item-1-height-sm-mobile: 2.9375rem;
 
 $website-header-height: 8rem;
 $website-header--photograph-page-height: 6rem;
+
+$thumbnails-width: 21.9375rem;
 
 
 /* Margins variables */
@@ -40,7 +45,11 @@ $photograph-profil__location-margin-bottom: 1.1875rem;
 
 $buttons-padding: 0.6875rem;
 
-$select-menu__selected-items-vertical-padding: 1.4375rem;
+$select-menu__selected-item-vertical-padding: 1.4375rem;
+$select-menu__selected-item-vertical-padding-sm-mobile: 1.0625rem;
+
+$select-menu__selected-item-left-padding: 1.25rem;
+$select-menu__selected-item-right-padding: 1.125rem;
 
 $photograph-header-padding-top: 3.5rem;
 $photograph-header-padding-bottom: 2.625rem;
@@ -54,8 +63,10 @@ $contact-button-font-size: 1.25rem;
 $contact-button-font-size-mobile: 1.0625rem;
 
 $select-menu-font-size: 1.125rem;
+$select-menu-font-size-sm-mobile: 0.9375rem;
 
 $filters-section-font-size: 1.125rem;
+$filters-section-font-size-tablette: 0.9375rem;
 
 $first-heading-tablette-font-size: 1.7rem;
 $first-heading-mobile-landscape-orientation-font-size: 1.5rem;
@@ -100,6 +111,8 @@ $secondary-color-alternative-2: #FAFAFA;
 $one-column: 1fr;
 $two-column: repeat(2, 1fr);
 $three-column: repeat(3, 1fr);
+
+$filters-section-second-column-width: 8.814rem;
 
 /* Gap variables */
 

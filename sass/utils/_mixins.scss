@@ -64,6 +64,12 @@
 	}
 }
 
+@mixin from-small-computer-and-less {
+	@media screen and (max-width: map-get($breakpoints, sm-computer)) {
+		@content;
+	}
+}
+
 @mixin from-computer-and-less {
 	@media screen and (max-width: map-get($breakpoints, computer)) {
 		@content;
@@ -146,6 +152,7 @@
 @mixin select-menu-items-appearance {
 	display: flex;
 
+	justify-content: space-between;
 	align-items: center;
 
     color: white;
@@ -155,9 +162,25 @@
 
     cursor: pointer;
     user-select: none;
+
+	@include from-tablette-and-less() {
+		font-size: $select-menu-font-size-sm-mobile;
+	}
 }
 
 @mixin select-menu-items-hover-and-focus-effect() {
 	color: $default-text-color;
 	background-color: $secondary-background-color;
+}
+
+@mixin thumbnails-aspect-ratio() {
+	object-fit: cover;
+}
+
+@mixin thumbnails-border-radius() {
+	border-radius: $small-beveled-border;
+}
+
+@mixin thumbnails-background-color {
+	background-color: $alternative-background-color;
 }
