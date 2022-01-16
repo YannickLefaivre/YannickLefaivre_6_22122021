@@ -29,4 +29,9 @@ $select-menu-items-size: (width: 10.625rem,
 height: 3.5rem);
 $select-menu-items-size-sm-mobile: (width: $select-menu-items-width-sm-mobile, height: 2.6875rem);
 
-$thumbnails-size: (width: 21.875rem, height: 18.75rem);
+$thumbnails-size: (width: 100%, height: 18.75rem);
+
+$photograph-footer-size: ( width: 23.5rem,
+height: 5.5625rem);
+$photograph-footer-size-computer: ( width: 22rem,
+height: 4rem);

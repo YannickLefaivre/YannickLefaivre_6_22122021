@@ -1,0 +1,65 @@
+.thumbnail-card {
+    width: $same-width-as-it-parent;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    &__lightbox-link {
+        width: $same-width-as-it-parent;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    img {
+        @include set-size($thumbnails-size);
+
+        @include thumbnails-aspect-ratio();
+
+        @include thumbnails-border-radius();
+
+        @include thumbnails-background-color();
+    }
+
+    video {
+        @include set-size($thumbnails-size);
+
+        @include thumbnails-aspect-ratio();
+
+        @include thumbnails-border-radius();
+        
+        @include thumbnails-background-color();
+    }
+}
+
+.thumbnail-card-details {
+    width: $same-width-as-it-parent;
+
+    margin-top: 0.625rem;
+    
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: $photograph-profil__location-font-size;
+
+    @include from-computer-and-less {
+        font-size: $photograph-profil__location-font-size-sm-mobile;
+    }
+
+    &__title {
+        max-width: $thumbnail-card-details__title-max-width;
+
+        color: $primary-color;
+
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
