@@ -15,7 +15,7 @@
         height: $user-size-tablette;
     }
 
-    @include for-mobile-in-medium-landscape-orientation {
+    @include for-mobile-in-medium-landscape-orientation-500px-599px {
         width: $user-size-mobile-small-landscape-orientation;
         height: $user-size-mobile-small-landscape-orientation;
     }

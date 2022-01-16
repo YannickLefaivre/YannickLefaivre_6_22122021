@@ -20,7 +20,7 @@
         gap: $photographer-section-gutter-tablette;
     }
 
-    @include for-mobile-in-medium-landscape-orientation {
+    @include for-mobile-in-medium-landscape-orientation-500px-599px {
         margin: $photographer-section-margin-small-landscape-orientation;
 
         gap: $photographer-section-gutter-mobile-sm-landscape-orientation;
@@ -56,7 +56,7 @@
             font-size: $thumb-photographer__heading-font-size-tablette;
         }
 
-        @include for-mobile-in-medium-landscape-orientation {
+        @include for-mobile-in-medium-landscape-orientation-500px-599px {
             font-size: $thumb-photographer__heading-font-size-sm-landscape-orientation-font-size;
         }
 

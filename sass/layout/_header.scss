@@ -16,7 +16,7 @@
     }
     
     &--photograph-page {
-        @include for-mobile-in-medium-landscape-orientation {
+        @include for-mobile-in-medium-landscape-orientation-500px-599px {
             height: $website-header--photograph-page-height;
             
             justify-content: center;
@@ -33,7 +33,7 @@
             font-size: $first-heading-tablette-font-size;
         }
 
-        @include for-mobile-in-medium-landscape-orientation {
+        @include for-mobile-in-medium-landscape-orientation-500px-599px {
             margin-right: $main-wrapper-sides-margin-mobile-landscape-orientation;
 
             font-size: $first-heading-mobile-landscape-orientation-font-size;
@@ -62,7 +62,7 @@
         margin-left: $main-wrapper-sides-margin-tablette;
     }
 
-    @include for-mobile-in-medium-landscape-orientation {
+    @include for-mobile-in-medium-landscape-orientation-500px-599px {
         margin-left: $main-wrapper-sides-margin-mobile-landscape-orientation;
     }
 
@@ -79,7 +79,7 @@
     }
     
     &--photograph-page {
-        @include for-mobile-in-medium-landscape-orientation {
+        @include for-mobile-in-medium-landscape-orientation-500px-599px {
             margin: initial;
         }
     }
