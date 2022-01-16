@@ -38,7 +38,7 @@
 }
 
 /* Mobile with a landscape orientation width between 530px and 599px */
-@mixin for-mobile-in-medium-landscape-orientation {
+@mixin for-mobile-in-medium-landscape-orientation-500px-599px {
 	@media screen and (max-width: map-get($breakpoints, mobile-md-landscape-orientation)) {
 		@content;
 	}

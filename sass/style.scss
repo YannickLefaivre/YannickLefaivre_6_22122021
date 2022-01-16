@@ -1,6 +1,6 @@
 @import "./utils/variables";
-@import "./utils/lists";
 @import "./utils/maps";
+@import "./utils/lists";
 @import "./utils/functions";
 @import "./utils/mixins";
 @import "./utils/animations";
@@ -19,7 +19,9 @@
 @import "./layout/header";
 @import "./layout/photograph-header";
 @import "./layout/filters-section";
+@import "./layout/photograph-gallery";
 @import "./layout/thumbnails";
+@import "./layout/photograph-footer";
 @import "./layout/modals";
 @import "./layout/form";
 

@@ -16,7 +16,7 @@
         font-size: $filters-section-font-size-tablette;
     }
     
-    @include for-mobile-in-medium-landscape-orientation() {
+    @include for-mobile-in-medium-landscape-orientation-500px-599px() {
         margin: $filters-section-margin-sm-mobile;
 
         justify-content: center;

@@ -1,0 +1,26 @@
+.photograph-footer {
+    @include set-size($photograph-footer-size);
+
+    position: fixed;
+    right: $photograph-footer-right-offset;
+    bottom: 0;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    font-size: $photograph-profil__location-font-size;
+
+    color: $default-text-color;
+    background-color: $secondary-background-color;
+
+    border-radius: $small-beveled-border;
+    
+    z-index: 2;
+
+    @include from-computer-and-less {
+        @include set-size($photograph-footer-size-computer);
+
+        font-size: $photograph-profil__location-font-size-sm-mobile;
+    }
+}

@@ -4,6 +4,8 @@ $zero-value: 0;
 
 /* Selector sizes */
 
+$same-width-as-it-parent: 100%;
+
 $main-wrapper-width: 1920px;
 
 $company-logo-height: 3.125rem;
@@ -26,6 +28,7 @@ $website-header--photograph-page-height: 6rem;
 
 $thumbnails-width: 21.9375rem;
 
+$thumbnail-card-details__title-max-width: 12rem;
 
 /* Margins variables */
 
@@ -40,6 +43,8 @@ $main-wrapper-sides-margin-md-mobile: 1.5rem;
 $photograph-profil-margin-bottom-sm-mobile: 2rem;
 
 $photograph-profil__location-margin-bottom: 1.1875rem;
+
+$photograph-gallery-margin-top: 3.625rem;
 
 /* Padding variables */
 
@@ -133,6 +138,10 @@ $small-beveled-border: 0.3125rem;
 
 $small-beveled-border-on-top: $small-beveled-border $small-beveled-border 0 0;
 $small-beveled-border-on-bottom: 0 0 $small-beveled-border $small-beveled-border;
+
+/* Position, top, right, left and bottom variables */
+
+$photograph-footer-right-offset: 36px;
 
 /* Transitions variables */
 
