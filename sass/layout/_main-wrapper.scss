@@ -1,0 +1,10 @@
+.main-wrapper {
+    max-width: $main-wrapper-width;
+    margin: 0 auto;
+    
+    overflow: visible;
+    
+    &--modal-open {
+        overflow: hidden;
+    }
+}
