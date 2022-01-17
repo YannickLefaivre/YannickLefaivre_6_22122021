@@ -13,6 +13,10 @@ $filters-section-margin-sm-mobile: 1.25rem 1rem $zero-value;
 $photograph-gallery-margin: $photograph-gallery-margin-top $main-wrapper-sides-margin $zero-value;
 $photograph-gallery-margin-tablette: $photograph-gallery-margin-top $main-wrapper-sides-margin-tablette $zero-value;
 
+$lightbox-modal-content-margin: $lightbox-modal-content-margin-top $main-wrapper-sides-margin $zero-value;
+$lightbox-modal-content-margin-tablette: 2.5rem auto $zero-value;
+$lightbox-modal-content-margin-mobile-in-landscape-orientation: $lightbox-modal-content-margin-top auto $zero-value;
+
 /* Padding lists */
 
 $photograph-header-padding: $photograph-header-padding-top 3.125rem $photograph-header-padding-bottom;

@@ -15,6 +15,11 @@ $breakpoints: (
     large-screen: 1440px
 );
 
+$breakpoints-height: (
+    viewport-height-of-599px: 699px,
+    viewport-height-of-939px: 939px
+);
+
 /* Selector sizes */
 
 $buttons-size: (width: auto, height: 4.375rem);

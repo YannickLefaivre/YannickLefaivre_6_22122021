@@ -41,7 +41,7 @@
     font-size: $photograph-profil__location-font-size;
 
     @include from-tablette-and-less {
-        font-size: $photograph-profil__location-font-size-sm-mobile;
+        font-size: $photograph-profil__location-font-size-tablette;
     }
 
     &__icon {
@@ -50,19 +50,28 @@
 }
 
 .close-button {
-    width: auto;
-    height: auto;
-
-    padding: 10px;
+    margin-top: 0.3rem;
+    
+    padding: 0.625rem;
 
     grid-column: 3;
     grid-row: 1;
 
-    align-self: flex-start;
-
-    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     color: $primary-color;
 
     background-color: inherit;
+
+    &__icon {
+        width: $close-button-size;
+        height: $close-button-size;
+
+        @include from-tablette-and-less {
+            width: 2.4375rem;
+            height: 2.4375rem;
+        }
+    }
 }

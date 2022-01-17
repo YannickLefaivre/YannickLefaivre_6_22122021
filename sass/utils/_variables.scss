@@ -30,6 +30,8 @@ $thumbnails-width: 21.9375rem;
 
 $thumbnail-card-details__title-max-width: 12rem;
 
+$close-button-size: 2.625rem;
+
 /* Margins variables */
 
 $user--photograph-header-id-photo-margin-bottom: 1rem;
@@ -45,6 +47,8 @@ $photograph-profil-margin-bottom-sm-mobile: 2rem;
 $photograph-profil__location-margin-bottom: 1.1875rem;
 
 $photograph-gallery-margin-top: 3.625rem;
+
+$lightbox-modal-content-margin-top: 2.5rem;
 
 /* Padding variables */
 
@@ -85,10 +89,12 @@ $photograph-profil__name-font-size: 4rem;
 $photograph-profil__name-font-size-sm-mobile: 2.3rem;
 
 $photograph-profil__location-font-size: 1.5rem;
-$photograph-profil__location-font-size-sm-mobile: 1.3125rem;
+$photograph-profil__location-font-size-tablette: 1.3125rem;
 
 $photograph-profil__tagline-font-size: 1.125rem;
 $photograph-profil__tagline-font-size-sm-mobile: 0.9375rem;
+
+$lightbox-navigation-button-font-size: 3.8rem;
 
 /* Line height variables */
 
@@ -118,6 +124,8 @@ $two-column: repeat(2, 1fr);
 $three-column: repeat(3, 1fr);
 
 $filters-section-second-column-width: 8.814rem;
+
+$modal-grid-columns-1-and-3-length: 0.8fr;
 
 /* Gap variables */
 

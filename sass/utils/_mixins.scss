@@ -58,6 +58,18 @@
 	}
 }
 
+@mixin for-device-with-a-height-of-500px-699px {
+	@media screen and (max-height: map-get($breakpoints-height, viewport-height-of-599px)) {
+		@content;
+	}
+}
+
+@mixin for-device-with-a-height-of-700px-940px {
+	@media screen and (max-height: map-get($breakpoints-height, viewport-height-of-939px)) {
+		@content;
+	}
+}
+
 @mixin from-tablette-and-less {
 	@media screen and (max-width: map-get($breakpoints, tablette)) {
 		@content;
@@ -168,11 +180,6 @@
 	}
 }
 
-@mixin select-menu-items-hover-and-focus-effect() {
-	color: $default-text-color;
-	background-color: $secondary-background-color;
-}
-
 @mixin thumbnails-aspect-ratio() {
 	object-fit: cover;
 }
@@ -183,4 +190,9 @@
 
 @mixin thumbnails-background-color {
 	background-color: $alternative-background-color;
+}
+
+@mixin fisheye-hover-and-focus-effect() {
+	color: $default-text-color;
+	background-color: $secondary-background-color;
 }

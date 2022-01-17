@@ -19,8 +19,7 @@
     <title>Ellie-Rose Wilkens - FishEye</title>
   </head>
 
-  <body>
-
+  <body class="main-wrapper">
     <header class="website-header website-header--photograph-page">
       <nav class="website-header-navigation-section website-header-navigation-section--photograph-page">
         <a href="../index.html">
@@ -249,16 +248,20 @@
 
     <aside id="lightbox-modal" class="modal modal--close">
       <div class="lightbox-modal-content">
-        <button class="fas fa-times close-button"></button>
+        <button class="close-button">
+          <svg class="close-button__icon" width="42" height="42" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg">
+            <path d="M42 4.23L37.77 0L21 16.77L4.23 0L0 4.23L16.77 21L0 37.77L4.23 42L21 25.23L37.77 42L42 37.77L25.23 21L42 4.23Z" fill="currentColor"/>
+          </svg>
+        </button>
 
         <a href="#" class="lightbox-navigation-button previous-button">
-          <span class="fas fa-chevron-left"></span>
+          <span class="lightbox-navigation-button__icon fas fa-chevron-left"></span>
         </a>
   
         <div class="close-up-view">
-          <img class="close-up-view__media" src="../assets/photographers/ellie-rose/pictures/Architecture_Connected_Curves.jpg" alt="">
+          <img class="close-up-view__media hidden-content" src="../assets/photographers/ellie-rose/pictures/Architecture_Connected_Curves.jpg" alt="">
   
-          <video class="close-up-view__media hidden-content" src="../assets/photographers/ellie-rose/videos/Sport_Tricks_in_the_air.mp4"></video>
+          <video controls class="close-up-view__media hidden-content" src="../assets/photographers/ellie-rose/videos/Sport_Tricks_in_the_air.mp4"></video>
   
           <p class="close-up-view__title">
             Courbes connectées
@@ -266,7 +269,7 @@
         </div>
   
         <a href="#" class="lightbox-navigation-button next-button">
-          <span class="fas fa-chevron-right"></span>
+          <span class="lightbox-navigation-button__icon fas fa-chevron-right"></span>
         </a>
       </div>
     </aside>
