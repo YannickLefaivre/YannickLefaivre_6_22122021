@@ -59,11 +59,11 @@
             }
 
             &:hover {
-                @include select-menu-items-hover-and-focus-effect();
+                @include fisheye-hover-and-focus-effect();
             }
 
             &:focus {
-                @include select-menu-items-hover-and-focus-effect();
+                @include fisheye-hover-and-focus-effect();
             }
 
             &:nth-child(1) {
@@ -88,7 +88,7 @@
         }
 
         li.same-as-selected {
-            @include select-menu-items-hover-and-focus-effect();
+            @include fisheye-hover-and-focus-effect();
         }
     }
 

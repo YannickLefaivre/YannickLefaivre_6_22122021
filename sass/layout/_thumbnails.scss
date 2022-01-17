@@ -50,7 +50,7 @@
     font-size: $photograph-profil__location-font-size;
 
     @include from-computer-and-less {
-        font-size: $photograph-profil__location-font-size-sm-mobile;
+        font-size: $photograph-profil__location-font-size-tablette;
     }
 
     &__title {

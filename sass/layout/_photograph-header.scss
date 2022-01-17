@@ -84,7 +84,7 @@
         color: $primary-color;
 
         @include from-tablette-and-less {
-            font-size: $photograph-profil__location-font-size-sm-mobile;
+            font-size: $photograph-profil__location-font-size-tablette;
         }
     }
 
