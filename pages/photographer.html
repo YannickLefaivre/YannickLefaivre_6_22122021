@@ -1,297 +1,408 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8">
+	<head>
+		<meta charset="utf-8" />
 
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- <link href="../public/dist/style.min.css" rel="stylesheet" type="text/css" /> Minified version of the application custom stylesheet -->
-    <link href="../public/css/style.css" rel="stylesheet" type="text/css" />
+		<!-- <link href="../public/dist/style.min.css" rel="stylesheet" type="text/css" /> Minified version of the application custom stylesheet -->
+		<link href="../public/css/style.css" rel="stylesheet" type="text/css" />
 
-    <link rel="icon" type="image/png" href="../assets/images/logo.png">
+		<link rel="icon" type="image/png" href="../assets/images/logo.png" />
 
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+		<link
+			href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
+			rel="stylesheet"
+		/>
 
-    <script src="https://kit.fontawesome.com/9809ccf456.js" crossorigin="anonymous"></script>
+		<script
+			src="https://kit.fontawesome.com/9809ccf456.js"
+			crossorigin="anonymous"
+		></script>
 
-    <title>Ellie-Rose Wilkens - FishEye</title>
-  </head>
+		<title>Ellie-Rose Wilkens - FishEye</title>
+	</head>
 
-  <body class="main-wrapper">
-    <header class="website-header website-header--photograph-page">
-      <nav class="website-header-navigation-section website-header-navigation-section--photograph-page">
-        <a href="../index.html">
-          <img class="logo" src="../assets/images/logo.png" alt="Page d'accueil de FishEye"/>
-        </a>
-      </nav>
-    </header>
+	<body class="main-wrapper">
+		<header class="website-header website-header--photograph-page">
+			<nav
+				class="website-header-navigation-section website-header-navigation-section--photograph-page"
+			>
+				<a href="../index.html">
+					<img
+						class="logo"
+						src="../assets/images/logo.png"
+						alt="Page d'accueil de FishEye"
+					/>
+				</a>
+			</nav>
+		</header>
 
-    <main id="main">
-      <header class="photograph-header">
-        <section class="photograph-profil">
-          <h1 class="photograph-profil__name">Ellie-Rose Wilkens</h1>
+		<main id="main">
+			<header class="photograph-header">
+				<section class="photograph-profil">
+					<h1 class="photograph-profil__name">Ellie-Rose Wilkens</h1>
 
-          <p class="photograph-profil__location">
-            Paris, France
-          </p>
+					<p class="photograph-profil__location">Paris, France</p>
 
-          <p class="photograph-profil__tagline">
-            Travaille sur des compositions complexes
-          </p>
-        </section>
+					<p class="photograph-profil__tagline">
+						Travaille sur des compositions complexes
+					</p>
+				</section>
 
-        <button class="button contact-button" onclick="displayModal()">Contactez-moi</button>
+				<button class="button contact-button" onclick="displayModal()">
+					Contactez-moi
+				</button>
 
-        <img class="user user--photograph-header-id-photo" src="../assets/photographers/photographers-id-photos/EllieRoseWilkens.jpg" alt="Ellie-Rose Wilkens">
-      </header>
+				<img
+					class="user user--photograph-header-id-photo"
+					src="../assets/photographers/photographers-id-photos/EllieRoseWilkens.jpg"
+					alt="Ellie-Rose Wilkens"
+				/>
+			</header>
 
-      <nav class="filters-section">
-        <p class="filters-section__label">Trier par</p>
+			<nav class="filters-section">
+				<p class="filters-section__label">Trier par</p>
 
-        <div class="select-menu">
-          <button type="button" id="select-menu-selected-item" class="select-menu__selected-item">
-            Popularité
-            <span class="fas fa-chevron-down select-menu__arrow"></span>
-          </button>
-          <ul class="select-items select-hide">
-            <li>
-              Popularité
-              <span class="fas fa-chevron-up select-menu__arrow"></span>
-            </li>
-            <li>Date</li>
-            <li>Titre</li>
-          </ul>
-        </div>
-      </nav>
-      
-      <div class="photograph-gallery">
-        <div class="thumbnail-card">
-          <a class="thumbnail-card__lightbox-link" href="#">
-            <video src="../assets/photographers/ellie-rose/videos/Sport_Tricks_in_the_air.mp4"></video>
-          </a>
-          
-          <div class="thumbnail-card-details">
-            <p class="thumbnail-card-details__title">Figure en l'air</p>
-          
-            <button class="likes-button">
-              150
-              <span class="likes-button__icon fas fa-heart"></span>
-            </button>
-          </div>
-        </div>
-        
-        <div class="thumbnail-card">
-          <a href="#" class="thumbnail-card__lightbox-link">
-            <img src="../assets/photographers/ellie-rose/pictures/Architecture_Connected_Curves.jpg" alt="">
-          </a>
-          
-          <div class="thumbnail-card-details">
-            <p class="thumbnail-card-details__title">Courbes connectées</p>
-          
-            <button class="likes-button">
-              79
-              <span class="likes-button__icon fas fa-heart"></span>
-            </button>
-          </div>
-        </div>
+				<div class="select-menu">
+					<button
+						type="button"
+						id="select-menu-selected-item"
+						class="select-menu__selected-item"
+					>
+						Popularité
+						<span class="fas fa-chevron-down select-menu__arrow"></span>
+					</button>
+					<ul class="select-items select-hide">
+						<li>
+							Popularité
+							<span class="fas fa-chevron-up select-menu__arrow"></span>
+						</li>
+						<li>Date</li>
+						<li>Titre</li>
+					</ul>
+				</div>
+			</nav>
 
-        <div class="thumbnail-card">
-          <a href="#" class="thumbnail-card__lightbox-link">
-            <img src="../assets/photographers/ellie-rose/pictures/Architecture_Cross_Bar.jpg" alt="">
-          </a>
-          
-          <div class="thumbnail-card-details">
-            <p class="thumbnail-card-details__title">Barre transversale</p>
-          
-            <button class="likes-button">
-              66
-              <span class="likes-button__icon fas fa-heart"></span>
-            </button>
-          </div>
-        </div>
+			<div class="photograph-gallery">
+				<div class="thumbnail-card">
+					<a class="thumbnail-card__lightbox-link" href="#">
+						<video
+							src="../assets/photographers/ellie-rose/videos/Sport_Tricks_in_the_air.mp4"
+						></video>
+					</a>
 
-        <div class="thumbnail-card">
-          <a href="#" class="thumbnail-card__lightbox-link">
-            <img src="../assets/photographers/ellie-rose/pictures/Architecture_Horseshoe.jpg" alt="">
-          </a>
-          
-          <div class="thumbnail-card-details">
-            <p class="thumbnail-card-details__title">Fer à cheval</p>
-        
-            <button class="likes-button">
-              11
-              <span class="likes-button__icon fas fa-heart"></span>
-            </button>
-          </div>
-          
-        </div>
+					<div class="thumbnail-card-details">
+						<p class="thumbnail-card-details__title">Figure en l'air</p>
 
-        <div class="thumbnail-card">
-          <a href="#" class="thumbnail-card__lightbox-link">
-            <img src="../assets/photographers/ellie-rose/pictures/Architecture_Water_on_Modern.jpg" alt="">
-          </a>
-          
-          <div class="thumbnail-card-details">
-            <p class="thumbnail-card-details__title">De l'eau sur un batîment moderne</p>
-        
-            <button class="likes-button">
-              85
-              <span class="likes-button__icon fas fa-heart"></span>
-            </button>
-          </div>
-        </div>
+						<button class="likes-button">
+							150
+							<span class="likes-button__icon fas fa-heart"></span>
+						</button>
+					</div>
+				</div>
 
-        <div class="thumbnail-card">
-          <a href="#" class="thumbnail-card__lightbox-link">
-            <img src="../assets/photographers/ellie-rose/pictures/Architecture_White_Light.jpg" alt="">
-          </a>
+				<div class="thumbnail-card">
+					<a href="#" class="thumbnail-card__lightbox-link">
+						<img
+							src="../assets/photographers/ellie-rose/pictures/Architecture_Connected_Curves.jpg"
+							alt=""
+						/>
+					</a>
 
-          <div class="thumbnail-card-details">
-            <p class="thumbnail-card-details__title">Lumière blanche</p>
-        
-            <button class="likes-button">
-              52
-              <span class="likes-button__icon fas fa-heart"></span>
-            </button>
-          </div>
-        </div>
+					<div class="thumbnail-card-details">
+						<p class="thumbnail-card-details__title">Courbes connectées</p>
 
-        <div class="thumbnail-card">
-          <a href="#" class="thumbnail-card__lightbox-link">
-            <img src="../assets/photographers/ellie-rose/pictures/Sport_Next_Hold.jpg" alt="">
-          </a>
+						<button class="likes-button">
+							79
+							<span class="likes-button__icon fas fa-heart"></span>
+						</button>
+					</div>
+				</div>
 
-          
-          <div class="thumbnail-card-details">
-            <p class="thumbnail-card-details__title">Grimpeur</p>
-        
-            <button class="likes-button">
-              101
-              <span class="likes-button__icon fas fa-heart"></span>
-            </button>
-          </div>
-        </div>
+				<div class="thumbnail-card">
+					<a href="#" class="thumbnail-card__lightbox-link">
+						<img
+							src="../assets/photographers/ellie-rose/pictures/Architecture_Cross_Bar.jpg"
+							alt=""
+						/>
+					</a>
 
-        <div class="thumbnail-card">
-          <a href="#" class="thumbnail-card__lightbox-link">
-            <img src="../assets/photographers/ellie-rose/pictures/Sport_Race_End.jpg" alt="">
-          </a>
-          
-          <div class="thumbnail-card-details">
-            <p class="thumbnail-card-details__title">Fin de course</p>
-        
-            <button class="likes-button">
-              88
-              <span class="likes-button__icon fas fa-heart"></span>
-            </button>
-          </div>
-        </div>
+					<div class="thumbnail-card-details">
+						<p class="thumbnail-card-details__title">Barre transversale</p>
 
-        <div class="thumbnail-card">
-          <a href="#" class="thumbnail-card__lightbox-link">
-            <img src="../assets/photographers/ellie-rose/pictures/Sport_Sky_Cross.jpg" alt="">
-          </a>
+						<button class="likes-button">
+							66
+							<span class="likes-button__icon fas fa-heart"></span>
+						</button>
+					</div>
+				</div>
 
-          <div class="thumbnail-card-details">
-            <p class="thumbnail-card-details__title">Skieur</p>
-        
-            <button class="likes-button">
-              77
-              <span class="likes-button__icon fas fa-heart"></span>
-            </button>
-          </div>
-        </div>
+				<div class="thumbnail-card">
+					<a href="#" class="thumbnail-card__lightbox-link">
+						<img
+							src="../assets/photographers/ellie-rose/pictures/Architecture_Horseshoe.jpg"
+							alt=""
+						/>
+					</a>
 
-        <div class="thumbnail-card">
-          <a href="#" class="thumbnail-card__lightbox-link">
-            <img src="../assets/photographers/ellie-rose/pictures/sport_water_tunnel.jpg" alt="">
-          </a>
+					<div class="thumbnail-card-details">
+						<p class="thumbnail-card-details__title">Fer à cheval</p>
 
-          <div class="thumbnail-card-details">
-            <p class="thumbnail-card-details__title">Surfer</p>
-        
-            <button class="likes-button">
-              103
-              <span class="likes-button__icon fas fa-heart"></span>
-            </button> 
-          </div>
-        </div>
+						<button class="likes-button">
+							11
+							<span class="likes-button__icon fas fa-heart"></span>
+						</button>
+					</div>
+				</div>
 
-        <div class="thumbnail-card">
-          <a href="#lightbox-modal" class="thumbnail-card__lightbox-link">
-            <img src="../assets/photographers/ellie-rose/pictures/Sport_Jump.jpg" alt="">
-          </a>
+				<div class="thumbnail-card">
+					<a href="#" class="thumbnail-card__lightbox-link">
+						<img
+							src="../assets/photographers/ellie-rose/pictures/Architecture_Water_on_Modern.jpg"
+							alt=""
+						/>
+					</a>
 
-          <div class="thumbnail-card-details">
-            <p class="thumbnail-card-details__title">Saute !</p>
-        
-            <button class="likes-button">
-              95
-              <span class="likes-button__icon fas fa-heart"></span>
-            </button>
-          </div>
-        </div>
-      </div>
+					<div class="thumbnail-card-details">
+						<p class="thumbnail-card-details__title">
+							De l'eau sur un batîment moderne
+						</p>
 
-      <footer class="photograph-footer">
-        <p class="photograph-footer__numbers-of-likes">
-          157 908 <span class="fas fa-heart"></span>
-        </p>
+						<button class="likes-button">
+							85
+							<span class="likes-button__icon fas fa-heart"></span>
+						</button>
+					</div>
+				</div>
 
-        <p class="photograph-footer__price-per-hours">
-          300&euro; / heure
-        </p>
-      </footer>
-    </main>
+				<div class="thumbnail-card">
+					<a href="#" class="thumbnail-card__lightbox-link">
+						<img
+							src="../assets/photographers/ellie-rose/pictures/Architecture_White_Light.jpg"
+							alt=""
+						/>
+					</a>
 
-    <aside id="lightbox-modal" class="modal modal--close">
-      <div class="lightbox-modal-content">
-        <button class="close-button">
-          <svg class="close-button__icon" width="42" height="42" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg">
-            <path d="M42 4.23L37.77 0L21 16.77L4.23 0L0 4.23L16.77 21L0 37.77L4.23 42L21 25.23L37.77 42L42 37.77L25.23 21L42 4.23Z" fill="currentColor"/>
-          </svg>
-        </button>
+					<div class="thumbnail-card-details">
+						<p class="thumbnail-card-details__title">Lumière blanche</p>
 
-        <a href="#" class="lightbox-navigation-button previous-button">
-          <span class="lightbox-navigation-button__icon fas fa-chevron-left"></span>
-        </a>
-  
-        <div class="close-up-view">
-          <img class="close-up-view__media hidden-content" src="../assets/photographers/ellie-rose/pictures/Architecture_Connected_Curves.jpg" alt="">
-  
-          <video controls class="close-up-view__media hidden-content" src="../assets/photographers/ellie-rose/videos/Sport_Tricks_in_the_air.mp4"></video>
-  
-          <p class="close-up-view__title">
-            Courbes connectées
-          </p>
-        </div>
-  
-        <a href="#" class="lightbox-navigation-button next-button">
-          <span class="lightbox-navigation-button__icon fas fa-chevron-right"></span>
-        </a>
-      </div>
-    </aside>
+						<button class="likes-button">
+							52
+							<span class="likes-button__icon fas fa-heart"></span>
+						</button>
+					</div>
+				</div>
 
-    <div id="contact-modal" class="modal modal--close">
+				<div class="thumbnail-card">
+					<a href="#" class="thumbnail-card__lightbox-link">
+						<img
+							src="../assets/photographers/ellie-rose/pictures/Sport_Next_Hold.jpg"
+							alt=""
+						/>
+					</a>
+
+					<div class="thumbnail-card-details">
+						<p class="thumbnail-card-details__title">Grimpeur</p>
+
+						<button class="likes-button">
+							101
+							<span class="likes-button__icon fas fa-heart"></span>
+						</button>
+					</div>
+				</div>
+
+				<div class="thumbnail-card">
+					<a href="#" class="thumbnail-card__lightbox-link">
+						<img
+							src="../assets/photographers/ellie-rose/pictures/Sport_Race_End.jpg"
+							alt=""
+						/>
+					</a>
+
+					<div class="thumbnail-card-details">
+						<p class="thumbnail-card-details__title">Fin de course</p>
+
+						<button class="likes-button">
+							88
+							<span class="likes-button__icon fas fa-heart"></span>
+						</button>
+					</div>
+				</div>
+
+				<div class="thumbnail-card">
+					<a href="#" class="thumbnail-card__lightbox-link">
+						<img
+							src="../assets/photographers/ellie-rose/pictures/Sport_Sky_Cross.jpg"
+							alt=""
+						/>
+					</a>
+
+					<div class="thumbnail-card-details">
+						<p class="thumbnail-card-details__title">Skieur</p>
+
+						<button class="likes-button">
+							77
+							<span class="likes-button__icon fas fa-heart"></span>
+						</button>
+					</div>
+				</div>
+
+				<div class="thumbnail-card">
+					<a href="#" class="thumbnail-card__lightbox-link">
+						<img
+							src="../assets/photographers/ellie-rose/pictures/sport_water_tunnel.jpg"
+							alt=""
+						/>
+					</a>
+
+					<div class="thumbnail-card-details">
+						<p class="thumbnail-card-details__title">Surfer</p>
+
+						<button class="likes-button">
+							103
+							<span class="likes-button__icon fas fa-heart"></span>
+						</button>
+					</div>
+				</div>
+
+				<div class="thumbnail-card">
+					<a href="#lightbox-modal" class="thumbnail-card__lightbox-link">
+						<img
+							src="../assets/photographers/ellie-rose/pictures/Sport_Jump.jpg"
+							alt=""
+						/>
+					</a>
+
+					<div class="thumbnail-card-details">
+						<p class="thumbnail-card-details__title">Saute !</p>
+
+						<button class="likes-button">
+							95
+							<span class="likes-button__icon fas fa-heart"></span>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<footer class="photograph-footer">
+				<p class="photograph-footer__numbers-of-likes">
+					157 908 <span class="fas fa-heart"></span>
+				</p>
+
+				<p class="photograph-footer__price-per-hours">300&euro; / heure</p>
+			</footer>
+		</main>
+
+		<aside id="lightbox-modal" class="modal modal--close">
+			<div class="lightbox-modal-content">
+				<button class="close-button">
+					<svg
+						class="close-button__icon"
+						width="42"
+						height="42"
+						viewBox="0 0 42 42"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							d="M42 4.23L37.77 0L21 16.77L4.23 0L0 4.23L16.77 21L0 37.77L4.23 42L21 25.23L37.77 42L42 37.77L25.23 21L42 4.23Z"
+							fill="currentColor"
+						/>
+					</svg>
+				</button>
+
+				<a href="#" class="lightbox-navigation-button previous-button">
+					<span
+						class="lightbox-navigation-button__icon fas fa-chevron-left"
+					></span>
+				</a>
+
+				<div class="close-up-view">
+					<img
+						class="close-up-view__media hidden-content"
+						src="../assets/photographers/ellie-rose/pictures/Architecture_Connected_Curves.jpg"
+						alt=""
+					/>
+
+					<video
+						controls
+						class="close-up-view__media hidden-content"
+						src="../assets/photographers/ellie-rose/videos/Sport_Tricks_in_the_air.mp4"
+					></video>
+
+					<p class="close-up-view__title">Courbes connectées</p>
+				</div>
+
+				<a href="#" class="lightbox-navigation-button next-button">
+					<span
+						class="lightbox-navigation-button__icon fas fa-chevron-right"
+					></span>
+				</a>
+			</div>
+		</aside>
+
+		<aside id="contact-modal" class="modal modal--close contact-modal">
 			<div class="contact-modal-content">
-				<header>
-          <h2>Contactez-moi</h2>
-          
-          <img src="../assets/icons/close.svg" onclick="closeModal()" alt=""/>
-        </header>
+				<header class="contact-modal-header">
+					<h2 class="contact-modal-header__heading">
+						Contactez-moi
+						<br />
+						Ellie-Rose Wilkens
+					</h2>
 
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
+					<button class="close-button close-button--contact-modal">
+						<svg
+							class="close-button__icon"
+							width="42"
+							height="42"
+							viewBox="0 0 42 42"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M42 4.23L37.77 0L21 16.77L4.23 0L0 4.23L16.77 21L0 37.77L4.23 42L21 25.23L37.77 42L42 37.77L25.23 21L42 4.23Z"
+								fill="currentColor"
+							/>
+						</svg>
+					</button>
+				</header>
+
+				<form id="modal-form" name="reserve" action="index.html" method="post">
+					<div class="form-data">
+						<label for="first-name">Prénom</label>
+						<input
+              class="text-control"
+							type="text"
+							id="first-name"
+							name="first-name"
+						/>
 					</div>
 
-          <button class="contact-button">Envoyer</button>
+					<div class="form-data">
+						<label for="last-name">Nom</label>
+						<input
+              class="text-control"
+							type="text"
+							id="last-name"
+							name="last-name"
+						/>
+					</div>
+
+					<div class="form-data form-data--email">
+						<label for="email">E-mail</label>
+						<input class="text-control" type="email" id="email" name="email" />
+					</div>
+
+          <div class="form-data form-data--message">
+            <label for="message">Votre message</label>
+            <textarea class="text-control textarea" name="message" id="message" cols="30" rows="10"></textarea>
+          </div>
+
+					<button class="button submit-button">Envoyer</button>
 				</form>
 			</div>
-		</div>
-    <!-- <script src="/scripts/utils/contactForm.js"></script> -->
-  </body>
+		</aside>
+		<!-- <script src="/scripts/utils/contactForm.js"></script> -->
+	</body>
 </html>

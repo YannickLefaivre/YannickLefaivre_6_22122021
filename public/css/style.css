@@ -24,6 +24,7 @@
 /* Mobile with a landscape orientation width between 530px and 599px */
 /* Mobile with a landscape orientation width between 600px and 699px */
 /* Small tablette and mobile with a landscape orientation width between 700px and 850px */
+/* Device with a width between 1200px and 1369px */
 /* Sets the selector sizes */
 /* Sets the selector margin */
 /* Sets the selctor padding */
@@ -504,7 +505,7 @@ select {
 .user--photograph-header-id-photo {
   order: 3;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1160px) {
   .user--photograph-header-id-photo {
     order: 2;
   }
@@ -521,29 +522,29 @@ select {
   height: 4.375rem;
   padding: 0.6875rem;
   font-size: 1.25rem;
-}
-
-.contact-button {
-  order: 2;
   color: white;
   background-color: #901C1C;
 }
-@media screen and (max-width: 1200px) {
-  .contact-button {
-    margin: 0 auto;
-    order: 3;
-  }
-}
 @media screen and (max-width: 992px) {
-  .contact-button {
+  .button {
     font-size: 1.0625rem;
   }
 }
 @media screen and (max-width: 699px) {
-  .contact-button {
+  .button {
     width: auto;
     height: 3.5rem;
     font-size: 1.0625rem;
+  }
+}
+
+.contact-button {
+  order: 2;
+}
+@media screen and (max-width: 1160px) {
+  .contact-button {
+    margin: 0 auto;
+    order: 3;
   }
 }
 
@@ -576,6 +577,27 @@ select {
   color: #901C1C;
   background-color: inherit;
 }
+.close-button--contact-modal {
+  color: white;
+}
+@media screen and (max-width: 1369px) {
+  .close-button--contact-modal .close-button__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+@media screen and (max-width: 1160px) {
+  .close-button--contact-modal .close-button__icon {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+@media screen and (max-width: 599px) {
+  .close-button--contact-modal .close-button__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
 .close-button__icon {
   width: 2.625rem;
   height: 2.625rem;
@@ -584,6 +606,37 @@ select {
   .close-button__icon {
     width: 2.4375rem;
     height: 2.4375rem;
+  }
+}
+
+.submit-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.4375rem 3.125rem;
+}
+.submit-button:hover, .submit-button:focus {
+  background-color: #a52020;
+}
+@media screen and (max-width: 1369px) {
+  .submit-button {
+    width: 10rem;
+    height: 4rem;
+    padding: revert;
+    font-size: 1.1rem;
+  }
+}
+@media screen and (max-width: 1160px) {
+  .submit-button {
+    width: 8rem;
+    height: 3rem;
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 599px) {
+  .submit-button {
+    width: 7rem;
+    height: 3rem;
   }
 }
 
@@ -710,6 +763,57 @@ select {
   display: none;
 }
 
+.text-control {
+  width: 100%;
+  height: 4.25rem;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 0.3125rem;
+}
+.text-control:focus-visible {
+  outline-color: black;
+}
+@media screen and (max-width: 1369px) {
+  .text-control {
+    height: 3rem;
+  }
+}
+@media screen and (max-width: 1160px) {
+  .text-control {
+    height: 2.5rem;
+  }
+}
+@media screen and (max-width: 599px) {
+  .text-control {
+    height: 2rem;
+  }
+}
+
+.textarea {
+  min-width: 100%;
+  max-width: 100%;
+  height: 10.625rem;
+  max-height: 10.625rem;
+}
+@media screen and (max-width: 1369px) {
+  .textarea {
+    height: 8rem;
+    max-height: 8rem;
+  }
+}
+@media screen and (max-width: 1160px) {
+  .textarea {
+    height: 7rem;
+    max-height: 7rem;
+  }
+}
+@media screen and (max-width: 599px) {
+  .textarea {
+    height: 5rem;
+    max-height: 5rem;
+  }
+}
+
 .main-wrapper {
   max-width: 1920px;
   margin: 0 auto;
@@ -815,7 +919,7 @@ select {
   background-color: #FAFAFA;
   border-radius: 0.3125rem;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1160px) {
   .photograph-header {
     gap: 3rem;
   }
@@ -927,7 +1031,7 @@ select {
   grid-template-columns: repeat(3, 1fr);
   gap: 4.4375rem 5.9375rem;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1160px) {
   .photograph-gallery {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -990,7 +1094,7 @@ select {
   align-items: center;
   font-size: 1.5rem;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1160px) {
   .thumbnail-card-details {
     font-size: 1.3125rem;
   }
@@ -1018,7 +1122,7 @@ select {
   border-radius: 0.3125rem;
   z-index: 2;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1160px) {
   .photograph-footer {
     width: 22rem;
     height: 4rem;
@@ -1057,7 +1161,7 @@ select {
   justify-items: center;
   align-items: center;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1160px) {
   .lightbox-modal-content {
     width: 90%;
     height: initial;
@@ -1142,28 +1246,90 @@ select {
   display: none;
 }
 
+.contact-modal {
+  align-items: flex-start;
+  background-color: rgba(196, 196, 196, 0.4);
+}
+
 .contact-modal-content {
-  border-radius: 0.3125rem;
-  background-color: #DB8876;
   width: 50%;
+  max-width: 720px;
+  height: 58rem;
+  padding: 1.5625rem 2rem 2.1875rem;
+  margin: 13% auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 35px;
-  margin: auto;
+  border-radius: 0.3125rem;
+  background-color: #DB8876;
 }
-.contact-modal-content header {
-  justify-content: space-between;
+@media screen and (max-width: 1369px) {
+  .contact-modal-content {
+    height: 48rem;
+    padding: 1.5625rem;
+  }
+}
+@media screen and (max-width: 1160px) {
+  .contact-modal-content {
+    height: 39rem;
+  }
+}
+@media screen and (max-width: 992px) {
+  .contact-modal-content {
+    width: 53%;
+  }
+}
+@media screen and (max-width: 872px) {
+  .contact-modal-content {
+    width: 65%;
+  }
+}
+@media screen and (max-width: 699px) {
+  .contact-modal-content {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 599px) {
+  .contact-modal-content {
+    width: 80%;
+    height: 33rem;
+  }
+}
+
+.contact-modal-header {
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
 }
-.contact-modal-content header img {
-  cursor: pointer;
+.contact-modal-header__heading {
+  margin-bottom: 1.1875rem;
+  text-align: left;
+  font-size: 4rem;
+  color: #000;
 }
-.contact-modal-content header h2 {
-  font-size: 64px;
-  font-weight: normal;
-  text-align: center;
+@media screen and (max-width: 1369px) {
+  .contact-modal-header__heading {
+    margin-bottom: initial;
+    font-size: 3.2rem;
+  }
+}
+@media screen and (max-width: 1160px) {
+  .contact-modal-header__heading {
+    font-size: 2.3rem;
+  }
+}
+@media screen and (max-width: 699px) {
+  .contact-modal-header__heading {
+    margin-bottom: initial;
+  }
+}
+@media screen and (max-width: 599px) {
+  .contact-modal-header__heading {
+    font-size: 1.9rem;
+  }
 }
 
 form {
@@ -1174,20 +1340,50 @@ form {
 }
 form label {
   color: #312E2E;
-  font-size: 36px;
+  font-size: 2.25rem;
 }
-form div {
+@media screen and (max-width: 1369px) {
+  form label {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 1160px) {
+  form label {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 699px) {
+  form label {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 599px) {
+  form label {
+    font-size: 1.3rem;
+  }
+}
+
+.form-data {
+  width: 100%;
+  margin-bottom: 5px;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  align-items: self-start;
-  margin-bottom: 26px;
 }
-form input {
-  width: 100%;
-  height: 68px;
-  border: none;
-  border-radius: 5px;
+.form-data--email {
+  margin-bottom: 12px;
+}
+@media screen and (max-width: 1160px) {
+  .form-data--email {
+    margin-bottom: 8px;
+  }
+}
+.form-data--message {
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 1160px) {
+  .form-data--message {
+    margin-bottom: 22px;
+  }
 }
 
 .photographer-section {
@@ -1196,7 +1392,7 @@ form input {
   grid-template-columns: repeat(3, 1fr);
   gap: 5rem 10rem;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1160px) {
   .photographer-section {
     margin: 6.25rem 4.5rem;
     gap: 7rem;

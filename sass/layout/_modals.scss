@@ -135,29 +135,89 @@
     display: none;
 }
 
+.contact-modal {
+    align-items: flex-start;
+
+    background-color: rgba($color: $alternative-background-color, $alpha: 0.4);
+}
+
 .contact-modal-content {
-    border-radius: $small-beveled-border;
-    background-color: #DB8876;
     width: 50%;
+    max-width: 720px;
+
+    height: 58rem;
+
+    padding: $contact-modal-content-padding-top 2rem 2.1875rem;
+    margin: 13% auto;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 35px;
-    margin: auto;
-    
-    header {
-        justify-content: space-between;
-        width: 100%;
 
-        img {
-            cursor: pointer;
+    border-radius: $small-beveled-border;
+    background-color: $secondary-background-color;
+
+    @include from-large-computer-and-less {
+        height: 48rem;
+
+        padding: $contact-modal-content-padding-top;
+    }
+
+    @include from-computer-and-less {
+        height: 39rem;
+    }
+
+    @include from-tablette-and-less {
+        width: 53%;
+    }
+
+    @include for-mobile-in-extra-large-landscape-orientation-and-small-tablette {
+        width: 65%;
+    }
+
+    @include for-mobile-in-large-landscape-orientation {
+        width: 75%;
+    }
+
+    @include for-mobile-in-medium-landscape-orientation-500px-599px {
+        width: 80%;
+        height: 33rem;
+    }
+}
+
+.contact-modal-header {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+
+    &__heading {
+        margin-bottom: 1.1875rem;
+
+        text-align: left;
+        font-size: 4rem;
+
+        color: $default-text-color;
+
+        @include from-large-computer-and-less {
+            margin-bottom: initial;
+
+            font-size: 3.2rem;
         }
-    
-        h2 {
-            font-size: 64px;
-            font-weight: normal;
-            text-align: center;
+
+        @include from-computer-and-less {
+            font-size: 2.3rem;
+        }
+
+        @include for-mobile-in-large-landscape-orientation {
+            margin-bottom: initial;
+        }
+
+        @include for-mobile-in-medium-landscape-orientation-500px-599px {
+            font-size: 1.9rem;
         }
     }
 }

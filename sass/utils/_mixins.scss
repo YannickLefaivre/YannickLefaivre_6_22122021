@@ -88,6 +88,13 @@
 	}
 }
 
+/* Device with a width between 1200px and 1369px */
+@mixin from-large-computer-and-less {
+	@media screen and (max-width: map-get($breakpoints, lg-computer)) {
+		@content;
+	}
+}
+
 @mixin from-large-screen-and-less {
 	@media screen and (max-width: map-get($breakpoints, large-screen)) {
 		@content;

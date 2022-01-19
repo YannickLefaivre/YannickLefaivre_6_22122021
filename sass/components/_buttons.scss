@@ -3,19 +3,9 @@
     padding: $buttons-padding;
     
     font-size: $contact-button-font-size;
-}
-
-.contact-button {
-    order: 2;
 
     color:  white;
     background-color: $primary-color;
-    
-    @include from-computer-and-less {
-        margin: 0 auto;
-
-        order: 3;
-    }
 
     @include from-tablette-and-less {
         font-size: $contact-button-font-size-mobile;
@@ -25,6 +15,16 @@
         @include set-size($contact-button-size-mobile);
 
         font-size: $contact-button-font-size-mobile;
+    }
+}
+
+.contact-button {
+    order: 2;
+    
+    @include from-computer-and-less {
+        margin: 0 auto;
+
+        order: 3;
     }
 }
 
@@ -65,6 +65,27 @@
 
     background-color: inherit;
 
+    &--contact-modal {
+        color: white;
+
+        .close-button__icon {
+            @include from-large-computer-and-less {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+
+            @include from-computer-and-less {
+                width: 2rem;
+                height: 2rem;
+            }
+
+            @include for-mobile-in-medium-landscape-orientation-500px-599px {
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+        }
+    }
+
     &__icon {
         width: $close-button-size;
         height: $close-button-size;
@@ -73,5 +94,39 @@
             width: 2.4375rem;
             height: 2.4375rem;
         }
+    }
+}
+
+.submit-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1.4375rem 3.125rem;
+
+    &:hover, 
+    &:focus {
+        background-color: lighten($color: $primary-color, $amount: 5%);
+    }
+
+    @include from-large-computer-and-less {
+        width: 10rem;
+        height: 4rem;
+
+        padding: revert;
+
+        font-size: 1.1rem;
+    }
+
+    @include from-computer-and-less {
+        width: 8rem;
+        height: 3rem;
+
+        font-size: 0.8rem;
+    }
+
+    @include for-mobile-in-medium-landscape-orientation-500px-599px {
+        width: 7rem;
+        height: 3rem;
     }
 }

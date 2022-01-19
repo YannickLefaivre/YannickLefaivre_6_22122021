@@ -1,0 +1,52 @@
+form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    label {
+        color: #312E2E;
+        font-size: 2.25rem;
+
+        @include from-large-computer-and-less {
+            font-size: 2rem;
+        }
+
+        @include from-computer-and-less {
+            font-size: 1.5rem;
+        }
+
+        @include for-mobile-in-large-landscape-orientation {
+            font-size: 1.5rem;
+        }
+
+        @include for-mobile-in-medium-landscape-orientation-500px-599px {
+            font-size: 1.3rem;
+        }
+    }
+}
+    
+.form-data {
+    width: 100%;
+
+    margin-bottom: 5px;
+
+    display: flex;
+    flex-direction: column;
+
+    &--email {
+        margin-bottom: 12px;
+
+        @include from-computer-and-less {
+            margin-bottom: 8px;
+        }
+    }
+    
+    &--message {
+        margin-bottom: 30px;
+
+        @include from-computer-and-less {
+            margin-bottom: 22px;
+        }
+    }
+}

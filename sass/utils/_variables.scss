@@ -6,7 +6,14 @@ $zero-value: 0;
 
 $same-width-as-it-parent: 100%;
 
+$textarea-height: 10.625rem;
+$textarea-height-lg-computer: 8rem;
+$textarea-height-computer: 7rem;
+$textarea-height-mobile-in-landscape-orientation: 5rem; 
+
 $main-wrapper-width: 1920px;
+
+$close-button-size: 2.625rem;
 
 $company-logo-height: 3.125rem;
 $company-logo-height-tablette: 2.188rem;
@@ -29,8 +36,6 @@ $website-header--photograph-page-height: 6rem;
 $thumbnails-width: 21.9375rem;
 
 $thumbnail-card-details__title-max-width: 12rem;
-
-$close-button-size: 2.625rem;
 
 /* Margins variables */
 
@@ -63,6 +68,7 @@ $select-menu__selected-item-right-padding: 1.125rem;
 $photograph-header-padding-top: 3.5rem;
 $photograph-header-padding-bottom: 2.625rem;
 
+$contact-modal-content-padding-top: 1.5625rem;
 
 /* Font sizes */
 
