@@ -5,13 +5,13 @@ $photographer-section-margin-tablette: 3rem $main-wrapper-sides-margin-tablette;
 $photographer-section-margin-small-landscape-orientation: 3rem 3rem;
 $photographer-section-margin-mobile: 3rem $main-wrapper-sides-margin-lg-mobile;
 
-$photograph-header-margin: 2.5rem $main-wrapper-sides-margin 1rem;
+$photographer-header-margin: 2.5rem $main-wrapper-sides-margin 1rem;
 
 $filters-section-margin: $zero-value $main-wrapper-sides-margin;
 $filters-section-margin-sm-mobile: 1.25rem 1rem $zero-value;
 
-$photograph-gallery-margin: $photograph-gallery-margin-top $main-wrapper-sides-margin $zero-value;
-$photograph-gallery-margin-tablette: $photograph-gallery-margin-top $main-wrapper-sides-margin-tablette $zero-value;
+$photographer-gallery-margin: $photographer-gallery-margin-top $main-wrapper-sides-margin $zero-value;
+$photographer-gallery-margin-tablette: $photographer-gallery-margin-top $main-wrapper-sides-margin-tablette $zero-value;
 
 $lightbox-modal-content-margin: $lightbox-modal-content-margin-top $main-wrapper-sides-margin $zero-value;
 $lightbox-modal-content-margin-tablette: 2.5rem auto $zero-value;
@@ -19,8 +19,8 @@ $lightbox-modal-content-margin-mobile-in-landscape-orientation: $lightbox-modal-
 
 /* Padding lists */
 
-$photograph-header-padding: $photograph-header-padding-top 3.125rem $photograph-header-padding-bottom;
-$photograph-header-padding-tablette: $photograph-header-padding-top $main-wrapper-sides-margin-tablette $photograph-header-padding-bottom;
+$photographer-header-padding: $photographer-header-padding-top 3.125rem $photographer-header-padding-bottom;
+$photographer-header-padding-tablette: $photographer-header-padding-top $main-wrapper-sides-margin-tablette $photographer-header-padding-bottom;
 
 $select-menu__selected-item-padding: 
     $select-menu__selected-item-vertical-padding
@@ -61,5 +61,5 @@ $photographer-section-gutter-mobile-sm-landscape-orientation: 4.375rem 3rem;
 $photographer-section-gutter: 5rem 10rem;
 $photographer-section-gutter-tablette: 5rem 4rem;
 
-$photograph-header-gutter-sm-computer: $photograph-header-row-gutter 0.8rem;
-$photograph-header-gutter-tablette: $photograph-header-row-gutter 4rem;
+$photographer-header-gutter-sm-computer: $photographer-header-row-gutter 0.8rem;
+$photographer-header-gutter-tablette: $photographer-header-row-gutter 4rem;

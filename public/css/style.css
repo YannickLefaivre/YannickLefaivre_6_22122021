@@ -502,16 +502,16 @@ select {
     height: 11.75rem;
   }
 }
-.user--photograph-header-id-photo {
+.user--photographer-header-id-photo {
   order: 3;
 }
 @media screen and (max-width: 1160px) {
-  .user--photograph-header-id-photo {
+  .user--photographer-header-id-photo {
     order: 2;
   }
 }
 @media screen and (max-width: 699px) {
-  .user--photograph-header-id-photo {
+  .user--photographer-header-id-photo {
     margin-bottom: 1rem;
     order: -1;
   }
@@ -909,7 +909,7 @@ select {
   }
 }
 
-.photograph-header {
+.photographer-header {
   margin: 2.5rem 4.5rem 1rem;
   padding: 3.5rem 3.125rem 2.625rem;
   display: flex;
@@ -920,29 +920,29 @@ select {
   border-radius: 0.3125rem;
 }
 @media screen and (max-width: 1160px) {
-  .photograph-header {
+  .photographer-header {
     gap: 3rem;
   }
 }
 @media screen and (max-width: 1160px) {
-  .photograph-header {
+  .photographer-header {
     gap: 3rem 0.8rem;
   }
 }
 @media screen and (max-width: 992px) {
-  .photograph-header {
+  .photographer-header {
     padding: 3.5rem 4.375rem 2.625rem;
     gap: 3rem 4rem;
   }
 }
 @media screen and (max-width: 872px) {
-  .photograph-header {
+  .photographer-header {
     margin: 0;
     gap: 3rem;
   }
 }
 @media screen and (max-width: 699px) {
-  .photograph-header {
+  .photographer-header {
     padding: 3.5rem 3.125rem 2.625rem;
     flex-direction: column;
     justify-content: center;
@@ -950,7 +950,7 @@ select {
   }
 }
 @media screen and (max-width: 599px) {
-  .photograph-header {
+  .photographer-header {
     margin: initial;
   }
 }
@@ -1025,30 +1025,30 @@ select {
   margin-bottom: 1rem;
 }
 
-.photograph-gallery {
+.photographer-gallery {
   margin: 3.625rem 4.5rem 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 4.4375rem 5.9375rem;
 }
 @media screen and (max-width: 1160px) {
-  .photograph-gallery {
+  .photographer-gallery {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media screen and (max-width: 992px) {
-  .photograph-gallery {
+  .photographer-gallery {
     margin: 3.625rem 4.375rem 0;
   }
 }
 @media screen and (max-width: 872px) {
-  .photograph-gallery {
+  .photographer-gallery {
     -moz-column-gap: 3rem;
          column-gap: 3rem;
   }
 }
 @media screen and (max-width: 699px) {
-  .photograph-gallery {
+  .photographer-gallery {
     grid-template-columns: 1fr;
     -moz-column-gap: 0;
          column-gap: 0;
@@ -1107,7 +1107,7 @@ select {
   text-overflow: ellipsis;
 }
 
-.photograph-footer {
+.photographer-footer {
   width: 23.5rem;
   height: 5.5625rem;
   position: fixed;
@@ -1123,7 +1123,7 @@ select {
   z-index: 2;
 }
 @media screen and (max-width: 1160px) {
-  .photograph-footer {
+  .photographer-footer {
     width: 22rem;
     height: 4rem;
     font-size: 1.3125rem;

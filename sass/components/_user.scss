@@ -25,7 +25,7 @@
         height: $user-size-mobile;
     }
     
-    &--photograph-header-id-photo {
+    &--photographer-header-id-photo {
         order: 3;
     
         @include from-computer-and-less {
@@ -33,7 +33,7 @@
         }
 
         @include for-mobile-in-large-landscape-orientation {
-            margin-bottom: $user--photograph-header-id-photo-margin-bottom;
+            margin-bottom: $user--photographer-header-id-photo-margin-bottom;
             order: -1;
         }
     }

@@ -1,5 +1,5 @@
-.photograph-gallery {
-    margin: $photograph-gallery-margin;
+.photographer-gallery {
+    margin: $photographer-gallery-margin;
 
     display: grid;
     grid-template-columns: $three-column;
@@ -10,7 +10,7 @@
     }
 
     @include from-tablette-and-less {
-        margin: $photograph-gallery-margin-tablette;
+        margin: $photographer-gallery-margin-tablette;
     }
 
     @include for-mobile-in-extra-large-landscape-orientation-and-small-tablette {

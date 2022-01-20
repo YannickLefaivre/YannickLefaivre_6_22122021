@@ -1,8 +1,8 @@
-.photograph-footer {
-    @include set-size($photograph-footer-size);
+.photographer-footer {
+    @include set-size($photographer-footer-size);
 
     position: fixed;
-    right: $photograph-footer-right-offset;
+    right: $photographer-footer-right-offset;
     bottom: 0;
 
     display: flex;
@@ -19,7 +19,7 @@
     z-index: 2;
 
     @include from-computer-and-less {
-        @include set-size($photograph-footer-size-computer);
+        @include set-size($photographer-footer-size-computer);
 
         font-size: $photograph-profil__location-font-size-tablette;
     }
