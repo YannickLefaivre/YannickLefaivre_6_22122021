@@ -8,11 +8,15 @@
     align-items: flex-start;
 
     &__lightbox-link {
-        width: $same-width-as-it-parent;
-
+        @include set-size($thumbnails-size);
+        
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @include thumbnails-border-radius();
+
+        @include thumbnails-background-color();
     }
 
     img {

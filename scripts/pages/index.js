@@ -1,64 +1,69 @@
 async function getPhotographers() {
-    const photographers = fetch("./data/photographers.json")
+
+    const photographers = fetch("data/photographers.json")
                             .then(function(result) {
                                 if(result.ok) {
                                     return result.json();
                                 }
                             })
                             .then(function(photographersDatas) {
-                                return photographersDatas.photographers; // renvoie les données des photographes (nom, ville, pays, etc...)
+                                return photographersDatas.photographers;
                             })
                             .catch(function(error) {
                                 console.log(`Fetch haven't succeed to retrieve the photographers datas. ${error}.`)
                             });
                             
     return photographers;
+    
 }
 
 async function displayData(photographers) {
-    const photographersThumbnails = document.querySelectorAll(".thumb-photographer");
+
+    const photographersSection = document.querySelector(".photographer-section");
+
+    photographers.forEach( (photographer) => {
+
+        const photographerModel = photographerFactory(photographer);
+
+        const userCardDOM = photographerModel.getUserCardDOM();
+
+        photographersSection.appendChild(userCardDOM);
+        
+    });
+
+};
+
+function getChoosenPhotographerId() {
+
+    const photographerPageLinks = document.querySelectorAll(".thumb-photographer a");
 
     /* 
-        Parcours la liste de miniatures de photographe tout en ajoutant leur données 
-        au emplacement prévu à cette effet dans le HTML.
+        Ecoute si un lien vers la page des photographes a été cliquer. Si oui, 
+        stocker dans une variable l'id du photographe dont les média doivent 
+        être charger dans la page photographer.html . 
     */
-    for(i = 0; i < photographers.length && i < photographersThumbnails.length; i++) {
-        photographersThumbnails[i]
-            .querySelector("a[href=\"./pages/photographer.html\"]")
-            .setAttribute("id", `${photographers[i].id}`
-        );
+    photographerPageLinks.forEach( (photographerPageLink) => {
 
-        photographersThumbnails[i]
-            .querySelector(".user")
-            .setAttribute(
-                "src", 
-                `./assets/photographers/photographers-id-photos/${photographers[i].portrait}`
-        );
+        photographerPageLink.addEventListener("click", function(event) {
 
-        photographersThumbnails[i].querySelector(".thumb-photographer__heading").textContent = photographers[i].name;
+            event.preventDefault();
+            
+            let photographerID = event.currentTarget.getAttribute("id");
 
-        photographersThumbnails[i].querySelector(".thumb-photographer-datas__location").textContent = `${photographers[i].city}, ${photographers[i].country}`;
-
-        photographersThumbnails[i].querySelector(".thumb-photographer-datas__tagline").textContent = photographers[i].tagline;
-
-        photographersThumbnails[i].querySelector(".thumb-photographer-datas__price-per-day").textContent = `${photographers[i].price}€/day`;
-    }
-    
-/* 
-    Provient du code de base. Laisser-là en commentaire pour l'instant 
-    avant d'être sûr de n'en pas avoir besoin plus tard.
-
-    photographers.forEach((photographer) => {
-        const photographerModel = photographerFactory(photographer);
-    }); 
-*/
-};
+            window.document.location = `./pages/photographer.html?id=${photographerID}`;
+        });
+    });
+}
 
 async function init() {
+
     // Récupère les datas des photographes
     const photographers = await getPhotographers();
+
     displayData(photographers);
+
+    getChoosenPhotographerId();
+
 };
 
-init();
-    
+document.addEventListener("DOMContentLoaded", init);

@@ -1064,9 +1064,12 @@ select {
 }
 .thumbnail-card__lightbox-link {
   width: 100%;
+  height: 18.75rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 0.3125rem;
+  background-color: #C4C4C4;
 }
 .thumbnail-card img {
   width: 100%;
