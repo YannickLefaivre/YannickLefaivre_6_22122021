@@ -23,11 +23,11 @@ async function displayData(photographers) {
 
     photographers.forEach( (photographer) => {
 
-        const photographerModel = photographerFactory(photographer);
+        const photographerModel = new Photographer(photographer.name, photographer.id, photographer.city, photographer.country, photographer.tagline, photographer.price, photographer.portrait);
 
-        const userCardDOM = photographerModel.getUserCardDOM();
+        const userCardDOM = photographerModel.getCardDOM();
 
-        photographersSection.appendChild(userCardDOM);
+        photographersSection.innerHTML += userCardDOM;
         
     });
 
