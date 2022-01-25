@@ -29,23 +29,20 @@
 }
 
 .likes-button {
+    margin-left: 0.39875rem;
+
     display: flex;
-    flex-direction: row;
 
     justify-content: center;
     align-items: center;
 
-    background-color: initial;
-    color: $primary-color;
-
     font-size: $photograph-profil__location-font-size;
+
+    color: $primary-color;
+    background-color: transparent;
 
     @include from-tablette-and-less {
         font-size: $photograph-profil__location-font-size-tablette;
-    }
-
-    &__icon {
-        margin-left: 0.39875rem;
     }
 }
 

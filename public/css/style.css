@@ -549,21 +549,18 @@ select {
 }
 
 .likes-button {
+  margin-left: 0.39875rem;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: initial;
-  color: #901C1C;
   font-size: 1.5rem;
+  color: #901C1C;
+  background-color: transparent;
 }
 @media screen and (max-width: 992px) {
   .likes-button {
     font-size: 1.3125rem;
   }
-}
-.likes-button__icon {
-  margin-left: 0.39875rem;
 }
 
 .close-button {
@@ -1108,6 +1105,21 @@ select {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.thumbnail-card-details-likes-infos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.thumbnail-card-details-likes-infos__number-of-likes {
+  font-size: 1.5rem;
+  color: #901C1C;
+}
+@media screen and (max-width: 992px) {
+  .thumbnail-card-details-likes-infos__number-of-likes {
+    font-size: 1.3125rem;
+  }
 }
 
 .photographer-footer {
