@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 	<head>
 		<meta charset="utf-8" />
 
@@ -7,8 +7,7 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<!-- <link href="../public/dist/style.min.css" rel="stylesheet" type="text/css" /> Minified version of the application custom stylesheet -->
-		<link href="../public/css/style.css" rel="stylesheet" type="text/css" />
+		<link href="../public/dist/style.min.css" rel="stylesheet" type="text/css" />
 
 		<link rel="icon" type="image/png" href="../assets/images/logo.png" />
 
@@ -42,25 +41,6 @@
 
 		<main id="main">
 			<header class="photographer-header">
-				<section class="photograph-profil">
-					<h1 class="photograph-profil__name">Nom du photographe</h1>
-
-					<p class="photograph-profil__location">Ville, Pays</p>
-
-					<p class="photograph-profil__tagline">
-						Slogan
-					</p>
-				</section>
-
-				<button class="button contact-button" onclick="displayModal()">
-					Contactez-moi
-				</button>
-
-				<img
-					class="user user--photographer-header-id-photo"
-					src="../assets/photographers/placeholders/account.png"
-					alt="Ellie-Rose Wilkens"
-				/>
 			</header>
 
 			<nav class="filters-section">
@@ -90,11 +70,6 @@
 			</div>
 
 			<footer class="photographer-footer">
-				<p class="photographer-footer__numbers-of-likes">
-					 <span class="fas fa-heart"></span>
-				</p>
-
-				<p class="photographer-footer__price-per-hours">0&euro; / heure</p>
 			</footer>
 		</main>
 
@@ -206,7 +181,12 @@
 			</div>
 		</aside>
 
-		<script src="../scripts//factories/photographer.js"></script>
+		<script src="../scripts/classes/video.js"></script>
+		<script src="../scripts/classes/photo.js"></script>
+		<script src="../scripts/classes/photographer.js"></script>
+		
+		<script src="../scripts/factories/factory.js"></script>
+
 		<script src="../scripts/pages/photographer.js"></script>
 
 		<!-- <script src="/scripts/utils/contactForm.js"></script> -->
