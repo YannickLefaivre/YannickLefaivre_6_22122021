@@ -29,6 +29,38 @@
 /* Sets the selector margin */
 /* Sets the selctor padding */
 /* Select menu items style (select items and selected item) */
+@-webkit-keyframes show-up {
+  from {
+    transform: translateY(25%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+@keyframes show-up {
+  from {
+    transform: translateY(25%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
   ========================================================================== */
@@ -1153,13 +1185,12 @@ select {
   height: 100%;
   overflow: auto;
   z-index: 2;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.modal--open {
-  display: block;
+  -webkit-animation: fade-in 0.3s ease;
+          animation: fade-in 0.3s ease;
 }
 .modal--close {
   display: none;
@@ -1264,6 +1295,8 @@ select {
 .contact-modal {
   align-items: flex-start;
   background-color: rgba(196, 196, 196, 0.4);
+  -webkit-animation: show-up 0.3s ease-in;
+          animation: show-up 0.3s ease-in;
 }
 
 .contact-modal-content {
@@ -1399,6 +1432,13 @@ form label {
   .form-data--message {
     margin-bottom: 22px;
   }
+}
+.form-data__error-message {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: #901C1C;
+  background-color: #fff;
 }
 
 .photographer-section {

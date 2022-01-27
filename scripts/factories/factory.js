@@ -1,6 +1,6 @@
 class Factory {
 
-    static createMedia(media) {
+    static createMedia(media, file) {
         if (media.hasOwnProperty("video")) {
 
             return new Video(media.id, media.photographerId, media.title, media.video, media.likes, media.date, media.price);

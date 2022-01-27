@@ -6,15 +6,11 @@
     height: 100%;
     overflow: auto;
     z-index: 2;
-    background-color: rgba($color: $default-background-color, $alpha: 0.85);
+    background-color: rgba($color: $default-background-color, $alpha: 1);
 
     display: flex;
     justify-content: center;
     align-items: center;
-
-    &--open {
-        display: block;
-    }
 
     &--close {
         display: none;

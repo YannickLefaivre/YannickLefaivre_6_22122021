@@ -50,7 +50,7 @@ class Photographer {
             <p class="photograph-profil__tagline">${this.tagline}</p>
         </section>
 
-        <button class="button contact-button">
+        <button id="contact-button" class="button contact-button">
             Contactez-moi
         </button>
 
@@ -64,35 +64,28 @@ class Photographer {
 
     }
 
-    getMediaDirectoryPath() {
-
-        var firstName = this.name.match(/^\w+-?\w+(?!\w)/i);
-        var mediaDirectoryName = firstName[0].toLowerCase();
-    
-        const mediaDirectoryPath = `../../assets/photographers/${mediaDirectoryName}`;
-    
-        return mediaDirectoryPath;
-    }
-
     getMediaCardDOM(media) {
 
-        const mediaDirectoryPath = this.getMediaDirectoryPath();
-        var mediaTagAndSource = "";
+        const mediaDirectoryPath = Directory.getMediaDirectoryPath(this);
+        var mediaOuterHTML = "";
+        var mediaSource = "";
 
         if (media instanceof Video) {
 
-            mediaTagAndSource = `<video src="${mediaDirectoryPath}/videos/${media.video}"></video>`;
+            mediaSource = `${mediaDirectoryPath}/videos/${media.video}`;
+            mediaOuterHTML = `<video src="${mediaSource}"></video>`;
 
         } else {
 
-            mediaTagAndSource = `<img src="${mediaDirectoryPath}/pictures/${media.image}" alt="${media.title}" />`;
+            mediaSource = `${mediaDirectoryPath}/pictures/${media.image}`;
+            mediaOuterHTML = `<img src="${mediaSource}" alt="${media.title}" />`;
 
         }
 
         const mediaCard = `
         <article class="thumbnail-card">
-            <a href="#" class="thumbnail-card__lightbox-link">
-                ${mediaTagAndSource}
+            <a href="${mediaSource}" class="thumbnail-card__lightbox-link">
+                ${mediaOuterHTML}
             </a>
 
             <div class="thumbnail-card-details">

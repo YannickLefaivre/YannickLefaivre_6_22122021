@@ -1,12 +1,12 @@
 const queryString = window.location.search;
 const urlParameters = new URLSearchParams(queryString);
-const photographerId = urlParameters.get("id");
+const idString = urlParameters.get("id");
 
-parseInt(photographerId);
+const photographerId = parseInt(idString);
 
 async function getPhotographersDatas() {
 
-    const photographersDatas = fetch("https://yannicklefaivre.github.io/YannickLefaivre_6_22122021/data/photographers.json")
+    const photographersDatas = fetch("../data/photographers.json")
                     .then(function(result) {
                         if(result.ok) {
                             return result.json();
@@ -29,7 +29,7 @@ function getCurrentPhotographer(photographersData) {
 
     photographersData.photographers.forEach( (photographer) => {
 
-        if (photographer.id == photographerId) {
+        if (photographer.id === photographerId) {
 
             currentPhotographer.name = photographer.name;
             currentPhotographer.id = photographer.id;
@@ -44,9 +44,9 @@ function getCurrentPhotographer(photographersData) {
 
     photographersData.media.forEach( (media) => {
 
-        if (media.photographerId == photographerId) {
+        if (media.photographerId === photographerId) {
 
-            if(currentPhotographer.media[0] == undefined) {
+            if(currentPhotographer.media[0] === undefined) {
 
                 currentPhotographer.media[0] = Factory.createMedia(media);
 
@@ -107,14 +107,18 @@ async function displayData(photographersData) {
 
     displayPhotographerFooter(currentPhotographer);
     
+    return "finished";
 }
 
 async function init() {
     // Récupère les données des photographes
     const photographersDatas = await getPhotographersDatas();
 
-    displayData(photographersDatas);
+    if (await displayData(photographersDatas) === "finished") {
 
+        Lightbox.init();
+
+    }
 }
 
 document.addEventListener("DOMContentLoaded", init);
