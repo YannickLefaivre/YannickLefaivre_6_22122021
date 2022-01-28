@@ -116,6 +116,7 @@ async function init() {
 
     if (await displayData(photographersDatas) === "finished") {
 
+        ContactForm.init();
         Lightbox.init();
 
     }

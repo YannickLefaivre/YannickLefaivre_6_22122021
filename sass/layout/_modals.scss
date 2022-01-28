@@ -15,6 +15,8 @@
     &--close {
         display: none;
     }
+
+    animation: fade-in $anim-fade-in-delay $anim-fade-in-timing;
 }
 
 .lightbox-modal-content {
@@ -154,6 +156,8 @@
     border-radius: $small-beveled-border;
     background-color: $secondary-background-color;
 
+    animation: show-up $anim-show-up-delay $anim-show-up-timing;
+
     @include from-large-computer-and-less {
         height: 48rem;
 
@@ -180,6 +184,12 @@
         width: 80%;
         height: 33rem;
     }
+    
+    &--error-message-visible {
+
+        height: auto;
+
+    }
 }
 
 .contact-modal-header {
@@ -189,6 +199,10 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
+
+    @include for-mobile-in-large-landscape-orientation {
+        margin: 0 0 1rem;
+    }
 
     &__heading {
         margin-bottom: 1.1875rem;

@@ -5,7 +5,7 @@ form {
     align-items: flex-start;
     
     label {
-        color: #312E2E;
+        color: $text-second-alternative-color;
         font-size: 2.25rem;
 
         @include from-large-computer-and-less {
@@ -47,6 +47,26 @@ form {
 
         @include from-computer-and-less {
             margin-bottom: 22px;
+        }
+    }
+
+    &__error-message {
+        margin: 0.5rem 0 0;
+
+        font-size: 1.5rem;
+
+        line-height: 1.5;
+        text-align: left;
+        
+        color: $default-text-color;
+        background-color: transparent;
+
+        @include from-computer-and-less {
+            font-size: 1rem;
+        }
+
+        @include for-mobile-in-medium-landscape-orientation-500px-599px {
+            font-size: 0.8rem;
         }
     }
 }

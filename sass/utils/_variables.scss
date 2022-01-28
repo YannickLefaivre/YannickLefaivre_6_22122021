@@ -114,7 +114,8 @@ $alternative-background-color: #C4C4C4;
 $secondary-background-color: #DB8876;
 
 $default-text-color: #000;
-$text-alternative-color: #757575;
+$text-first-alternative-color: #757575;
+$text-second-alternative-color: #312E2E;
 
 $primary-color: #901C1C;
 $primary-color-alternative: #D3573C;
@@ -160,3 +161,9 @@ $photographer-footer-right-offset: 36px;
 /* Transitions variables */
 
 /* Animations variables */
+
+$anim-fade-in-delay: 0.3s;
+$anim-fade-in-timing: ease;
+
+$anim-show-up-delay: 0.3s;
+$anim-show-up-timing: ease-in;

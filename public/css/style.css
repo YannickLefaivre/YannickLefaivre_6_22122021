@@ -795,6 +795,7 @@ select {
 .text-control {
   width: 100%;
   height: 4.25rem;
+  font-size: 1.4rem;
   padding: 0.7rem;
   border: none;
   border-radius: 0.3125rem;
@@ -815,6 +816,7 @@ select {
 @media screen and (max-width: 599px) {
   .text-control {
     height: 2rem;
+    font-size: 1rem;
   }
 }
 
@@ -1295,8 +1297,6 @@ select {
 .contact-modal {
   align-items: flex-start;
   background-color: rgba(196, 196, 196, 0.4);
-  -webkit-animation: show-up 0.3s ease-in;
-          animation: show-up 0.3s ease-in;
 }
 
 .contact-modal-content {
@@ -1311,6 +1311,8 @@ select {
   justify-content: space-between;
   border-radius: 0.3125rem;
   background-color: #DB8876;
+  -webkit-animation: show-up 0.3s ease-in;
+          animation: show-up 0.3s ease-in;
 }
 @media screen and (max-width: 1369px) {
   .contact-modal-content {
@@ -1344,6 +1346,9 @@ select {
     height: 33rem;
   }
 }
+.contact-modal-content--error-message-visible {
+  height: auto;
+}
 
 .contact-modal-header {
   width: 100%;
@@ -1351,6 +1356,11 @@ select {
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
+}
+@media screen and (max-width: 699px) {
+  .contact-modal-header {
+    margin: 0 0 1rem;
+  }
 }
 .contact-modal-header__heading {
   margin-bottom: 1.1875rem;
@@ -1434,11 +1444,22 @@ form label {
   }
 }
 .form-data__error-message {
-  margin: 1rem 0;
+  margin: 0.5rem 0 0;
   font-size: 1.5rem;
   line-height: 1.5;
-  color: #901C1C;
-  background-color: #fff;
+  text-align: left;
+  color: #000;
+  background-color: transparent;
+}
+@media screen and (max-width: 1160px) {
+  .form-data__error-message {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 599px) {
+  .form-data__error-message {
+    font-size: 0.8rem;
+  }
 }
 
 .photographer-section {
