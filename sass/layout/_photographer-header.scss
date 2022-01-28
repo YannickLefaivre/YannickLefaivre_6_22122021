@@ -91,7 +91,7 @@
     &__tagline {
         font-size: $photograph-profil__tagline-font-size;
 
-        color: $text-alternative-color;
+        color: $text-first-alternative-color;
 
         @include from-tablette-and-less {
             font-size: $photograph-profil__tagline-font-size-sm-mobile;
