@@ -1,31 +1,31 @@
-const queryString = window.location.search;
-const urlParameters = new URLSearchParams(queryString);
-const idString = urlParameters.get("id");
+async function getPhotographersData() {
 
-const photographerId = parseInt(idString);
-
-async function getPhotographersDatas() {
-
-    const photographersDatas = fetch("../data/photographers.json")
+    const photographersData = fetch("../data/photographers.json")
                     .then(function(result) {
                         if(result.ok) {
                             return result.json();
                         }
                     })
-                    .then(function(photographersDatas) {
-                        return photographersDatas;
+                    .then(function(photographersData) {
+                        return photographersData;
                     })
                     .catch(function(error) {
                         console.log(`Fetch haven't succeed to retrieve the photographers datas. ${error}.`)
                     });
 
-    return photographersDatas;
+    return photographersData;
 
 }
 
 function getCurrentPhotographer(photographersData) {
 
     var currentPhotographer = new Photographer();
+
+    const queryString = window.location.search;
+    const urlParameters = new URLSearchParams(queryString);
+    const idString = urlParameters.get("id");
+
+    const photographerId = parseInt(idString);
 
     photographersData.photographers.forEach( (photographer) => {
 
@@ -97,9 +97,7 @@ function displayPhotographerFooter(currentPhotographer) {
 }
 
 
-async function displayData(photographersData) {
-    
-    var currentPhotographer = getCurrentPhotographer(photographersData);
+async function displayData(currentPhotographer) {
 
     displayPhotographerBanner(currentPhotographer);
 
@@ -112,12 +110,15 @@ async function displayData(photographersData) {
 
 async function init() {
     // Récupère les données des photographes
-    const photographersDatas = await getPhotographersDatas();
+    const photographersData = await getPhotographersData();
+    
+    var currentPhotographer = getCurrentPhotographer(photographersData);
 
-    if (await displayData(photographersDatas) === "finished") {
+    if (await displayData(currentPhotographer) === "finished") {
 
         ContactForm.init();
         Lightbox.init();
+        SelectMenu.init(currentPhotographer);
 
     }
 }
