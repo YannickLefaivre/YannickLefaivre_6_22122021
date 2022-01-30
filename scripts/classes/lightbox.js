@@ -4,9 +4,9 @@ class Lightbox {
 
         const links = document.querySelectorAll(`a[href$=".jpg"], a[href$=".mp4"]`);
 
-        links.forEach(link => {
+        links.forEach( (link) => {
 
-            link.addEventListener("click", event => {
+            link.addEventListener("click", (event) => {
 
                 event.preventDefault();
                 
@@ -147,13 +147,12 @@ class Lightbox {
         let mediaTitle = this.linksOfAllMedia[this.currentIndex].parentElement.querySelector(".thumbnail-card-details__title").innerText;
 
         this.element.querySelector(".previous-button").setAttribute("href", `${mediaLink.getAttribute("href")}`);
-        debugger;
 
         this.loadMediaAndItTitle(mediaLink, mediaType, mediaTitle);
 
     }
 
-    buildDOM(mediaLink) {
+    buildDOM() {
 
         const dom = document.createElement("aside");
 

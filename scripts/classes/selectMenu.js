@@ -90,12 +90,6 @@ class SelectMenu {
                 
                 this.sortByPopularity(media);
                 
-                media.forEach( media => {
-
-                    console.log(media.likes);
-
-                });
-                
                 this.updatePhotographerGallery(currentPhotographer);
                 
 
@@ -105,12 +99,6 @@ class SelectMenu {
                             
                 this.sortByTitle(media);
                 
-                media.forEach( media => {
-
-                    console.log(media.title);
-
-                });
-                
                 this.updatePhotographerGallery(currentPhotographer);
 
                 break;
@@ -118,12 +106,6 @@ class SelectMenu {
             case "Date":
                 
                 this.sortByDate(media);
-                
-                media.forEach( media => {
-
-                    console.log(media.date);
-
-                });
                 
                 this.updatePhotographerGallery(currentPhotographer);
 
