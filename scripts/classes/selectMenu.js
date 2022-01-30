@@ -4,30 +4,36 @@ class SelectMenu {
 
         const selectMenuContainer = document.querySelector(".select-menu");
 
-        selectMenuContainer.addEventListener("click", function(event) {
+        selectMenuContainer.addEventListener("click", (event) => {
 
             event.preventDefault();
 
-            event.stopImmediatePropagation();
-
-            new SelectMenu(currentPhotographer, selectMenuContainer);
+            event.stopPropagation();
+            
+            new SelectMenu(currentPhotographer);
             
         });
 
     }
 
-    constructor(currentPhotographer, selectMenuContainer) {
+    constructor(currentPhotographer) {
+
+        this.closeCallbackCallCount = 0;
 
         this.currentPhotographer = currentPhotographer;
 
-        this.container = selectMenuContainer;
-
+        this.container = document.querySelector(".select-menu");
+        
         this.open();
 
         this.button = this.container.querySelector(".select-menu__selected-item");
+            
+        this.optionsContainer = this.container.querySelector(".select-items");
+
+        this.options = this.optionsContainer.querySelectorAll("li");
 
         this.options.forEach( (option) => {
-            
+        
             option.addEventListener("click", this.selectOption.bind(this));
     
         });
@@ -49,10 +55,6 @@ class SelectMenu {
         </ul>`;
 
         this.container.innerHTML += optionsContainerDOM;
-        
-        this.optionsContainer = this.container.querySelector(".select-items");
-
-        this.options = this.optionsContainer.querySelectorAll("li");
 
     }
 
@@ -60,18 +62,15 @@ class SelectMenu {
 
         event.preventDefault();
 
-        if (this.container.querySelector(this.optionsContainer.nodeName) !== null) {
+        this.closeCallbackCallCount++;
 
+        console.log(`The close() callback function was called ${this.closeCallbackCallCount} time(s) during new ${typeof this} life time.`);
+
+        if (this.closeCallbackCallCount < 2) {
             this.optionsContainer.classList.add("select-hide");
 
-            document.removeEventListener("click", this.close.bind(this));
-
-            window.setTimeout( () => {
-
-                this.container.removeChild(this.optionsContainer);
-
-            }, 500);
-
+            this.container.removeChild(this.optionsContainer);
+        
         }
 
     }
@@ -207,7 +206,7 @@ class SelectMenu {
 
         event.preventDefault();
 
-        event.stopImmediatePropagation();
+        event.stopPropagation();
 
         this.sortMediaCards(this.currentPhotographer, this.currentPhotographer.media, event.currentTarget.innerText);
 
