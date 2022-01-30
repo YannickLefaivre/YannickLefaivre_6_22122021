@@ -199,6 +199,8 @@ class SelectMenu {
         });
 
         Lightbox.init();
+
+        LikeButton.init(currentPhotographer);
     }
 
     selectOption(event) {

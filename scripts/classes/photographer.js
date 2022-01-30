@@ -98,7 +98,7 @@ class Photographer {
                         ${media.likes}
                     </p>
 
-                    <button class="likes-button">
+                    <button class="like-button">
                         <span class="fas fa-heart"></span>
                     </button>
                 </div>
@@ -129,11 +129,11 @@ class Photographer {
 
     getFooterInfosDOM() {
 
-        var totalOfLikes = this.calculateTotalOfLikes();
+        this.totalOfLikes = this.calculateTotalOfLikes();
 
         const footerInfos = `
-        <p>
-            ${totalOfLikes} <span class="fas fa-heart"></span>
+        <p id="total-of-likes">
+            ${this.totalOfLikes} <span class="fas fa-heart"></span>
         </p>
 
         <p>

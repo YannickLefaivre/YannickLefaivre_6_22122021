@@ -108,21 +108,27 @@ async function displayData(currentPhotographer) {
     displayPhotographerFooter(currentPhotographer);
     
     return "finished";
+
 }
 
 async function init() {
-    // Récupère les données des photographes
+    
     const photographersData = await getPhotographersData();
     
     var currentPhotographer = getCurrentPhotographer(photographersData);
 
     if (await displayData(currentPhotographer) === "finished") {
 
+        LikeButton.init(currentPhotographer);
+
         ContactForm.init();
+
         Lightbox.init();
+
         SelectMenu.init(currentPhotographer);
 
     }
+
 }
 
 document.addEventListener("DOMContentLoaded", init);
