@@ -1,3 +1,7 @@
+/**
+    Code largely made using Grafikart's tutorial on creating Lightbox in JS Vanilla.
+    The tutorial can be found here: https://grafikart.fr/tutoriels/lightbox-javascript-1224
+*/
 class Lightbox {
 
     static init() {

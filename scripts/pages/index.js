@@ -6,8 +6,8 @@ async function getPhotographers() {
                                     return result.json();
                                 }
                             })
-                            .then(function(photographersDatas) {
-                                return photographersDatas.photographers;
+                            .then(function(photographersData) {
+                                return photographersData.photographers;
                             })
                             .catch(function(error) {
                                 console.log(`Fetch haven't succeed to retrieve the photographers datas. ${error}.`)
@@ -33,14 +33,14 @@ async function displayData(photographers) {
 
 };
 
-function getChoosenPhotographerId() {
+function includeIdOfTheChosenPhotographerInTheUrl() {
 
     const photographerPageLinks = document.querySelectorAll(".thumb-photographer a");
 
     /* 
-        Ecoute si un lien vers la page des photographes a été cliquer. Si oui, 
-        stocker dans une variable l'id du photographe dont les média doivent 
-        être charger dans la page photographer.html . 
+        Listen if a link to the photographers page has been clicked. If yes,
+        store in a variable the id of the photographer whose media should be
+        be loaded in the photographer.html page. 
     */
     photographerPageLinks.forEach( (photographerPageLink) => {
 
@@ -57,12 +57,11 @@ function getChoosenPhotographerId() {
 
 async function init() {
 
-    // Récupère les datas des photographes
     const photographers = await getPhotographers();
 
     displayData(photographers);
 
-    getChoosenPhotographerId();
+    includeIdOfTheChosenPhotographerInTheUrl();
 
 };
 
