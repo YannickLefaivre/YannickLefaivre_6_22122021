@@ -14,7 +14,7 @@ class Photographer {
         const userCard = 
         `<article class="thumb-photographer">
             <a href="./pages/photographer.html" id="${this.id}">
-                <img class="user" src="./${this.picture}" alt="">
+                <img class="user" src="./${this.picture}" alt="${this.name}">
 
                 <h2 class="thumb-photographer__heading">
                     ${this.name}
