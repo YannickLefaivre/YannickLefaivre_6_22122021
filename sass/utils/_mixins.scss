@@ -203,3 +203,8 @@
 	color: $default-text-color;
 	background-color: $secondary-background-color;
 }
+
+@mixin fisheye-like-button-interactivity-effect() {
+	background-color: transparent;
+	outline: $secondary-background-color;
+}

@@ -49,6 +49,8 @@ a {
 
 a,
 button {
+    transition: $trans-color-parameter;
+
     &:hover,
     &:focus {
         color: $default-text-color;

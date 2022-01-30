@@ -160,10 +160,16 @@ $photographer-footer-right-offset: 36px;
 
 /* Transitions variables */
 
+$default-transition-duration: 0.3s;
+
+$trans-color-parameter: color 0.3s;
+
+$trans-background-color-parameter: background-color 0.3s;
+
 /* Animations variables */
 
-$anim-fade-in-delay: 0.3s;
+$anim-fade-in-delay: $default-transition-duration;
 $anim-fade-in-timing: ease;
 
-$anim-show-up-delay: 0.3s;
+$anim-show-up-delay: $default-transition-duration;
 $anim-show-up-timing: ease-in;

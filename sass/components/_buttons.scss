@@ -28,7 +28,7 @@
     }
 }
 
-.likes-button {
+.like-button {
     margin-left: 0.39875rem;
 
     display: flex;
@@ -41,8 +41,18 @@
     color: $primary-color;
     background-color: transparent;
 
+    transition: outline 0.3s, $trans-color-parameter;
+
     @include from-tablette-and-less {
         font-size: $photograph-profil__location-font-size-tablette;
+    }
+
+    &:hover {
+        @include fisheye-like-button-interactivity-effect();
+    }
+
+    &:focus {
+        @include fisheye-like-button-interactivity-effect();
     }
 }
 
@@ -100,6 +110,8 @@
     align-items: center;
 
     padding: 1.4375rem 3.125rem;
+
+    transition: background-color 0.3s;
 
     &:hover, 
     &:focus {

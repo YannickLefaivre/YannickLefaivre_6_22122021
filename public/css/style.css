@@ -432,6 +432,10 @@ select {
   cursor: pointer;
 }
 
+a,
+button {
+  transition: background-color 0.3s;
+}
 a:hover, a:focus,
 button:hover,
 button:focus {
@@ -476,6 +480,10 @@ a:hover h2, a:focus h2 {
   color: #000;
 }
 
+a,
+button {
+  transition: color 0.3s;
+}
 a:hover, a:focus,
 button:hover,
 button:focus {
@@ -580,7 +588,7 @@ select {
   }
 }
 
-.likes-button {
+.like-button {
   margin-left: 0.39875rem;
   display: flex;
   justify-content: center;
@@ -588,11 +596,20 @@ select {
   font-size: 1.5rem;
   color: #901C1C;
   background-color: transparent;
+  transition: outline 0.3s, color 0.3s;
 }
 @media screen and (max-width: 992px) {
-  .likes-button {
+  .like-button {
     font-size: 1.3125rem;
   }
+}
+.like-button:hover {
+  background-color: transparent;
+  outline: #DB8876;
+}
+.like-button:focus {
+  background-color: transparent;
+  outline: #DB8876;
 }
 
 .close-button {
@@ -643,6 +660,7 @@ select {
   justify-content: center;
   align-items: center;
   padding: 1.4375rem 3.125rem;
+  transition: background-color 0.3s;
 }
 .submit-button:hover, .submit-button:focus {
   background-color: #a52020;
@@ -736,6 +754,7 @@ select {
   position: relative;
   flex-direction: row;
   align-items: center;
+  transition: background-color 0.3s, color 0.3s;
 }
 @media screen and (max-width: 992px) {
   .select-menu .select-items li {
@@ -1234,6 +1253,7 @@ select {
   font-size: 3.8rem;
   color: #901C1C;
   border-radius: 0.3125rem;
+  transition: background-color 0.3s, color 0.3s;
 }
 .lightbox-modal-content .lightbox-navigation-button:hover .lightbox-navigation-button__icon {
   color: #000;

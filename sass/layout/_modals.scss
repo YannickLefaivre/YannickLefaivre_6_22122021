@@ -61,6 +61,8 @@
 
         border-radius: $small-beveled-border;
 
+        transition: background-color 0.3s, color 0.3s;
+
         &:hover {
             .lightbox-navigation-button__icon {
                 @include fisheye-hover-and-focus-effect();

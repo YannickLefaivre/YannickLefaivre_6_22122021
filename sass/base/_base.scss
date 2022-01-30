@@ -32,6 +32,8 @@ select {
 
 a,
 button {
+    transition: background-color 0.3s;
+
     &:hover,
     &:focus {
         background-color: $secondary-background-color;
