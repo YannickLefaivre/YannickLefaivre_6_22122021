@@ -88,16 +88,15 @@ class SelectMenu {
 
             case "Popularité":
                 
-                this.sortByPopularity(media);
+                SelectMenu.sortByPopularity(media);
                 
                 this.updatePhotographerGallery(currentPhotographer);
-                
 
                 break;
 
             case "Titre":
                             
-                this.sortByTitle(media);
+                SelectMenu.sortByTitle(media);
                 
                 this.updatePhotographerGallery(currentPhotographer);
 
@@ -105,20 +104,21 @@ class SelectMenu {
             
             case "Date":
                 
-                this.sortByDate(media);
+                SelectMenu.sortByDate(media);
                 
                 this.updatePhotographerGallery(currentPhotographer);
 
                 break;
         
             default:
+                
                 break;
                 
         }
 
     }
 
-    ascendingSort(a, b) {
+    static ascendingSort(a, b) {
 
         if (a > b) {
 
@@ -136,7 +136,7 @@ class SelectMenu {
 
     }
 
-    descendingSort(a, b) {
+    static descendingSort(a, b) {
 
         if (a > b) {
 
@@ -154,31 +154,31 @@ class SelectMenu {
 
     }
 
-    sortByPopularity(media) {
+    static sortByPopularity(media) {
 
        media.sort( (previousMedia, nextMedia) => {
 
-            return this.descendingSort(previousMedia.likes, nextMedia.likes);
+            return SelectMenu.descendingSort(previousMedia.likes, nextMedia.likes);
 
        });
 
     }
 
-    sortByDate(media) {
+    static sortByDate(media) {
 
        media.sort( (previousMedia, nextMedia) => {
 
-            return this.descendingSort(previousMedia.date, nextMedia.date);
+            return SelectMenu.descendingSort(previousMedia.date, nextMedia.date);
 
        });
 
     }
 
-    sortByTitle(media) {
+    static sortByTitle(media) {
         
         media.sort( (previousMedia, nextMedia) => {
 
-            return this.ascendingSort(previousMedia.title, nextMedia.title);
+            return SelectMenu.ascendingSort(previousMedia.title, nextMedia.title);
 
        });
 

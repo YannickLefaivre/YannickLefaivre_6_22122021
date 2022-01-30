@@ -1,3 +1,8 @@
+/**
+    I used Grafikart's tutorial on creating Lightbox in JS Vanilla as a model to implement
+    the opening and closing functionalities of the modal contact form.
+    The tutorial can be found here: https://grafikart.fr/tutoriels/lightbox-javascript-1224
+*/
 class ContactForm {
 
     static init() {
@@ -22,6 +27,8 @@ class ContactForm {
 
         this.storeFormElements();
 
+        this.firstNameInput.focus();
+
         this.element.querySelector(".close-button").addEventListener("click", this.close.bind(this));
 
         this.form.addEventListener("submit", this.onSubmit.bind(this));
@@ -30,13 +37,13 @@ class ContactForm {
 
     buildDOM() {
 
-        const dom = document.createElement("aside");
+        const contactFormBackground = document.createElement("aside");
 
         this.currentPhotographerName = document.querySelector(".photograph-profil__name").innerText;
 
-        dom.classList.add("modal", "contact-modal");
+        contactFormBackground.classList.add("modal", "contact-modal");
 
-        dom.innerHTML = `
+        contactFormBackground.innerHTML = `
         <div class="contact-modal-content">
             <header class="contact-modal-header">
                 <h2 class="contact-modal-header__heading">
@@ -123,7 +130,7 @@ class ContactForm {
 
         document.body.classList.toggle("main-wrapper--modal-open");
 
-        return dom;
+        return contactFormBackground;
 
     }
 
@@ -133,6 +140,8 @@ class ContactForm {
         this.lastNameField = document.getElementById("data-form-last-name");
         this.emailField = document.getElementById("data-form-email");
         this.messageField = document.getElementById("data-form-message");
+
+        this.firstNameInput = document.getElementById("first-name");
 
         this.form = document.getElementById("modal-form");
         
@@ -181,8 +190,8 @@ class ContactForm {
     }
 
     /** 
-     * Redonne à la propriété height de la *div.contact-modal-content* une valeur fixe. 
-     * Sinon height est défini sur *auto* quand le message d'erreur est visible.
+     * Sets the height property of the *div.contact-modal-content* back to a fixed value.
+     * Otherwise height is set to *auto* when the error message is visible.
      */
     resetContentContainerHeight() {
 
@@ -232,7 +241,6 @@ class ContactForm {
 
     validateNameField(nameInput, nameField) {
 
-        // First and last name pattern to check the validity of the associated field
         var namePattern = /^[a-zA-Z]{2,}$/g;
 
         var fieldName = "";

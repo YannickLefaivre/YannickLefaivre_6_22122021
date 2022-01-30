@@ -76,6 +76,8 @@ function displayMediaCards(currentPhotographer) {
 
     const photographerGallery = document.querySelector(".photographer-gallery");
 
+    SelectMenu.sortByPopularity(currentPhotographer.media);
+
     currentPhotographer.media.forEach( (media) => {
 
         const mediaCardDOM = currentPhotographer.getMediaCardDOM(media);
