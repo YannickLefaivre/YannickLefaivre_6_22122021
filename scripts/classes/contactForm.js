@@ -52,7 +52,7 @@ class ContactForm {
                     ${this.currentPhotographerName}
                 </h2>
 
-                <button class="close-button close-button--contact-modal">
+                <button type="button" class="close-button close-button--contact-modal">
                     <svg
                         class="close-button__icon"
                         width="42"
@@ -118,8 +118,7 @@ class ContactForm {
                         required 
                         cols="30" 
                         rows="10" 
-                    >
-                    </textarea>
+                    ></textarea>
 
                     <p class="form-data__error-message hidden-content"></p>
                 </div>
@@ -136,14 +135,14 @@ class ContactForm {
 
     storeFormElements() {
 
+        this.form = document.getElementById("modal-form");
+
         this.firstNameField = document.getElementById("data-form-first-name");
         this.lastNameField = document.getElementById("data-form-last-name");
         this.emailField = document.getElementById("data-form-email");
         this.messageField = document.getElementById("data-form-message");
 
         this.firstNameInput = document.getElementById("first-name");
-
-        this.form = document.getElementById("modal-form");
         
     }
 
@@ -303,15 +302,19 @@ class ContactForm {
 
     validateMessageField() {
 
-        if(this.getInputValue("message") === 0) {
+        if(this.getInputValue("message").length === 0) {
 
             this.displayErrorMessage(this.messageField, "Vous devez laisser un message.");
+
+            return false;
 
         } else {
 
             this.deleteErrorMessage(this.messageField);
 
         }
+
+        return true;
 
     }
 
@@ -357,7 +360,11 @@ class ContactForm {
 
             this.submitForm();
 
-            return false;
+            this.form.reset();
+
+            this.close(event);
+
+            return true;
             
         }
 
