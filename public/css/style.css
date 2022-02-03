@@ -1049,7 +1049,7 @@ select {
   }
 }
 
-.filters-section {
+.select-menu-section {
   position: relative;
   margin: 0 4.5rem;
   font-size: 1.125rem;
@@ -1059,18 +1059,18 @@ select {
   align-items: center;
 }
 @media screen and (max-width: 992px) {
-  .filters-section {
+  .select-menu-section {
     margin: 1.2rem 4.375rem 0;
     font-size: 0.9375rem;
   }
 }
 @media screen and (max-width: 599px) {
-  .filters-section {
+  .select-menu-section {
     margin: 1.25rem 1rem 0;
     justify-content: center;
   }
 }
-.filters-section__label {
+.select-menu-section__label {
   margin-right: 1rem;
   margin-bottom: 1rem;
 }
