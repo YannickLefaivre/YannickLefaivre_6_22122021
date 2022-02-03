@@ -736,6 +736,10 @@ select {
   top: 0;
   z-index: 99;
 }
+.select-menu .select-items:focus li.active-option {
+  color: #000;
+  background-color: #DB8876;
+}
 .select-menu .select-items li {
   width: 10.625rem;
   height: 3.5rem;
@@ -778,10 +782,6 @@ select {
   background-color: white;
 }
 .select-menu .select-items li:hover {
-  color: #000;
-  background-color: #DB8876;
-}
-.select-menu .select-items li:focus {
   color: #000;
   background-color: #DB8876;
 }
@@ -1175,7 +1175,7 @@ select {
   }
 }
 
-.photographer-footer {
+.photographer-likes-and-price {
   width: 23.5rem;
   height: 5.5625rem;
   position: fixed;
@@ -1191,7 +1191,7 @@ select {
   z-index: 2;
 }
 @media screen and (max-width: 1160px) {
-  .photographer-footer {
+  .photographer-likes-and-price {
     width: 22rem;
     height: 4rem;
     font-size: 1.3125rem;

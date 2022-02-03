@@ -29,9 +29,17 @@ class Lightbox {
         this.element = this.buildDOM(mediaLink);
         this.loadMediaAndItTitle(mediaLink, mediaType, mediaTitle);
         this.linksOfAllMedia = linksOfAllMedia;
+
+        this.button = this.element.querySelector(".close-button");
         
+        this.onKeyup = this.onKeyup.bind(this);
+
         document.body.classList.add("main-wrapper--modal-open");
         document.body.appendChild(this.element);
+        
+        this.button.focus();
+
+        document.addEventListener("keyup", this.onKeyup);
     }
 
     loadMediaAndItTitle(currentMediaLink, mediaType, mediaTitle) {
@@ -71,6 +79,24 @@ class Lightbox {
         closeUpView.innerHTML = mediaAndTitle;
     }
 
+    onKeyup(event) {
+
+        if (event.key === "Escape") {
+
+            this.close(event);
+
+        } else if (event.key === "ArrowLeft") {
+
+            this.previous(event);
+
+        } else if (event.key === "ArrowRight") {
+
+            this.next(event);
+
+        }
+
+    }
+
     close(event) {
 
         event.preventDefault();
@@ -84,6 +110,8 @@ class Lightbox {
             this.element.parentElement.removeChild(this.element);
 
         }, 500);
+
+        document.removeEventListener("keyup", this.onKeyup);
     }
     
     next(event) {
@@ -158,13 +186,15 @@ class Lightbox {
 
     buildDOM() {
 
-        const dom = document.createElement("aside");
+        const modalBackground = document.createElement("aside");
 
-        dom.classList.add("modal");
+        modalBackground.setAttribute("role", "dialog");
+        modalBackground.setAttribute("aria-label", "image closeup view");
+        modalBackground.classList.add("modal");
 
-        dom.innerHTML = `
+        modalBackground.innerHTML = `
         <div class="lightbox-modal-content">
-            <button class="close-button">
+            <button id="close-button" class="close-button" aria-label="Close dialog">
                 <svg
                     class="close-button__icon"
                     width="42"
@@ -179,7 +209,7 @@ class Lightbox {
                 </svg>
             </button>
 
-            <a href="#" class="lightbox-navigation-button previous-button">
+            <a href="#" class="lightbox-navigation-button previous-button" aria-label="Previous-image">
                 <span
                     class="lightbox-navigation-button__icon fas fa-chevron-left"
                 ></span>
@@ -188,18 +218,18 @@ class Lightbox {
             <div class="close-up-view">
             </div>
 
-            <a href="#" class="lightbox-navigation-button next-button">
+            <a href="#" class="lightbox-navigation-button next-button" aria-label="Next-image">
                 <span
                     class="lightbox-navigation-button__icon fas fa-chevron-right"
                 ></span>
             </a>
         </div>`;
 
-        dom.querySelector(".close-button").addEventListener("click", this.close.bind(this));
-        dom.querySelector(".next-button").addEventListener("click", this.next.bind(this));
-        dom.querySelector(".previous-button").addEventListener("click", this.previous.bind(this));
+        modalBackground.querySelector(".close-button").addEventListener("click", this.close.bind(this));
+        modalBackground.querySelector(".next-button").addEventListener("click", this.next.bind(this));
+        modalBackground.querySelector(".previous-button").addEventListener("click", this.previous.bind(this));
 
-        return dom;
+        return modalBackground;
 
     }
 }

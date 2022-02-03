@@ -27,7 +27,7 @@ class ContactForm {
 
         this.storeFormElements();
 
-        this.firstNameInput.focus();
+        this.button.focus();
 
         this.element.querySelector(".close-button").addEventListener("click", this.close.bind(this));
 
@@ -44,16 +44,17 @@ class ContactForm {
         contactFormBackground.classList.add("modal", "contact-modal");
 
         contactFormBackground.innerHTML = `
-        <div class="contact-modal-content">
+        <div class="contact-modal-content" role="dialog" aria-labelledby="contact-modal-heading">
             <header class="contact-modal-header">
-                <h2 class="contact-modal-header__heading">
+                <h2 id="contact-modal-heading" class="contact-modal-header__heading">
                     Contactez-moi
                     <br />
                     ${this.currentPhotographerName}
                 </h2>
 
-                <button type="button" class="close-button close-button--contact-modal">
+                <button type="button" id="close-button" class="close-button close-button--contact-modal" aria-label="Close contact form">
                     <svg
+                        aria-hidden="true"
                         class="close-button__icon"
                         width="42"
                         height="42"
@@ -134,6 +135,8 @@ class ContactForm {
     }
 
     storeFormElements() {
+        
+        this.button = document.getElementById("close-button");
 
         this.form = document.getElementById("modal-form");
 
