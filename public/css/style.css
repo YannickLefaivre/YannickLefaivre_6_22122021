@@ -1041,7 +1041,7 @@ select {
 }
 .photograph-profil__tagline {
   font-size: 1.125rem;
-  color: #757575;
+  color: #525252;
 }
 @media screen and (max-width: 992px) {
   .photograph-profil__tagline {

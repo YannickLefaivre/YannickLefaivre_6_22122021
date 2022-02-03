@@ -77,10 +77,11 @@ class ContactForm {
                         type="text"
                         id="first-name"
                         name="first-name"
+                        placeholder="Jean"
                         required
                     />
 
-                    <p class="form-data__error-message hidden-content">  </p>
+                    <p aria-hidden="true" class="form-data__error-message hidden-content">  </p>
                 </div>
 
                 <div id="data-form-last-name" class="form-data">
@@ -90,10 +91,11 @@ class ContactForm {
                         type="text"
                         id="last-name"
                         name="last-name"
+                        placeholder="Dupont"
                         required
                     />
 
-                    <p class="form-data__error-message hidden-content">  </p>
+                    <p aria-hidden="true" class="form-data__error-message hidden-content">  </p>
                 </div>
 
                 <div id="data-form-email" class="form-data form-data--email">
@@ -103,10 +105,11 @@ class ContactForm {
                         type="email" 
                         id="email" 
                         name="email" 
+                        placeholder="jean-dupont@gmail.com"
                         required
                     />
 
-                    <p class="form-data__error-message hidden-content"></p>
+                    <p aria-hidden="true" class="form-data__error-message hidden-content"></p>
                 </div>
 
                 <div id="data-form-message" class="form-data form-data--message">
@@ -116,12 +119,13 @@ class ContactForm {
                         textarea" 
                         id="message"
                         name="message"
+                        placeholder="Tapez votre message dans ce champs."
                         required 
                         cols="30" 
                         rows="10" 
                     ></textarea>
 
-                    <p class="form-data__error-message hidden-content"></p>
+                    <p aria-hidden="true" class="form-data__error-message hidden-content"></p>
                 </div>
 
                 <button type="submit" class="button submit-button" value="Submit" formnovalidate>Envoyer</button>
@@ -182,6 +186,8 @@ class ContactForm {
             const contentContainer = this.element.querySelector(".contact-modal-content");
 
             errorMessageParagraph.classList.toggle("hidden-content");
+
+            errorMessageParagraph.setAttribute("aria-hidden", "false");
             
             errorMessageParagraph.textContent = errorMessageToDisplay;
     
