@@ -14,7 +14,7 @@ class Photographer {
         const userCard = 
         `<article class="thumb-photographer">
             <a href="./pages/photographer.html" id="${this.id}">
-                <img class="user" src="./${this.picture}" alt="${this.name}">
+                <img class="user" src="./${this.picture}" alt="">
 
                 <h2 class="thumb-photographer__heading">
                     ${this.name}
@@ -78,7 +78,7 @@ class Photographer {
         } else {
 
             mediaSource = `${mediaDirectoryPath}/pictures/${media.image}`;
-            mediaOuterHTML = `<img src="${mediaSource}" alt="${media.title}" />`;
+            mediaOuterHTML = `<img src="${mediaSource}" alt="${media.title}, close up view" />`;
 
         }
 
@@ -98,7 +98,7 @@ class Photographer {
                         ${media.likes}
                     </p>
 
-                    <button class="like-button">
+                    <button class="like-button" aria-label="likes">
                         <span class="fas fa-heart"></span>
                     </button>
                 </div>

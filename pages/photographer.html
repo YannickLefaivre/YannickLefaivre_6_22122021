@@ -33,7 +33,7 @@
 					<img
 						class="logo"
 						src="../assets/images/logo.png"
-						alt="Page d'accueil de FishEye"
+						alt="Fisheye Home Page"
 					/>
 				</a>
 			</nav>
@@ -44,13 +44,15 @@
 			</header>
 
 			<nav class="filters-section">
-				<p class="filters-section__label">Trier par</p>
+				<p id="select-menu-label" class="filters-section__label">Trier par</p>
 
 				<div class="select-menu">
 					<button
 						type="button"
-						id="select-menu-selected-item"
+						id="select-menu-trigger"
 						class="select-menu__selected-item"
+						aria-haspopup="listbox"
+						aria-expanded="false"
 					>
 						Popularité
 						<span class="fas fa-chevron-down select-menu__arrow"></span>
