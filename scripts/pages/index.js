@@ -31,28 +31,6 @@ async function displayData(photographers) {
         
     });
 
-};
-
-function includeIdOfTheChosenPhotographerInTheUrl() {
-
-    const photographerPageLinks = document.querySelectorAll(".thumb-photographer a");
-
-    /* 
-        Listen if a link to the photographers page has been clicked. If yes,
-        store in a variable the id of the photographer whose media should be
-        be loaded in the photographer.html page. 
-    */
-    photographerPageLinks.forEach( (photographerPageLink) => {
-
-        photographerPageLink.addEventListener("click", function(event) {
-
-            event.preventDefault();
-            
-            let photographerID = event.currentTarget.getAttribute("id");
-
-            window.document.location = `./pages/photographer.html?id=${photographerID}`;
-        });
-    });
 }
 
 async function init() {
@@ -60,8 +38,6 @@ async function init() {
     const photographers = await getPhotographers();
 
     displayData(photographers);
-
-    includeIdOfTheChosenPhotographerInTheUrl();
 
 };
 
