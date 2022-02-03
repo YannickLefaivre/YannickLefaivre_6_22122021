@@ -1,8 +1,8 @@
-.photographer-footer {
-    @include set-size($photographer-footer-size);
+.photographer-likes-and-price {
+    @include set-size($photographer-likes-and-price-size);
 
     position: fixed;
-    right: $photographer-footer-right-offset;
+    right: $photographer-likes-and-price-right-offset;
     bottom: 0;
 
     display: flex;
@@ -19,7 +19,7 @@
     z-index: 2;
 
     @include from-computer-and-less {
-        @include set-size($photographer-footer-size-computer);
+        @include set-size($photographer-likes-and-price-size-computer);
 
         font-size: $photograph-profil__location-font-size-tablette;
     }

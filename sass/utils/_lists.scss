@@ -7,8 +7,8 @@ $photographer-section-margin-mobile: 3rem $main-wrapper-sides-margin-lg-mobile;
 
 $photographer-header-margin: 2.5rem $main-wrapper-sides-margin 1rem;
 
-$filters-section-margin: $zero-value $main-wrapper-sides-margin;
-$filters-section-margin-sm-mobile: 1.25rem 1rem $zero-value;
+$select-menu-section-margin: $zero-value $main-wrapper-sides-margin;
+$select-menu-section-margin-sm-mobile: 1.25rem 1rem $zero-value;
 
 $photographer-gallery-margin: $photographer-gallery-margin-top $main-wrapper-sides-margin $zero-value;
 $photographer-gallery-margin-tablette: $photographer-gallery-margin-top $main-wrapper-sides-margin-tablette $zero-value;
@@ -44,14 +44,14 @@ $select-item-3-padding-sm-mobile: 11px 20px 10px;
 
 /* Grid templates */
 
-$filters-section-grid-columns-width: 0.8fr $select-menu-items-width-sm-mobile;
-$filters-section-grid-rows-height: 2.5rem 1fr;
+$select-menu-section-grid-columns-width: 0.8fr $select-menu-items-width-sm-mobile;
+$select-menu-section-grid-rows-height: 2.5rem 1fr;
 
-$filters-section-grid-template-sm-mobile: $filters-section-grid-rows-height / $filters-section-grid-columns-width;
+$select-menu-section-grid-template-sm-mobile: $select-menu-section-grid-rows-height / $select-menu-section-grid-columns-width;
 
 /* Grid columns length */
 
-$filters-section-grid-columns-width: 4.625rem 10.625rem;
+$select-menu-section-grid-columns-width: 4.625rem 10.625rem;
 
 /* Gap lists */
 

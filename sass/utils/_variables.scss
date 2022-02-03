@@ -80,8 +80,8 @@ $contact-button-font-size-mobile: 1.0625rem;
 $select-menu-font-size: 1.125rem;
 $select-menu-font-size-sm-mobile: 0.9375rem;
 
-$filters-section-font-size: 1.125rem;
-$filters-section-font-size-tablette: 0.9375rem;
+$select-menu-section-font-size: 1.125rem;
+$select-menu-section-font-size-tablette: 0.9375rem;
 
 $first-heading-tablette-font-size: 1.7rem;
 $first-heading-mobile-landscape-orientation-font-size: 1.5rem;
@@ -130,7 +130,7 @@ $one-column: 1fr;
 $two-column: repeat(2, 1fr);
 $three-column: repeat(3, 1fr);
 
-$filters-section-second-column-width: 8.814rem;
+$select-menu-section-second-column-width: 8.814rem;
 
 $modal-grid-columns-1-and-3-length: 0.8fr;
 
@@ -143,7 +143,7 @@ $photographer-page-link-gutter: 1rem;
 $photographer-header-row-gutter: 3rem;
 $photographer-header-gutter-xl-mobile-landscape-orientation: 3rem;
 
-$filters-section-gutter: 0 1.5625rem;
+$select-menu-section-gutter: 0 1.5625rem;
 
 /* Radius variables */
 
@@ -156,7 +156,7 @@ $small-beveled-border-on-bottom: 0 0 $small-beveled-border $small-beveled-border
 
 /* Position, top, right, left and bottom variables */
 
-$photographer-footer-right-offset: 36px;
+$photographer-likes-and-price-right-offset: 36px;
 
 /* Transitions variables */
 

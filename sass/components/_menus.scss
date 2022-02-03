@@ -30,6 +30,10 @@
         top: 0;
         z-index: 99;
 
+        &:focus li.active-option {
+            @include fisheye-hover-and-focus-effect();
+        }
+
         li {
             @include set-size($select-menu-items-size);
 
@@ -61,10 +65,6 @@
             }
 
             &:hover {
-                @include fisheye-hover-and-focus-effect();
-            }
-
-            &:focus {
                 @include fisheye-hover-and-focus-effect();
             }
 

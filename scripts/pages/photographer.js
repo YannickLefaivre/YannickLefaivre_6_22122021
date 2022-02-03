@@ -91,7 +91,7 @@ function displayMediaCards(currentPhotographer) {
 
 function displayPhotographerFooter(currentPhotographer) {
 
-    const photographerFooter = document.querySelector(".photographer-footer");
+    const photographerFooter = document.querySelector(".photographer-likes-and-price");
 
     const footerInfosDOM = currentPhotographer.getFooterInfosDOM();
 

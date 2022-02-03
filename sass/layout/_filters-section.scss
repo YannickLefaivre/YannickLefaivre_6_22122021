@@ -1,9 +1,9 @@
-.filters-section {
+.select-menu-section {
     position: relative;
 
-    margin: $filters-section-margin;
+    margin: $select-menu-section-margin;
 
-    font-size: $filters-section-font-size;
+    font-size: $select-menu-section-font-size;
     font-weight: bold;
 
     display: flex;
@@ -13,11 +13,11 @@
     @include from-tablette-and-less {
         margin: 1.2rem $main-wrapper-sides-margin-tablette 0;
         
-        font-size: $filters-section-font-size-tablette;
+        font-size: $select-menu-section-font-size-tablette;
     }
     
     @include for-mobile-in-medium-landscape-orientation-500px-599px() {
-        margin: $filters-section-margin-sm-mobile;
+        margin: $select-menu-section-margin-sm-mobile;
 
         justify-content: center;
     }
