@@ -25,7 +25,7 @@
 	</head>
 
 	<body class="main-wrapper">
-		<header class="website-header website-header--photograph-page">
+		<header class="website-header website-header--photograph-page" aria-label="en-tête du site web">
 			<nav
 				class="website-header-navigation-section website-header-navigation-section--photograph-page"
 			>
@@ -40,10 +40,13 @@
 		</header>
 
 		<main id="main">
-			<header class="photographer-header">
+			<header class="photographer-header" aria-label="Bannière de la page du photographe">
 			</header>
 
-			<nav class="filters-section">
+			<aside class="photographer-likes-and-price" aria-label="Nombre total de J'aime et prix par jour de l'artiste">
+			</aside>
+
+			<div class="filters-section">
 				<p id="select-menu-label" class="filters-section__label">Trier par</p>
 
 				<div class="select-menu">
@@ -58,13 +61,10 @@
 						<span class="fas fa-chevron-down select-menu__arrow"></span>
 					</button>
 				</div>
-			</nav>
+			</div>
 
 			<div class="photographer-gallery">
 			</div>
-
-			<footer class="photographer-footer">
-			</footer>
 		</main>
 
 		<script src="../scripts/utils/directory.js"></script>

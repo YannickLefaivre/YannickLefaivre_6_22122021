@@ -196,6 +196,7 @@ class Lightbox {
         <div class="lightbox-modal-content">
             <button id="close-button" class="close-button" aria-label="Close dialog">
                 <svg
+                    aria-hidden="true"
                     class="close-button__icon"
                     width="42"
                     height="42"
