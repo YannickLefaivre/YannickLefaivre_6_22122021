@@ -55,7 +55,7 @@ class Lightbox {
         if (mediaType instanceof HTMLVideoElement) {
 
             media = `
-            <video controls class="close-up-view__media" src="${currentMediaURL}"
+            <video controls class="close-up-view__media" src="${currentMediaURL}" aria-labelledby="media-title"
         ></video>`
 
         } else {
@@ -64,7 +64,7 @@ class Lightbox {
             <img
                 class="close-up-view__media"
                 src="${currentMediaURL}"
-                alt=""
+                alt="${mediaTitle}"
             />`;
 
         }
@@ -72,7 +72,7 @@ class Lightbox {
         const mediaAndTitle = `
         ${media}
         
-        <p class="close-up-view__title">${mediaTitle}</p>`;
+        <p id="media-title" class="close-up-view__title">${mediaTitle}</p>`;
 
         this.currentMediaLink = currentMediaLink;
 

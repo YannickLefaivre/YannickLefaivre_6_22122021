@@ -13,7 +13,7 @@ class Photographer {
     getCardDOM() {
         const userCard = 
         `<article class="thumb-photographer">
-            <a href="./pages/photographer.html" id="${this.id}">
+            <a href="./pages/photographer.html?id=${this.id}">
                 <img class="user" src="./${this.picture}" alt="">
 
                 <h2 class="thumb-photographer__heading">
@@ -26,12 +26,12 @@ class Photographer {
                     ${this.location}
                 </p>
 
-                <p class="thumb-photographer-datas__tagline">
+                <p class="thumb-photographer-datas__tagline" lang="fr">
                     ${this.tagline}
                 </p>
 
-                <p class="thumb-photographer-datas__price-per-day">
-                    ${this.price}€ / jour
+                <p class="thumb-photographer-datas__price-per-day" lang="fr">
+                    ${this.price}€/jour
                 </p>
             </div>
         </article>`;
@@ -73,7 +73,7 @@ class Photographer {
         if (media instanceof Video) {
 
             mediaSource = `${mediaDirectoryPath}/videos/${media.video}`;
-            mediaOuterHTML = `<video src="${mediaSource}"></video>`;
+            mediaOuterHTML = `<video src="${mediaSource}" aria-label="${media.title}, close up view"></video>`;
 
         } else {
 
