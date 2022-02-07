@@ -58,7 +58,7 @@ class ContactForm {
                 </h2>
             </header>
 
-            <form id="modal-form" name="reserve" action="index.html" method="post">
+            <form id="modal-form" name="reserve" action="#" method="post">
                 <div id="data-form-first-name" class="form-data">
                     <label for="first-name">Prénom</label>
                     <input 

@@ -166,9 +166,13 @@ class SelectMenu {
 
     close(event) {
 
-        event.preventDefault();
+        if ([this.optionsContainer, this.options, this.button, this.container].includes(event.target)) {
 
-        event.stopPropagation();
+            event.preventDefault();
+
+            event.stopPropagation();
+
+        }
 
         if (!this.optionsContainer.classList.contains("select-hide")) {
 
