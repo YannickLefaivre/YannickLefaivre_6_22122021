@@ -439,6 +439,7 @@ button {
 a:hover, a:focus,
 button:hover,
 button:focus {
+  outline: normal dotted;
   background-color: #DB8876;
 }
 
@@ -589,7 +590,6 @@ select {
 }
 
 .like-button {
-  margin-left: 0.39875rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -603,16 +603,17 @@ select {
     font-size: 1.3125rem;
   }
 }
-.like-button:hover {
-  background-color: transparent;
-  outline: #DB8876;
+.like-button__number-of-likes {
+  color: #901C1C;
 }
-.like-button:focus {
-  background-color: transparent;
-  outline: #DB8876;
+.like-button__icon {
+  margin-left: 0.39875rem;
 }
 
 .close-button {
+  position: absolute;
+  top: 3.5%;
+  right: 5%;
   margin-top: 0.3rem;
   padding: 0.625rem;
   grid-column: 3;
@@ -660,10 +661,6 @@ select {
   justify-content: center;
   align-items: center;
   padding: 1.4375rem 3.125rem;
-  transition: background-color 0.3s;
-}
-.submit-button:hover, .submit-button:focus {
-  background-color: #a52020;
 }
 @media screen and (max-width: 1369px) {
   .submit-button {
@@ -1160,21 +1157,6 @@ select {
   text-overflow: ellipsis;
 }
 
-.thumbnail-card-details-likes-infos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.thumbnail-card-details-likes-infos__number-of-likes {
-  font-size: 1.5rem;
-  color: #901C1C;
-}
-@media screen and (max-width: 992px) {
-  .thumbnail-card-details-likes-infos__number-of-likes {
-    font-size: 1.3125rem;
-  }
-}
-
 .photographer-likes-and-price {
   width: 23.5rem;
   height: 5.5625rem;
@@ -1320,6 +1302,7 @@ select {
 }
 
 .contact-modal-content {
+  position: relative;
   width: 50%;
   max-width: 720px;
   height: 58rem;
