@@ -20,7 +20,7 @@ class TrapTabKey {
             // SHIFT + TAB
             if (event.shiftKey) {
 
-                if (document.activeElement === tabStop.firstTabStop) {
+                if (document.activeElement === tabStops.firstTabStop) {
 
                     event.preventDefault();
 
@@ -31,7 +31,7 @@ class TrapTabKey {
             // TAB
             } else {
 
-                if (document.activeElement === this.lastTabStop) {
+                if (document.activeElement === tabStops.lastTabStop) {
 
                     event.preventDefault();
 

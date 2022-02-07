@@ -21,9 +21,13 @@ class ContactForm {
 
     constructor() {
 
-        this.element = this.buildDOM();
+        this.element = document.getElementById("contact-form");
+
+        this.contentContainer = this.buildDOM();
         
-        document.body.appendChild(this.element);
+        this.element.appendChild(this.contentContainer);
+
+        this.button = document.getElementById("close-button");
 
         this.storeFormElements();
 
@@ -33,15 +37,24 @@ class ContactForm {
 
         this.element.addEventListener("keydown", this.onKeydonwn.bind(this));
 
+        this.contentContainer.addEventListener("keydown", (event) => {
+
+            event.preventDefault();
+
+            TrapTabKey.init();
+
+        })
+
         this.form.addEventListener("submit", this.onSubmit.bind(this));
 
     }
 
     buildDOM() {
+
         this.currentPhotographerName = document.querySelector(".photograph-profil__name").innerText;
 
-        contactFormBackground.innerHTML = `
-        <div class="contact-modal-content" role="dialog" aria-labelledby="contact-modal-heading">
+        this.element.innerHTML = `
+        <div class="contact-modal-content" role="dialog" aria-labelledby="contact-modal-heading" tabindex="0">
             <header class="contact-modal-header">
                 <h2 id="contact-modal-heading" class="contact-modal-header__heading">
                     Contactez-moi
@@ -62,7 +75,7 @@ class ContactForm {
                         required
                     />
 
-                    <p aria-hidden="true" class="form-data__error-message hidden-content">  </p>
+                    <p class="form-data__error-message hidden-content">  </p>
                 </div>
 
                 <div id="data-form-last-name" class="form-data">
@@ -76,7 +89,7 @@ class ContactForm {
                         required
                     />
 
-                    <p aria-hidden="true" class="form-data__error-message hidden-content">  </p>
+                    <p class="form-data__error-message hidden-content">  </p>
                 </div>
 
                 <div id="data-form-email" class="form-data form-data--email">
@@ -90,7 +103,7 @@ class ContactForm {
                         required
                     />
 
-                    <p aria-hidden="true" class="form-data__error-message hidden-content"></p>
+                    <p class="form-data__error-message hidden-content"></p>
                 </div>
 
                 <div id="data-form-message" class="form-data form-data--message">
@@ -106,7 +119,7 @@ class ContactForm {
                         rows="10" 
                     ></textarea>
 
-                    <p aria-hidden="true" class="form-data__error-message hidden-content"></p>
+                    <p class="form-data__error-message hidden-content"></p>
                 </div>
 
                 <button type="submit" class="button submit-button" value="Submit" formnovalidate>Envoyer</button>
@@ -129,17 +142,17 @@ class ContactForm {
             </button>
         </div>`;
 
+        const modalContent = this.element.querySelector(".contact-modal-content");
+
+        this.element.classList.remove("modal--close");
+
         document.body.classList.toggle("main-wrapper--modal-open");
 
-        return contactFormBackground;
+        return modalContent;
 
     }
 
     storeFormElements() {
-        
-        this.modalOverlay = document.getElementById("modal-form");
-
-        this.button = document.getElementById("close-button");
 
         this.form = document.getElementById("modal-form");
 
@@ -161,9 +174,6 @@ class ContactForm {
             this.close(event);
 
         }
-
-        TrapTabKey.init(event, this.modalOverlay);
-
     }
 
     close(event) {
@@ -176,7 +186,7 @@ class ContactForm {
 
         window.setTimeout(() => {
 
-            this.element.parentElement.removeChild(this.element);
+            this.element.removeChild(this.contentContainer);
 
         }, 500);
 
@@ -232,8 +242,6 @@ class ContactForm {
         if (!errorMessageParagraph.classList.contains("hidden-content")) {
 
             concernedField.querySelector(".form-data__error-message").classList.toggle("hidden-content");
-
-            const contentContainer = this.element.querySelector(".contact-modal-content");
 
         }
 

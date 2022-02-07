@@ -317,7 +317,8 @@
 			"image": "Travel_Lonesome.jpg",
 			"likes": 88,
 			"date": "2019-02-03",
-			"price": 45
+			"price": 45,
+			"description": "Un paysage montagnard, plein de verdure et d'arbres vue d'en-haut. Une personne debout toute seul, au premier-plan, se trouve sur l'un des sommets d'une montagne."
 		},
 		{
 			"id": 625025343,
@@ -326,7 +327,8 @@
 			"image": "Travel_HillsideColor.jpg",
 			"likes": 85,
 			"date": "2019-04-03",
-			"price": 45
+			"price": 45,
+			"description": "Village au couleur de maison multicolore, niché sur une colline au-dessus de la mer."
 		},
 		{
 			"id": 2525345343,
@@ -335,7 +337,8 @@
 			"image": "Portrait_Wednesday.jpg",
 			"likes": 34,
 			"date": "2019-04-07",
-			"price": 45
+			"price": 45,
+			"description": "Portrait en gros plan sur le visage d'une petite fille faisant la grimace en tenant son visage avec ses deux mains."
 		},
 		{
 			"id": 2523434634,
@@ -344,7 +347,8 @@
 			"image": "Portrait_Nora.jpg",
 			"likes": 63,
 			"date": "2019-04-07",
-			"price": 45
+			"price": 45,
+			"description": "Portrait d'une jeune femme noir portant des lunettes et des boucles d'oreille. Celle-ci à le bras droit ainsi que ses mains droites et gauches posé sur un meuble rouge."
 		},
 		{
 			"id": 398847109,
@@ -353,7 +357,8 @@
 			"image": "Portrait_Background.jpg",
 			"likes": 55,
 			"date": "2019-06-20",
-			"price": 45
+			"price": 45,
+			"description": "Portrait poitrine, à mi-hauteur, en noir et blanc d'une femme vêtue d'un haut sombre. Elle a la tête légèrement redressée vers le haut et regarde l'objectif avec insistance."
 		},
 		{
 			"id": 2534342,
@@ -362,7 +367,8 @@
 			"image": "Event_SeasideWedding.jpg",
 			"likes": 25,
 			"date": "2019-06-21",
-			"price": 45
+			"price": 45,
+			"description": "Table d'un mariage dressée, disposer dans la longueur, près de la mer."
 		},
 		{
 			"id": 65235234,
@@ -371,7 +377,8 @@
 			"image": "Event_PintoWedding.jpg",
 			"likes": 52,
 			"date": "2019-06-25",
-			"price": 45
+			"price": 45,
+			"description": "Des mariés en tenu se tenant par la taille, leur tête coller l'un à l'autre, au milieu des roches."
 		},
 		{
 			"id": 23523434,
@@ -380,7 +387,8 @@
 			"image": "Event_BenevidesWedding.jpg",
 			"likes": 77,
 			"date": "2019-06-28",
-			"price": 45
+			"price": 45,
+			"description": "Un époux et son épouse en habit de marié souriant dans la haie d'honneur. L'allé est vide et brille de mille feux. L'épouse est légèrement penchée en arrière tandis que son marie la tient par la taille."
 		},
 		{
 			"id": 5234343,
@@ -389,7 +397,8 @@
 			"video": "Animals_Wild_Horses_in_the_mountains.mp4",
 			"likes": 142,
 			"date": "2019-08-23",
-			"price": 60
+			"price": 60,
+			"description": "Des chevaux sauvages galopant dans les montagnes."
 		  },
 		{
 			"id": 95234343,
@@ -398,7 +407,8 @@
 			"image": "Animals_Rainbow.jpg",
 			"likes": 59,
 			"date": "2019-07-02",
-			"price": 60
+			"price": 60,
+			"description": "Un oiseau au pelage multicolore perché sur une branche faisant face à l'objectif, la tête de profil."
 		},
 
 		{
@@ -408,7 +418,8 @@
 			"image": "Travel_Tower.jpg",
 			"likes": 25,
 			"date": "2019-04-03",
-			"price": 60
+			"price": 60,
+			"description": "Ruelle japonaise près du temple Hôkanji à Kyoto. Deux femmes vêtus d'habit traditionnel sont au premier-plan et quelques passant sont aperçue au loin."
 		},
 		{
 			"id": 2523434,
@@ -417,7 +428,8 @@
 			"image": "Travel_SunsetonCanals.jpg",
 			"likes": 53,
 			"date": "2019-05-06",
-			"price": 60
+			"price": 60,
+			"description": "Coucher de soleil sur les canaux de venise. Un bateau et quelques pirogues à l'eau. Puis quelques passant sur les trottoirs de la ville."
 		},
 		{
 			"id": 95293534,
@@ -426,7 +438,8 @@
 			"image": "Travel_OpenMountain.jpg",
 			"likes": 33,
 			"date": "2019-05-12",
-			"price": 60
+			"price": 60,
+			"description": "Au milieu d'un lac de montagne avec une forêt d'arbres verdoyantes au loin et une montagne dont le bas disparaît dans le brouillard."
 		},
 		{
 			"id": 356234343,
@@ -435,7 +448,8 @@
 			"image": "Travel_Bike_and_Stair.jpg",
 			"likes": 53,
 			"date": "2019-06-20",
-			"price": 60
+			"price": 60,
+			"description": "Un vélo garé près des escaliers et d'un lampadaire dans une ruelle parisiènne face à une résidence à plusieurs étages."
 		},
 		{
 			"id": 235234343,
@@ -444,7 +458,8 @@
 			"image": "Travel_Adventure_Door.jpg",
 			"likes": 63,
 			"date": "2019-06-26",
-			"price": 60
+			"price": 60,
+			"description":"Fenêtre vouté avec vue sur une colline parsemé d'arbres et de maisons."
 		},
 		{
 			"id": 6234234343,
@@ -453,7 +468,8 @@
 			"image": "Architecture_Contrast.jpg",
 			"likes": 52,
 			"date": "2019-06-30",
-			"price": 60
+			"price": 60,
+			"description": "Le grand dôme et deux petits dômes d'un bâtiment de St Petersburg."
 		},
 		{
 			"id": 6525666253,
@@ -462,7 +478,8 @@
 			"image": "Architecture_On_a_hill.jpg",
 			"likes": 63,
 			"date": "2019-07-20",
-			"price": 60
+			"price": 60,
+			"description": "Un village sur une colline au Tibet."
 		},
 		{
 			"id": 98252523433,
@@ -471,7 +488,8 @@
 			"image": "Architecture_Dome.jpg",
 			"likes": 88,
 			"date": "2020-01-05",
-			"price": 60
+			"price": 60,
+			"description": "La tour de pise vue d'en bas."
 		},
 		{
 			"id": 9259398453,
@@ -480,7 +498,8 @@
 			"video": "Architecture_coverr_circle_empty_highway_in_buenos_aires_587740985637.mp4",
 			"likes": 57,
 			"date": "2020-01-20",
-			"price": 65
+			"price": 65,
+			"description": "Vue aérienne d'une autoraute de Buenos Aires filmé par un drone."
 		  },
 		{
 			"id": 3523523534,
@@ -489,16 +508,18 @@
 			"image": "Architecture_Corner_Room.jpg",
 			"likes": 54,
 			"date": "2020-05-05",
-			"price": 60
+			"price": 60,
+			"description": "Haut d'un bâtiment d'angle avec des murs rouges et une toiture blue, sous un ciel bleu."
 		},
 		{
 			"id": 952343423,
 			"photographerId": 930,
-			"title": "Tricks in te air",
+			"title": "Tricks in the air",
 			"video": "Sport_Tricks_in_the_air.mp4",
 			"likes": 150,
 			"date": "2018-02-30",
-			"price": 70
+			"price": 70,
+			"description": "Une acrobate faisant des figures en tenant un élastique suspendu en l'air."
 		  },
 		{
 			"id": 235234343,
@@ -507,7 +528,8 @@
 			"image": "Sport_Next_Hold.jpg",
 			"likes": 101,
 			"date": "2018-03-05",
-			"price": 65
+			"price": 65,
+			"description": "une grimpeuse escaladant la paroi d'un rocher."
 		},
 		{
 			"id": 235343222,
@@ -516,7 +538,8 @@
 			"image": "sport_water_tunnel.jpg",
 			"likes": 103,
 			"date": "2018-03-10",
-			"price": 70
+			"price": 70,
+			"description": "un surfeur dans le tube d'une vague."
 		},
 		{
 			"id": 7775342343,
@@ -525,7 +548,8 @@
 			"image": "Sport_Sky_Cross.jpg",
 			"likes": 77,
 			"date": "2018-04-16",
-			"price": 50
+			"price": 50,
+			"description": "Un skieur est en l’air, la neige se trouve sous ses pieds et le ciel derrière lui en arrière-plan."
 		},
 		{
 			"id": 9253445784,
@@ -534,7 +558,8 @@
 			"image": "Sport_Race_End.jpg",
 			"likes": 88,
 			"date": "2018-04-22",
-			"price": 65
+			"price": 65,
+			"description": "Des coureurs pris en photo sur la ligne d'arrivée."
 		},
 		{
 			"id": 22299394,
@@ -543,7 +568,8 @@
 			"image": "Sport_Jump.jpg",
 			"likes": 95,
 			"date": "2018-04-27",
-			"price": 70
+			"price": 70,
+			"description": "Skateur en pleine réalisation d'une figure en l'air dans un bowl."
 		},
 		{
 			"id": 3452342633,
@@ -552,7 +578,8 @@
 			"image": "Architecture_White_Light.jpg",
 			"likes": 52,
 			"date": "2018-05-03",
-			"price": 75
+			"price": 75,
+			"description": "Intérieur d'un bâtiment où tous les murs et les plafonds sont blancs."
 		},
 		{
 			"id": 939234243,
@@ -561,7 +588,8 @@
 			"image": "Architecture_Water_on_Modern.jpg",
 			"likes": 55,
 			"date": "2018-05-10",
-			"price": 72
+			"price": 72,
+			"description": "Un bâtiment moderne ayant de l'eau son toit."
 		},
 		{
 			"id": 222959233,
@@ -570,7 +598,8 @@
 			"image": "Architecture_Horseshoe.jpg",
 			"likes": 85,
 			"date": "2018-05-15",
-			"price": 71
+			"price": 71,
+			"description": "Architecture en forme de fer à cheval."
 		},
 		{
 			"id": 965933434,
@@ -579,7 +608,8 @@
 			"image": "Architecture_Cross_Bar.jpg",
 			"likes": 66,
 			"date": "2018-05-20",
-			"price": 58
+			"price": 58,
+			"description": "Deux bâtiments formant une barre transversale."
 		},
 		{
 			"id": 777723343,
@@ -588,7 +618,8 @@
 			"image": "Architecture_Connected_Curves.jpg",
 			"likes": 79,
 			"date": "2018-05-21",
-			"price": 80
+			"price": 80,
+			"description": "Deux bâtiments à l'architecture sphérique connecté par une passerelle ayant une apparence courbée."
 		}
 	]
 }

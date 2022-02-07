@@ -13,8 +13,8 @@ class Photographer {
     getCardDOM() {
         const userCard = 
         `<article class="thumb-photographer">
-            <a href="./pages/photographer.html?id=${this.id}">
-                <img class="user" src="./${this.picture}" alt="">
+            <a href="./pages/photographer.html?id=${this.id}" id="${this.id}">
+                <img class="user" src="./${this.picture}" alt="" />
 
                 <h2 class="thumb-photographer__heading">
                     ${this.name}
@@ -73,18 +73,23 @@ class Photographer {
         if (media instanceof Video) {
 
             mediaSource = `${mediaDirectoryPath}/videos/${media.video}`;
-            mediaOuterHTML = `<video src="${mediaSource}" aria-label="${media.title}, close up view"></video>`;
+            mediaOuterHTML = `
+            <video>
+                <source src="${mediaSource}" type="video/mp4" />
+
+                Votre navigateur ne prend pas en charge le contenu video en HTML5.
+            </video>`;
 
         } else {
 
             mediaSource = `${mediaDirectoryPath}/pictures/${media.image}`;
-            mediaOuterHTML = `<img src="${mediaSource}" alt="${media.title}, close up view" />`;
+            mediaOuterHTML = `<img src="${mediaSource}" alt="${media.description}" />`;
 
         }
 
         const mediaCard = `
-        <article class="thumbnail-card">
-            <a href="${mediaSource}" class="thumbnail-card__lightbox-link">
+        <div class="thumbnail-card">
+            <a href="${mediaSource}" class="thumbnail-card__lightbox-link" aria-label="${media.title}, closeup view">
                 ${mediaOuterHTML}
             </a>
 
@@ -93,17 +98,12 @@ class Photographer {
                     ${media.title}
                 </p>
 
-                <div class="thumbnail-card-details-likes-infos">
-                    <p class="thumbnail-card-details-likes-infos__number-of-likes">
-                        ${media.likes}
-                    </p>
-
-                    <button class="like-button" aria-label="likes">
-                        <span class="fas fa-heart"></span>
-                    </button>
-                </div>
+                <button class="like-button" aria-label="likes">
+                    <span class="like-button__number-of-likes">${media.likes}</span>
+                    <span class="like-button__icon fas fa-heart" aria-hidden="true"></span>
+                </button>
             </div>
-        </article>`;
+        </div>`;
 
         return mediaCard;
     }

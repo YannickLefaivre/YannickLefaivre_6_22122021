@@ -69,7 +69,7 @@ class SelectMenu {
             role="listbox"
             tabindex="0" 
             aria-labelledby="select-menu-label" 
-            aria-activedescendant="popularity">
+            aria-activedescendant="popularité">
             <li id="popularité" role="option" aria-selected="true">
                 Popularité
                 <span class="fas fa-chevron-up select-menu__arrow"></span>
