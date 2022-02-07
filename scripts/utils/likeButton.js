@@ -2,23 +2,30 @@ class LikeButton {
 
     static init(currentPhotographer) {
 
-        const likeButtons = document.querySelectorAll(".like-button");
+        const likeIcons = document.querySelectorAll(".like-button__icon");
 
-        likeButtons.forEach( (likeButton) => {
+        likeIcons.forEach( (likeIcon) => {
 
-            likeButton.addEventListener("click", (event) => {
+            likeIcon.addEventListener("click", LikeButton.run);
 
-                event.preventDefault();
-
-                LikeButton.addLikes(event);
-
-                LikeButton.updateNumberOfLikesOfMediaInTheDataBase(event, currentPhotographer);
-
-                LikeButton.updatePhotographerTotalOflikes(currentPhotographer);
-
-            });
+            likeIcon.addEventListener("keydown", LikeButton.run);
 
         });
+
+    }
+
+    /**
+     * Active toutes les fonctionnalité du boutons J'aime
+     */
+    static run(event) {
+
+        event.preventDefault();
+
+        LikeButton.addLikes();
+
+        LikeButton.updateNumberOfLikesOfMediaInTheDataBase();
+        
+        LikeButton.updatePhotographerTotalOflikes();
 
     }
 
