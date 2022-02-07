@@ -35,8 +35,6 @@ class Lightbox {
         // Previously focused element before the modal was opened
         this.focusedElementBeforeModal = document.activeElement;
 
-        this.firstAndLastFocusableElements();
-
         this.button = this.modalOverlay.querySelector(".close-button");
         
         this.onKeyup = this.onKeyup.bind(this);

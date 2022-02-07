@@ -31,19 +31,14 @@ class ContactForm {
 
         this.storeFormElements();
 
+        // Last focused element before the opening of the modal
+        this.lastFocusedElement = document.activeElement;
+
         this.button.focus();
 
         this.element.querySelector(".close-button").addEventListener("click", this.close.bind(this));
 
         this.element.addEventListener("keydown", this.onKeydonwn.bind(this));
-
-        this.contentContainer.addEventListener("keydown", (event) => {
-
-            event.preventDefault();
-
-            TrapTabKey.init();
-
-        })
 
         this.form.addEventListener("submit", this.onSubmit.bind(this));
 
@@ -167,13 +162,15 @@ class ContactForm {
 
     onKeydonwn(event) {
 
-        event.preventDefault();
-
         if (event.key === "Escape") {
+
+            event.preventDefault();
 
             this.close(event);
 
         }
+
+        TrapTabKey.init(event, this.contentContainer);
     }
 
     close(event) {
@@ -190,6 +187,7 @@ class ContactForm {
 
         }, 500);
 
+        this.lastFocusedElement.focus();
     }
     
     getInputValue(inputFromToGetTheValue) {
