@@ -67,19 +67,3 @@
         text-overflow: ellipsis;
     }
 }
-
-.thumbnail-card-details-likes-infos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &__number-of-likes {
-        font-size: $photograph-profil__location-font-size;
-
-        color: $primary-color;
-
-        @include from-tablette-and-less {
-            font-size: $photograph-profil__location-font-size-tablette;
-        }
-    }
-}

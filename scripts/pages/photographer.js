@@ -1,4 +1,3 @@
-
 async function getPhotographersData() {
 
     const photographersData = fetch("../data/photographers.json")

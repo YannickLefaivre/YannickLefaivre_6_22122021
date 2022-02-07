@@ -1,6 +1,6 @@
 /**
-    I used Grafikart's tutorial on creating Lightbox in JS Vanilla as a model to implement
-    the opening and closing functionalities of the modal contact form.
+ *  I used Grafikart's tutorial on creating Lightbox in JS Vanilla as a model to implement
+ *   the opening and closing functionalities of the modal contact form.
     The tutorial can be found here: https://grafikart.fr/tutoriels/lightbox-javascript-1224
 */
 class ContactForm {
@@ -31,17 +31,14 @@ class ContactForm {
 
         this.element.querySelector(".close-button").addEventListener("click", this.close.bind(this));
 
+        this.element.addEventListener("keydown", this.onKeydonwn.bind(this));
+
         this.form.addEventListener("submit", this.onSubmit.bind(this));
 
     }
 
     buildDOM() {
-
-        const contactFormBackground = document.createElement("aside");
-
         this.currentPhotographerName = document.querySelector(".photograph-profil__name").innerText;
-
-        contactFormBackground.classList.add("modal", "contact-modal");
 
         contactFormBackground.innerHTML = `
         <div class="contact-modal-content" role="dialog" aria-labelledby="contact-modal-heading">
@@ -51,22 +48,6 @@ class ContactForm {
                     <br />
                     ${this.currentPhotographerName}
                 </h2>
-
-                <button type="button" id="close-button" class="close-button close-button--contact-modal" aria-label="Close contact form">
-                    <svg
-                        aria-hidden="true"
-                        class="close-button__icon"
-                        width="42"
-                        height="42"
-                        viewBox="0 0 42 42"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            d="M42 4.23L37.77 0L21 16.77L4.23 0L0 4.23L16.77 21L0 37.77L4.23 42L21 25.23L37.77 42L42 37.77L25.23 21L42 4.23Z"
-                            fill="currentColor"
-                        />
-                    </svg>
-                </button>
             </header>
 
             <form id="modal-form" name="reserve" action="index.html" method="post">
@@ -130,6 +111,22 @@ class ContactForm {
 
                 <button type="submit" class="button submit-button" value="Submit" formnovalidate>Envoyer</button>
             </form>
+
+            <button type="button" id="close-button" class="close-button close-button--contact-modal" aria-label="Close contact form">
+                <svg
+                    aria-hidden="true"
+                    class="close-button__icon"
+                    width="42"
+                    height="42"
+                    viewBox="0 0 42 42"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M42 4.23L37.77 0L21 16.77L4.23 0L0 4.23L16.77 21L0 37.77L4.23 42L21 25.23L37.77 42L42 37.77L25.23 21L42 4.23Z"
+                        fill="currentColor"
+                    />
+                </svg>
+            </button>
         </div>`;
 
         document.body.classList.toggle("main-wrapper--modal-open");
@@ -140,6 +137,8 @@ class ContactForm {
 
     storeFormElements() {
         
+        this.modalOverlay = document.getElementById("modal-form");
+
         this.button = document.getElementById("close-button");
 
         this.form = document.getElementById("modal-form");
@@ -151,6 +150,20 @@ class ContactForm {
 
         this.firstNameInput = document.getElementById("first-name");
         
+    }
+
+    onKeydonwn(event) {
+
+        event.preventDefault();
+
+        if (event.key === "Escape") {
+
+            this.close(event);
+
+        }
+
+        TrapTabKey.init(event, this.modalOverlay);
+
     }
 
     close(event) {

@@ -26,16 +26,23 @@ class Lightbox {
     
     constructor(mediaLink, linksOfAllMedia, mediaType, mediaTitle) {
         
-        this.element = this.buildDOM(mediaLink);
+        this.modalOverlay = this.buildDOM(mediaLink);
+        this.modalBody = this.modalOverlay.querySelector(".lightbox-modal-content");
+
         this.loadMediaAndItTitle(mediaLink, mediaType, mediaTitle);
         this.linksOfAllMedia = linksOfAllMedia;
 
-        this.button = this.element.querySelector(".close-button");
+        // Previously focused element before the modal was opened
+        this.focusedElementBeforeModal = document.activeElement;
+
+        this.firstAndLastFocusableElements();
+
+        this.button = this.modalOverlay.querySelector(".close-button");
         
         this.onKeyup = this.onKeyup.bind(this);
 
         document.body.classList.add("main-wrapper--modal-open");
-        document.body.appendChild(this.element);
+        document.body.appendChild(this.modalOverlay);
         
         this.button.focus();
 
@@ -46,7 +53,7 @@ class Lightbox {
 
         this.currentMediaLink = null;
 
-        const closeUpView = this.element.querySelector(".close-up-view");
+        const closeUpView = this.modalOverlay.querySelector(".close-up-view");
 
         const currentMediaURL = currentMediaLink.getAttribute("href");
 
@@ -55,13 +62,14 @@ class Lightbox {
         if (mediaType instanceof HTMLVideoElement) {
 
             media = `
-            <video controls class="close-up-view__media" src="${currentMediaURL}" aria-labelledby="media-title"
+            <video tabindex="0" controls class="close-up-view__media" src="${currentMediaURL}" aria-labelledby="media-title"
         ></video>`
 
         } else {
 
             media = `
             <img
+                tabindex="0"
                 class="close-up-view__media"
                 src="${currentMediaURL}"
                 alt="${mediaTitle}"
@@ -97,21 +105,30 @@ class Lightbox {
 
     }
 
+    previouslyFocusedElement() {
+
+        this.focusedElementBeforeModal.focus();
+
+    }
+
+
     close(event) {
 
         event.preventDefault();
 
-        this.element.classList.add("modal--close");
+        this.modalOverlay.classList.add("modal--close");
 
         document.body.classList.remove("main-wrapper--modal-open");
 
         window.setTimeout(() => {
 
-            this.element.parentElement.removeChild(this.element);
+            this.modalOverlay.removeChild(this.modalBody);
 
         }, 500);
 
         document.removeEventListener("keyup", this.onKeyup);
+        
+        this.previouslyFocusedElement();
     }
     
     next(event) {
@@ -144,7 +161,7 @@ class Lightbox {
         let mediaType = this.linksOfAllMedia[this.currentIndex].firstElementChild;
         let mediaTitle = this.linksOfAllMedia[this.currentIndex].parentElement.querySelector(".thumbnail-card-details__title").innerText;
 
-        this.element.querySelector(".next-button").setAttribute("href", `${mediaLink.getAttribute("href")}`);
+        this.modalOverlay.querySelector(".next-button").setAttribute("href", `${mediaLink.getAttribute("href")}`);
 
         this.loadMediaAndItTitle(mediaLink, mediaType, mediaTitle);
     }
@@ -178,7 +195,7 @@ class Lightbox {
         let mediaType = this.linksOfAllMedia[this.currentIndex].firstElementChild;
         let mediaTitle = this.linksOfAllMedia[this.currentIndex].parentElement.querySelector(".thumbnail-card-details__title").innerText;
 
-        this.element.querySelector(".previous-button").setAttribute("href", `${mediaLink.getAttribute("href")}`);
+        this.modalOverlay.querySelector(".previous-button").setAttribute("href", `${mediaLink.getAttribute("href")}`);
 
         this.loadMediaAndItTitle(mediaLink, mediaType, mediaTitle);
 
@@ -186,14 +203,31 @@ class Lightbox {
 
     buildDOM() {
 
-        const modalBackground = document.createElement("aside");
+        const websiteHeader = document.querySelector(".website-header");
 
-        modalBackground.setAttribute("role", "dialog");
-        modalBackground.setAttribute("aria-label", "image closeup view");
-        modalBackground.classList.add("modal");
+        const mainContent = document.getElementById("main");
 
-        modalBackground.innerHTML = `
-        <div class="lightbox-modal-content">
+        const modalOverlay = document.getElementById("lightbox");
+        
+        modalOverlay.classList.remove("modal--close");
+
+        modalOverlay.innerHTML = `
+        <div class="lightbox-modal-content" tabindex="0">
+            <div class="close-up-view">
+            </div>
+            
+            <a href="#" class="lightbox-navigation-button previous-button" aria-label="Previous-image">
+                <span
+                    class="lightbox-navigation-button__icon fas fa-chevron-left"
+                ></span>
+            </a>
+
+            <a href="#" class="lightbox-navigation-button next-button" aria-label="Next-image">
+                <span
+                    class="lightbox-navigation-button__icon fas fa-chevron-right"
+                ></span>
+            </a>
+
             <button id="close-button" class="close-button" aria-label="Close dialog">
                 <svg
                     aria-hidden="true"
@@ -209,28 +243,26 @@ class Lightbox {
                     />
                 </svg>
             </button>
-
-            <a href="#" class="lightbox-navigation-button previous-button" aria-label="Previous-image">
-                <span
-                    class="lightbox-navigation-button__icon fas fa-chevron-left"
-                ></span>
-            </a>
-
-            <div class="close-up-view">
-            </div>
-
-            <a href="#" class="lightbox-navigation-button next-button" aria-label="Next-image">
-                <span
-                    class="lightbox-navigation-button__icon fas fa-chevron-right"
-                ></span>
-            </a>
         </div>`;
 
-        modalBackground.querySelector(".close-button").addEventListener("click", this.close.bind(this));
-        modalBackground.querySelector(".next-button").addEventListener("click", this.next.bind(this));
-        modalBackground.querySelector(".previous-button").addEventListener("click", this.previous.bind(this));
+        const modalBody = document.querySelector(".lightbox-modal-content")
 
-        return modalBackground;
+        websiteHeader.setAttribute("aria-hidden", "true");
+        
+        mainContent.setAttribute("aria-hidden", "true");
+
+        modalOverlay.querySelector(".close-button").addEventListener("click", this.close.bind(this));
+        modalOverlay.querySelector(".next-button").addEventListener("click", this.next.bind(this));
+        modalOverlay.querySelector(".previous-button").addEventListener("click", this.previous.bind(this));
+
+        modalOverlay.addEventListener("keydown", (event) => {
+            
+            TrapTabKey.init(event, modalBody);
+        
+        });
+
+        return modalOverlay;
 
     }
+    
 }
