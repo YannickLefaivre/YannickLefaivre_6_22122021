@@ -21,18 +21,18 @@ export default class Lightbox {
                 const mediaType = event.currentTarget.firstElementChild;
                 const mediaTitle = event.currentTarget.parentElement.querySelector(".thumbnail-card-details__title").innerText;
 
-                new Lightbox(mediaLink, links, mediaType, mediaTitle);
+                new Lightbox(mediaLink, links, mediaType, mediaTitle, mediaLink.getAttribute("alt"));
             });
 
         });
     }
     
-    constructor(mediaLink, linksOfAllMedia, mediaType, mediaTitle) {
+    constructor(mediaLink, linksOfAllMedia, mediaType, mediaTitle, mediaDescription) {
         
         this.modalOverlay = this.buildDOM(mediaLink);
         this.modalBody = this.modalOverlay.querySelector(".lightbox-modal-content");
 
-        this.loadMediaAndItTitle(mediaLink, mediaType, mediaTitle);
+        this.loadMediaAndItTitle(mediaLink, mediaType, mediaTitle, mediaDescription);
         this.linksOfAllMedia = linksOfAllMedia;
 
         // Previously focused element before the modal was opened
@@ -50,7 +50,7 @@ export default class Lightbox {
         document.addEventListener("keyup", this.onKeyup);
     }
 
-    loadMediaAndItTitle(currentMediaLink, mediaType, mediaTitle) {
+    loadMediaAndItTitle(currentMediaLink, mediaType, mediaTitle, mediaDescription) {
 
         this.currentMediaLink = null;
 
@@ -73,7 +73,7 @@ export default class Lightbox {
                 tabindex="0"
                 class="close-up-view__media"
                 src="${currentMediaURL}"
-                alt="${mediaTitle}"
+                alt="${mediaDescription}"
             />`;
 
         }
