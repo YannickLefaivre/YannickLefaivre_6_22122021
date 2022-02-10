@@ -1,8 +1,11 @@
+import ATVisibility from "./atVisibility.js";
+import TrapTabKey from "./trapTabKey.js"
+
 /**
-    Code largely made using Grafikart's tutorial on creating Lightbox in JS Vanilla.
-    The tutorial can be found here: https://grafikart.fr/tutoriels/lightbox-javascript-1224
+    Code made by follow Grafikart's tutorial on creating Lightbox in JS Vanilla.
+    @tutorial The tutorial can be found here: https://grafikart.fr/tutoriels/lightbox-javascript-1224
 */
-class Lightbox {
+export default class Lightbox {
 
     static init() {
 
@@ -116,6 +119,12 @@ class Lightbox {
 
         this.modalOverlay.classList.add("modal--close");
 
+        ATVisibility.toggleATVisibilityFor(this.modalOverlay);
+
+        ATVisibility.toggleMainContentATVisibility();
+
+        ATVisibility.toggleWebsiteHeaderATVisibility();
+
         document.body.classList.remove("main-wrapper--modal-open");
 
         window.setTimeout(() => {
@@ -201,10 +210,6 @@ class Lightbox {
 
     buildDOM() {
 
-        const websiteHeader = document.querySelector(".website-header");
-
-        const mainContent = document.getElementById("main");
-
         const modalOverlay = document.getElementById("lightbox");
         
         modalOverlay.classList.remove("modal--close");
@@ -245,9 +250,11 @@ class Lightbox {
 
         const modalBody = document.querySelector(".lightbox-modal-content")
 
-        websiteHeader.setAttribute("aria-hidden", "true");
-        
-        mainContent.setAttribute("aria-hidden", "true");
+        ATVisibility.toggleATVisibilityFor(this.modalOverlay);
+
+        ATVisibility.toggleWebsiteHeaderATVisibility();
+
+        ATVisibility.toggleMainContentATVisibility();
 
         modalOverlay.querySelector(".close-button").addEventListener("click", this.close.bind(this));
         modalOverlay.querySelector(".next-button").addEventListener("click", this.next.bind(this));

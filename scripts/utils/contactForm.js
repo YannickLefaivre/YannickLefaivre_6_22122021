@@ -1,13 +1,17 @@
+import ATVisibility from "./atVisibility.js";
+import TrapTabKey from "./trapTabKey.js"
+
 /**
- *  I used Grafikart's tutorial on creating Lightbox in JS Vanilla as a model to implement
- *   the opening and closing functionalities of the modal contact form.
-    The tutorial can be found here: https://grafikart.fr/tutoriels/lightbox-javascript-1224
+ *  I follow Grafikart's tutorial on creating Lightbox in JS Vanilla to implement
+*   the opening, closing and keyboard navigation functionalities of the modal contact form.
+    @tutorial The tutorial can be found here: https://grafikart.fr/tutoriels/lightbox-javascript-1224
 */
-class ContactForm {
+export default class ContactForm {
 
     static init() {
         
         const contactButton = document.getElementById("contact-button");
+        const links = document.querySelectorAll(`a[href$=".jpg"], a[href$=".mp4"]`);
         
         contactButton.addEventListener("click", event => { 
             
@@ -17,6 +21,21 @@ class ContactForm {
         
         });
 
+        links.forEach( (link) => {
+
+            link.addEventListener("click", (event) => {
+
+                event.preventDefault();
+                
+                const mediaLink = event.currentTarget;
+                const mediaType = event.currentTarget.firstElementChild;
+                const mediaTitle = event.currentTarget.parentElement.querySelector(".thumbnail-card-details__title").innerText;
+
+                new Lightbox(mediaLink, links, mediaType, mediaTitle);
+            });
+
+        });
+
     }
 
     constructor() {
@@ -24,8 +43,6 @@ class ContactForm {
         this.element = document.getElementById("contact-form");
 
         this.contentContainer = this.buildDOM();
-        
-        this.element.appendChild(this.contentContainer);
 
         this.button = document.getElementById("close-button");
 
@@ -38,7 +55,7 @@ class ContactForm {
 
         this.element.querySelector(".close-button").addEventListener("click", this.close.bind(this));
 
-        this.element.addEventListener("keydown", this.onKeydonwn.bind(this));
+        this.element.addEventListener("keydown", this.onKeydown.bind(this));
 
         this.form.addEventListener("submit", this.onSubmit.bind(this));
 
@@ -49,7 +66,7 @@ class ContactForm {
         this.currentPhotographerName = document.querySelector(".photograph-profil__name").innerText;
 
         this.element.innerHTML = `
-        <div class="contact-modal-content" role="dialog" aria-labelledby="contact-modal-heading" tabindex="0">
+        <div class="contact-modal-content" role="dialog" aria-labelledby="contact-modal-heading" tabindex="-1">
             <header class="contact-modal-header">
                 <h2 id="contact-modal-heading" class="contact-modal-header__heading">
                     Contactez-moi
@@ -136,6 +153,12 @@ class ContactForm {
                 </svg>
             </button>
         </div>`;
+        
+        ATVisibility.toggleATVisibilityFor(this.element);
+
+        ATVisibility.toggleWebsiteHeaderATVisibility();
+
+        ATVisibility.toggleMainContentATVisibility();
 
         const modalContent = this.element.querySelector(".contact-modal-content");
 
@@ -160,7 +183,7 @@ class ContactForm {
         
     }
 
-    onKeydonwn(event) {
+    onKeydown(event) {
 
         if (event.key === "Escape") {
 
@@ -178,6 +201,12 @@ class ContactForm {
         event.preventDefault();
 
         this.element.classList.toggle("modal--close");
+
+        ATVisibility.toggleATVisibilityFor(this.element);
+
+        ATVisibility.toggleWebsiteHeaderATVisibility();
+
+        ATVisibility.toggleMainContentATVisibility();
 
         document.body.classList.toggle("main-wrapper--modal-open");
 

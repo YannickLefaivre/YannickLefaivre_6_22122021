@@ -8,7 +8,7 @@
  * https://github.com/udacity/ud891/tree/gh-pages/lesson2-focus/07-modals-and-keyboard-traps/solution
  *  
 */
-class TrapTabKey {
+export default class TrapTabKey {
     
     static init(event, modalOverlay) {
 
