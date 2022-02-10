@@ -1,4 +1,4 @@
-class Photo {
+export default class Photo {
 
     constructor(id, photographerId, title, image, likes, date, price, description) {
 

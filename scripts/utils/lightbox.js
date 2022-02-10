@@ -250,7 +250,7 @@ export default class Lightbox {
 
         const modalBody = document.querySelector(".lightbox-modal-content")
 
-        ATVisibility.toggleATVisibilityFor(this.modalOverlay);
+        ATVisibility.toggleATVisibilityFor(modalOverlay);
 
         ATVisibility.toggleWebsiteHeaderATVisibility();
 

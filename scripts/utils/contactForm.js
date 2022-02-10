@@ -1,5 +1,5 @@
 import ATVisibility from "./atVisibility.js";
-import TrapTabKey from "./trapTabKey.js"
+import TrapTabKey from "./trapTabKey.js";
 
 /**
  *  I follow Grafikart's tutorial on creating Lightbox in JS Vanilla to implement
@@ -11,7 +11,6 @@ export default class ContactForm {
     static init() {
         
         const contactButton = document.getElementById("contact-button");
-        const links = document.querySelectorAll(`a[href$=".jpg"], a[href$=".mp4"]`);
         
         contactButton.addEventListener("click", event => { 
             
@@ -19,21 +18,6 @@ export default class ContactForm {
 
             new ContactForm();
         
-        });
-
-        links.forEach( (link) => {
-
-            link.addEventListener("click", (event) => {
-
-                event.preventDefault();
-                
-                const mediaLink = event.currentTarget;
-                const mediaType = event.currentTarget.firstElementChild;
-                const mediaTitle = event.currentTarget.parentElement.querySelector(".thumbnail-card-details__title").innerText;
-
-                new Lightbox(mediaLink, links, mediaType, mediaTitle);
-            });
-
         });
 
     }

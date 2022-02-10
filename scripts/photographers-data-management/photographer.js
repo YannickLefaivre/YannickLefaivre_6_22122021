@@ -1,4 +1,8 @@
-class Photographer {
+import Directory from "../utils/directory.js";
+
+import Video from "../media/video.js";
+
+export default class Photographer {
 
     constructor(name, id, city, country, tagline, price, portrait, media) {
         this.name = name;
@@ -11,9 +15,9 @@ class Photographer {
     }
     
     getCardDOM() {
-        const userCard = 
-        `<article class="thumb-photographer">
-            <a href="./pages/photographer.html?id=${this.id}" id="${this.id}">
+        const userCard = `
+        <article class="thumb-photographer">
+            <a href="./pages/photographer.html?id=${this.id}" aria-label="${this.name} - Fisheye">
                 <img class="user" src="./${this.picture}" alt="" />
 
                 <h2 class="thumb-photographer__heading">
@@ -22,15 +26,15 @@ class Photographer {
             </a>
 
             <div class="thumb-photographer-datas">
-                <p class="thumb-photographer-datas__location">
+                <p class="thumb-photographer-datas__location" lang="en">
                     ${this.location}
                 </p>
 
-                <p class="thumb-photographer-datas__tagline" lang="fr">
+                <p class="thumb-photographer-datas__tagline">
                     ${this.tagline}
                 </p>
 
-                <p class="thumb-photographer-datas__price-per-day" lang="fr">
+                <p class="thumb-photographer-datas__price-per-day">
                     ${this.price}€/jour
                 </p>
             </div>
@@ -42,20 +46,20 @@ class Photographer {
     getBannerInfosDOM() {
 
         const bannerInfos = `
-        <section class="photograph-profil">
+        <div class="photograph-profil">
             <h1 class="photograph-profil__name">${this.name}</h1>
 
-            <p class="photograph-profil__location">${this.location}</p>
+            <p class="photograph-profil__location" lang="en">${this.location}</p>
 
             <p class="photograph-profil__tagline">${this.tagline}</p>
-        </section>
+        </div>
 
         <button id="contact-button" class="button contact-button">
             Contactez-moi
         </button>
 
         <img
-            class="user user--photographer-header-id-photo"
+            class="user user--photographer-banner-id-photo"
             src="../${this.picture}"
             alt="${this.name}"
         />`;
@@ -88,22 +92,22 @@ class Photographer {
         }
 
         const mediaCard = `
-        <div class="thumbnail-card">
+        <article class="thumbnail-card">
             <a href="${mediaSource}" class="thumbnail-card__lightbox-link" aria-label="${media.title}, closeup view">
                 ${mediaOuterHTML}
             </a>
 
             <div class="thumbnail-card-details">
-                <p class="thumbnail-card-details__title">
+                <h3 class="thumbnail-card-details__title" title="${media.title}" lang="en">
                     ${media.title}
-                </p>
+                </h3>
 
                 <button class="like-button" aria-label="likes">
                     <span class="like-button__number-of-likes">${media.likes}</span>
                     <span class="like-button__icon fas fa-heart" aria-hidden="true"></span>
                 </button>
             </div>
-        </div>`;
+        </article>`;
 
         return mediaCard;
     }
@@ -132,12 +136,14 @@ class Photographer {
         this.totalOfLikes = this.calculateTotalOfLikes();
 
         const footerInfos = `
-        <p id="total-of-likes">
-            ${this.totalOfLikes} <span class="fas fa-heart"></span>
-        </p>
-
         <p>
-            ${this.price}€ / jour
+            <span id="total-of-likes">
+                ${this.totalOfLikes} <span class="fas fa-heart" aria-label="likes"></span>
+            </span>
+
+            <span>
+                ${this.price}€ / jour
+            </span>
         </p>`;
 
         return footerInfos;

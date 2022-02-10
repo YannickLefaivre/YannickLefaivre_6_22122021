@@ -30,8 +30,12 @@
         top: 0;
         z-index: 99;
 
-        &:focus li.active-option {
-            @include fisheye-hover-and-focus-effect();
+        &:focus {
+            li.active-option {
+                outline: thin dotted;
+                
+                @include fisheye-hover-and-focus-effect();
+            }
         }
 
         li {
@@ -64,6 +68,10 @@
                 background-color: white;
             }
 
+            &:active {
+                @include fisheye-hover-and-focus-effect();
+            }
+
             &:hover {
                 @include fisheye-hover-and-focus-effect();
             }
@@ -87,10 +95,6 @@
             &:nth-child(3)::after {
                 display: none;
             }
-        }
-
-        li.same-as-selected {
-            @include fisheye-hover-and-focus-effect();
         }
     }
 

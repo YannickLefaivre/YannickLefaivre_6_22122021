@@ -1,3 +1,12 @@
+import Factory from "../factories/factory.js";
+
+import Photographer from "../photographers-data-management/photographer.js";
+
+import ContactForm from "../utils/contactForm.js";
+import Lightbox from "../utils/lightbox.js";
+import SelectMenu from "../utils/selectMenu.js";
+import LikeButton from "../utils/likeButton.js";
+
 async function getPhotographersData() {
 
     const photographersData = fetch("../data/photographers.json")
@@ -65,7 +74,7 @@ function getCurrentPhotographer(photographersData) {
 
 function displayPhotographerBanner(currentPhotographer) {
 
-    const photographerBanner = document.querySelector(".photographer-header");
+    const photographerBanner = document.querySelector(".photographer-banner");
     const bannerInfosDOM = currentPhotographer.getBannerInfosDOM();
 
     photographerBanner.innerHTML = bannerInfosDOM;
@@ -115,7 +124,10 @@ async function init() {
     
     const photographersData = await getPhotographersData();
     
-    var currentPhotographer = getCurrentPhotographer(photographersData);
+    const currentPhotographer = getCurrentPhotographer(photographersData);
+
+    // Add the name of the current photographer in the page title
+    document.title = `${currentPhotographer.name} - Fisheye`;
 
     if (await displayData(currentPhotographer) === "finished") {
 

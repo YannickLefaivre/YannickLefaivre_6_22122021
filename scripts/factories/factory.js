@@ -1,6 +1,9 @@
-class Factory {
+import Photo from "../media/photo.js";
+import Video from "../media/video.js";
 
-    static createMedia(media, file) {
+export default class Factory {
+
+    static createMedia(media) {
         if (media.hasOwnProperty("video")) {
 
             return new Video(media.id, media.photographerId, media.title, media.video, media.likes, media.date, media.price, media.description);

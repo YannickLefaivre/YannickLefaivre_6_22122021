@@ -1,3 +1,5 @@
+import Photographer from "../photographers-data-management/photographer.js";
+
 async function getPhotographers() {
 
     const photographers = fetch("data/photographers.json")
@@ -33,29 +35,11 @@ async function displayData(photographers) {
 
 }
 
-function goToSelectedPhotographerPage(event) {
-    
-    event.preventDefault();
-
-    let photographerId = event.currentTarget.getAttribute("id");
-
-    window.document.location = `./pages/photographer.html?id=${photographerId}`;
-
-}
-
 async function init() {
 
     const photographers = await getPhotographers();
 
     displayData(photographers);
-
-    const photographerPageLinks = document.querySelectorAll(`a[href^="./pages/photographer.html"]`);
-
-    photographerPageLinks.forEach( (link) => {
-
-        link.addEventListener("click", goToSelectedPhotographerPage);
-
-    });
 
 };
 

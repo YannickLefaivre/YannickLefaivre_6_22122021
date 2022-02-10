@@ -1,23 +1,26 @@
-.select-menu-section {
+.select-menu-form {
     position: relative;
+    
+    width: auto;
 
-    margin: $select-menu-section-margin;
+    margin: $select-menu-form-margin;
 
-    font-size: $select-menu-section-font-size;
+    font-size: $select-menu-form-font-size;
     font-weight: bold;
 
     display: flex;
+    flex-direction: row;
     justify-content: flex-start;
     align-items: center;
 
     @include from-tablette-and-less {
         margin: 1.2rem $main-wrapper-sides-margin-tablette 0;
         
-        font-size: $select-menu-section-font-size-tablette;
+        font-size: $select-menu-form-font-size-tablette;
     }
     
     @include for-mobile-in-medium-landscape-orientation-500px-599px() {
-        margin: $select-menu-section-margin-sm-mobile;
+        margin: $select-menu-form-margin-sm-mobile;
 
         justify-content: center;
     }

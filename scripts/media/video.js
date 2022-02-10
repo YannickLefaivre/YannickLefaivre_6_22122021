@@ -1,4 +1,4 @@
-class Video {
+export default class Video {
 
     constructor(id, photographerId, title, video, likes, date, price, description) {
 

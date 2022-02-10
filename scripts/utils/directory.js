@@ -1,4 +1,4 @@
-class Directory {
+export default class Directory {
 
     static getMediaDirectoryPath(currentPhotographer) {
         var firstName = currentPhotographer.name.match(/^\w+-?\w+(?!\w)/i);
