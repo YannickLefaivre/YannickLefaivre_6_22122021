@@ -1,6 +1,6 @@
-class Photo {
+export default class Photo {
 
-    constructor(id, photographerId, title, image, likes, date, price) {
+    constructor(id, photographerId, title, image, likes, date, price, description) {
 
         this.id = id;
         this.photographerId = photographerId;
@@ -9,6 +9,7 @@ class Photo {
         this.likes = likes;
         this.date = date;
         this.price = price;
+        this.description = description;
 
     }
 

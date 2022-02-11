@@ -439,8 +439,17 @@ button {
 a:hover, a:focus,
 button:hover,
 button:focus {
-  outline: normal dotted;
   background-color: #DB8876;
+}
+a:focus-visible,
+button:focus-visible {
+  outline: thin dotted;
+}
+
+.screen-reader-only {
+  position: absolute;
+  top: 0;
+  left: -100%;
 }
 
 body {
@@ -543,16 +552,16 @@ select {
     height: 11.75rem;
   }
 }
-.user--photographer-header-id-photo {
+.user--photographer-banner-id-photo {
   order: 3;
 }
 @media screen and (max-width: 1160px) {
-  .user--photographer-header-id-photo {
+  .user--photographer-banner-id-photo {
     order: 2;
   }
 }
 @media screen and (max-width: 699px) {
-  .user--photographer-header-id-photo {
+  .user--photographer-banner-id-photo {
     margin-bottom: 1rem;
     order: -1;
   }
@@ -593,20 +602,24 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
   color: #901C1C;
   background-color: transparent;
   transition: outline 0.3s, color 0.3s;
 }
 @media screen and (max-width: 992px) {
-  .like-button {
+  .like-button__number-of-likes {
+    font-size: 1.3125rem;
+  }
+  .like-button__icon {
     font-size: 1.3125rem;
   }
 }
 .like-button__number-of-likes {
+  font-size: 1.5rem;
   color: #901C1C;
 }
 .like-button__icon {
+  font-size: 1.5rem;
   margin-left: 0.39875rem;
 }
 
@@ -734,6 +747,7 @@ select {
   z-index: 99;
 }
 .select-menu .select-items:focus li.active-option {
+  outline: thin dotted;
   color: #000;
   background-color: #DB8876;
 }
@@ -778,6 +792,10 @@ select {
   height: 1px;
   background-color: white;
 }
+.select-menu .select-items li:active {
+  color: #000;
+  background-color: #DB8876;
+}
 .select-menu .select-items li:hover {
   color: #000;
   background-color: #DB8876;
@@ -799,10 +817,6 @@ select {
 }
 .select-menu .select-items li:nth-child(3)::after {
   display: none;
-}
-.select-menu .select-items li.same-as-selected {
-  color: #000;
-  background-color: #DB8876;
 }
 .select-menu .select-hide {
   display: none;
@@ -956,7 +970,7 @@ select {
   }
 }
 
-.photographer-header {
+.photographer-banner {
   margin: 2.5rem 4.5rem 1rem;
   padding: 3.5rem 3.125rem 2.625rem;
   display: flex;
@@ -967,29 +981,29 @@ select {
   border-radius: 0.3125rem;
 }
 @media screen and (max-width: 1160px) {
-  .photographer-header {
+  .photographer-banner {
     gap: 3rem;
   }
 }
 @media screen and (max-width: 1160px) {
-  .photographer-header {
+  .photographer-banner {
     gap: 3rem 0.8rem;
   }
 }
 @media screen and (max-width: 992px) {
-  .photographer-header {
+  .photographer-banner {
     padding: 3.5rem 4.375rem 2.625rem;
     gap: 3rem 4rem;
   }
 }
 @media screen and (max-width: 872px) {
-  .photographer-header {
+  .photographer-banner {
     margin: 0;
     gap: 3rem;
   }
 }
 @media screen and (max-width: 699px) {
-  .photographer-header {
+  .photographer-banner {
     padding: 3.5rem 3.125rem 2.625rem;
     flex-direction: column;
     justify-content: center;
@@ -997,7 +1011,7 @@ select {
   }
 }
 @media screen and (max-width: 599px) {
-  .photographer-header {
+  .photographer-banner {
     margin: initial;
   }
 }
@@ -1046,33 +1060,36 @@ select {
   }
 }
 
-.select-menu-section {
+.select-menu-form {
   position: relative;
+  width: auto;
   margin: 0 4.5rem;
   font-size: 1.125rem;
   font-weight: bold;
   display: flex;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: center;
 }
 @media screen and (max-width: 992px) {
-  .select-menu-section {
+  .select-menu-form {
     margin: 1.2rem 4.375rem 0;
     font-size: 0.9375rem;
   }
 }
 @media screen and (max-width: 599px) {
-  .select-menu-section {
+  .select-menu-form {
     margin: 1.25rem 1rem 0;
     justify-content: center;
   }
 }
-.select-menu-section__label {
+.select-menu-form__label {
   margin-right: 1rem;
   margin-bottom: 1rem;
 }
 
 .photographer-gallery {
+  overflow: hidden;
   margin: 3.625rem 4.5rem 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1152,6 +1169,7 @@ select {
 .thumbnail-card-details__title {
   max-width: 12rem;
   color: #901C1C;
+  font-weight: normal;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -1164,10 +1182,7 @@ select {
   right: 36px;
   bottom: 0;
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  font-size: 1.5rem;
-  color: #000;
   background-color: #DB8876;
   border-radius: 0.3125rem;
   z-index: 2;
@@ -1176,6 +1191,18 @@ select {
   .photographer-likes-and-price {
     width: 22rem;
     height: 4rem;
+  }
+}
+.photographer-likes-and-price p {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #000;
+}
+@media screen and (max-width: 1160px) {
+  .photographer-likes-and-price p {
     font-size: 1.3125rem;
   }
 }

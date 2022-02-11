@@ -1,9 +1,12 @@
+import ATVisibility from "./atVisibility.js";
+import TrapTabKey from "./trapTabKey.js";
+
 /**
- *  I used Grafikart's tutorial on creating Lightbox in JS Vanilla as a model to implement
- *   the opening and closing functionalities of the modal contact form.
-    The tutorial can be found here: https://grafikart.fr/tutoriels/lightbox-javascript-1224
+ *  I follow Grafikart's tutorial on creating Lightbox in JS Vanilla to implement
+*   the opening, closing and keyboard navigation functionalities of the modal contact form.
+    @tutorial The tutorial can be found here: https://grafikart.fr/tutoriels/lightbox-javascript-1224
 */
-class ContactForm {
+export default class ContactForm {
 
     static init() {
         
@@ -21,27 +24,33 @@ class ContactForm {
 
     constructor() {
 
-        this.element = this.buildDOM();
-        
-        document.body.appendChild(this.element);
+        this.element = document.getElementById("contact-form");
+
+        this.contentContainer = this.buildDOM();
+
+        this.button = document.getElementById("close-button");
 
         this.storeFormElements();
+
+        // Last focused element before the opening of the modal
+        this.lastFocusedElement = document.activeElement;
 
         this.button.focus();
 
         this.element.querySelector(".close-button").addEventListener("click", this.close.bind(this));
 
-        this.element.addEventListener("keydown", this.onKeydonwn.bind(this));
+        this.element.addEventListener("keydown", this.onKeydown.bind(this));
 
         this.form.addEventListener("submit", this.onSubmit.bind(this));
 
     }
 
     buildDOM() {
+
         this.currentPhotographerName = document.querySelector(".photograph-profil__name").innerText;
 
-        contactFormBackground.innerHTML = `
-        <div class="contact-modal-content" role="dialog" aria-labelledby="contact-modal-heading">
+        this.element.innerHTML = `
+        <div class="contact-modal-content" role="dialog" aria-labelledby="contact-modal-heading" tabindex="-1">
             <header class="contact-modal-header">
                 <h2 id="contact-modal-heading" class="contact-modal-header__heading">
                     Contactez-moi
@@ -50,7 +59,7 @@ class ContactForm {
                 </h2>
             </header>
 
-            <form id="modal-form" name="reserve" action="index.html" method="post">
+            <form id="modal-form" name="reserve" action="#" method="post">
                 <div id="data-form-first-name" class="form-data">
                     <label for="first-name">Prénom</label>
                     <input 
@@ -62,7 +71,7 @@ class ContactForm {
                         required
                     />
 
-                    <p aria-hidden="true" class="form-data__error-message hidden-content">  </p>
+                    <p class="form-data__error-message hidden-content">  </p>
                 </div>
 
                 <div id="data-form-last-name" class="form-data">
@@ -76,7 +85,7 @@ class ContactForm {
                         required
                     />
 
-                    <p aria-hidden="true" class="form-data__error-message hidden-content">  </p>
+                    <p class="form-data__error-message hidden-content">  </p>
                 </div>
 
                 <div id="data-form-email" class="form-data form-data--email">
@@ -90,7 +99,7 @@ class ContactForm {
                         required
                     />
 
-                    <p aria-hidden="true" class="form-data__error-message hidden-content"></p>
+                    <p class="form-data__error-message hidden-content"></p>
                 </div>
 
                 <div id="data-form-message" class="form-data form-data--message">
@@ -106,7 +115,7 @@ class ContactForm {
                         rows="10" 
                     ></textarea>
 
-                    <p aria-hidden="true" class="form-data__error-message hidden-content"></p>
+                    <p class="form-data__error-message hidden-content"></p>
                 </div>
 
                 <button type="submit" class="button submit-button" value="Submit" formnovalidate>Envoyer</button>
@@ -128,18 +137,24 @@ class ContactForm {
                 </svg>
             </button>
         </div>`;
+        
+        ATVisibility.toggleATVisibilityFor(this.element);
+
+        ATVisibility.toggleWebsiteHeaderATVisibility();
+
+        ATVisibility.toggleMainContentATVisibility();
+
+        const modalContent = this.element.querySelector(".contact-modal-content");
+
+        this.element.classList.remove("modal--close");
 
         document.body.classList.toggle("main-wrapper--modal-open");
 
-        return contactFormBackground;
+        return modalContent;
 
     }
 
     storeFormElements() {
-        
-        this.modalOverlay = document.getElementById("modal-form");
-
-        this.button = document.getElementById("close-button");
 
         this.form = document.getElementById("modal-form");
 
@@ -152,18 +167,17 @@ class ContactForm {
         
     }
 
-    onKeydonwn(event) {
-
-        event.preventDefault();
+    onKeydown(event) {
 
         if (event.key === "Escape") {
+
+            event.preventDefault();
 
             this.close(event);
 
         }
 
-        TrapTabKey.init(event, this.modalOverlay);
-
+        TrapTabKey.init(event, this.contentContainer);
     }
 
     close(event) {
@@ -172,14 +186,21 @@ class ContactForm {
 
         this.element.classList.toggle("modal--close");
 
+        ATVisibility.toggleATVisibilityFor(this.element);
+
+        ATVisibility.toggleWebsiteHeaderATVisibility();
+
+        ATVisibility.toggleMainContentATVisibility();
+
         document.body.classList.toggle("main-wrapper--modal-open");
 
         window.setTimeout(() => {
 
-            this.element.parentElement.removeChild(this.element);
+            this.element.removeChild(this.contentContainer);
 
         }, 500);
 
+        this.lastFocusedElement.focus();
     }
     
     getInputValue(inputFromToGetTheValue) {
@@ -232,8 +253,6 @@ class ContactForm {
         if (!errorMessageParagraph.classList.contains("hidden-content")) {
 
             concernedField.querySelector(".form-data__error-message").classList.toggle("hidden-content");
-
-            const contentContainer = this.element.querySelector(".contact-modal-content");
 
         }
 

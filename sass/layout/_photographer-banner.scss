@@ -1,6 +1,6 @@
-.photographer-header {
-    margin: $photographer-header-margin;
-    @include set-padding($photographer-header-padding);
+.photographer-banner {
+    margin: $photographer-banner-margin;
+    @include set-padding($photographer-banner-padding);
 
     display: flex;
     flex-flow: row wrap;
@@ -13,27 +13,27 @@
     border-radius: $small-beveled-border;
 
     @include from-computer-and-less {
-        gap: $photographer-header-row-gutter;
+        gap: $photographer-banner-row-gutter;
     }
 
     @include from-small-computer-and-less {
-        gap: $photographer-header-gutter-sm-computer;
+        gap: $photographer-banner-gutter-sm-computer;
     }
 
     @include from-tablette-and-less {
-        @include set-padding($photographer-header-padding-tablette);
+        @include set-padding($photographer-banner-padding-tablette);
 
-        gap: $photographer-header-gutter-tablette;
+        gap: $photographer-banner-gutter-tablette;
     }
 
     @include for-mobile-in-extra-large-landscape-orientation-and-small-tablette {
         margin: 0;
 
-        gap: $photographer-header-gutter-xl-mobile-landscape-orientation;
+        gap: $photographer-banner-gutter-xl-mobile-landscape-orientation;
     }
 
     @include for-mobile-in-large-landscape-orientation {
-        @include set-padding($photographer-header-padding);
+        @include set-padding($photographer-banner-padding);
         
         flex-direction: column;
 

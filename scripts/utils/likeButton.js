@@ -1,4 +1,4 @@
-class LikeButton {
+export default class LikeButton {
 
     static init(currentPhotographer) {
 
@@ -6,26 +6,34 @@ class LikeButton {
 
         likeIcons.forEach( (likeIcon) => {
 
-            likeIcon.addEventListener("click", LikeButton.run);
+            likeIcon.addEventListener("click", (event) => {
 
-            likeIcon.addEventListener("keydown", LikeButton.run);
+                LikeButton.run(event, currentPhotographer);
+
+            });
+
+            likeIcon.addEventListener("keydown", (event) => {
+
+                LikeButton.run(event, currentPhotographer);
+
+            });
 
         });
 
     }
 
     /**
-     * Active toutes les fonctionnalité du boutons J'aime
+     * Enables all Like button functionality
      */
-    static run(event) {
+    static run(event, currentPhotographer) {
 
         event.preventDefault();
 
-        LikeButton.addLikes();
+        LikeButton.addLikes(event);
 
-        LikeButton.updateNumberOfLikesOfMediaInTheDataBase();
+        LikeButton.updateNumberOfLikesOfMediaInTheDataBase(event, currentPhotographer);
         
-        LikeButton.updatePhotographerTotalOflikes();
+        LikeButton.updatePhotographerTotalOflikes(currentPhotographer);
 
     }
 

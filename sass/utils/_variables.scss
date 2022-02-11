@@ -39,7 +39,7 @@ $thumbnail-card-details__title-max-width: 12rem;
 
 /* Margins variables */
 
-$user--photographer-header-id-photo-margin-bottom: 1rem;
+$user--photographer-banner-id-photo-margin-bottom: 1rem;
 
 $main-wrapper-sides-margin: 4.5rem;
 $main-wrapper-sides-margin-tablette: 4.375rem;
@@ -65,8 +65,8 @@ $select-menu__selected-item-vertical-padding-sm-mobile: 1.0625rem;
 $select-menu__selected-item-left-padding: 1.25rem;
 $select-menu__selected-item-right-padding: 1.125rem;
 
-$photographer-header-padding-top: 3.5rem;
-$photographer-header-padding-bottom: 2.625rem;
+$photographer-banner-padding-top: 3.5rem;
+$photographer-banner-padding-bottom: 2.625rem;
 
 $contact-modal-content-padding-top: 1.5625rem;
 
@@ -80,8 +80,8 @@ $contact-button-font-size-mobile: 1.0625rem;
 $select-menu-font-size: 1.125rem;
 $select-menu-font-size-sm-mobile: 0.9375rem;
 
-$select-menu-section-font-size: 1.125rem;
-$select-menu-section-font-size-tablette: 0.9375rem;
+$select-menu-form-font-size: 1.125rem;
+$select-menu-form-font-size-tablette: 0.9375rem;
 
 $first-heading-tablette-font-size: 1.7rem;
 $first-heading-mobile-landscape-orientation-font-size: 1.5rem;
@@ -130,7 +130,7 @@ $one-column: 1fr;
 $two-column: repeat(2, 1fr);
 $three-column: repeat(3, 1fr);
 
-$select-menu-section-second-column-width: 8.814rem;
+$select-menu-form-second-column-width: 8.814rem;
 
 $modal-grid-columns-1-and-3-length: 0.8fr;
 
@@ -140,10 +140,10 @@ $photographer-section-gutter-computer: 7rem;
 
 $photographer-page-link-gutter: 1rem;
 
-$photographer-header-row-gutter: 3rem;
-$photographer-header-gutter-xl-mobile-landscape-orientation: 3rem;
+$photographer-banner-row-gutter: 3rem;
+$photographer-banner-gutter-xl-mobile-landscape-orientation: 3rem;
 
-$select-menu-section-gutter: 0 1.5625rem;
+$select-menu-form-gutter: 0 1.5625rem;
 
 /* Radius variables */
 

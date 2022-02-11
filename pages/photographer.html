@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 	<head>
 		<meta charset="utf-8" />
 
@@ -21,7 +21,7 @@
 			defer
 		></script>
 
-		<title>FishEye - Photographe</title>
+		<title>Photographe - Fisheye</title>
 		<meta name="description" content="Page de présentation des photos et vidéos du photographe ainsi que moyen de contacte." />
 	</head>
 
@@ -41,14 +41,14 @@
 		</header>
 
 		<main id="main" aria-hidden="false">
-			<header class="photographer-header" aria-label="Photographer page banner">
+			<header class="photographer-banner" aria-label="Photographer page banner">
 			</header>
 
 			<aside class="photographer-likes-and-price">
 			</aside>
 
-			<div class="select-menu-section">
-				<p id="select-menu-label" class="select-menu-section__label" lang="fr">Trier par</p>
+			<form class="select-menu-form" name="select-menu-form" method="get" action="#" novalidate>
+				<p id="select-menu-label" class="select-menu-form__label">Trier par</p>
 
 				<div class="select-menu">
 					<button
@@ -57,38 +57,25 @@
 						class="select-menu__selected-item"
 						aria-haspopup="listbox"
 						aria-expanded="false"
-						lang="fr"
+						aria-labelledby="select-menu-label select-menu-trigger"
 					>
 						Popularité
 						<span class="fas fa-chevron-down select-menu__arrow" aria-hidden="true"></span>
 					</button>
 				</div>
-			</div>
+			</form>
 
-			<div class="photographer-gallery">
-			</div>
+			<section id="photographer-gallery" class="photographer-gallery">
+				<h2 class="screen-reader-only" id="photographer-gallery__heading">Photos et vidéos</h2>
+			</section>
 		</main>
 
-		<div id="lightbox" class="modal modal--close" role="dialog" aria-label="image closeup view">
+		<div id="lightbox" class="modal modal--close" role="dialog" aria-label="image closeup view" aria-hidden="true">
 		</div>
 
-		<div id="contact-form" class="modal modal--close modal-contact"></div>
+		<div id="contact-form" class="modal modal--close contact-modal" aria-hidden="true">
+		</div>
 
-		<script src="../scripts/factories/factory.js"></script>
-		
-		<script src="../scripts/media/video.js"></script>
-		<script src="../scripts/media/photo.js"></script>
-
-		<script src="../scripts/utils/directory.js"></script>
-
-		<script src="../scripts/photographers-data-management/photographer.js"></script>
-
-		<script src="../scripts/utils/trapTabKey.js"></script>
-		<script src="../scripts/utils/contactForm.js"></script>
-		<script src="../scripts/utils/lightbox.js"></script>
-		<script src="../scripts/utils/likeButton.js"></script>
-		<script src="../scripts/utils/selectMenu.js"></script>
-
-		<script src="../scripts/pages/photographer.js"></script>
+		<script type="module" src="../scripts/pages/photographer.js"></script>
 	</body>
 </html>

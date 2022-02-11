@@ -5,10 +5,10 @@ $photographer-section-margin-tablette: 3rem $main-wrapper-sides-margin-tablette;
 $photographer-section-margin-small-landscape-orientation: 3rem 3rem;
 $photographer-section-margin-mobile: 3rem $main-wrapper-sides-margin-lg-mobile;
 
-$photographer-header-margin: 2.5rem $main-wrapper-sides-margin 1rem;
+$photographer-banner-margin: 2.5rem $main-wrapper-sides-margin 1rem;
 
-$select-menu-section-margin: $zero-value $main-wrapper-sides-margin;
-$select-menu-section-margin-sm-mobile: 1.25rem 1rem $zero-value;
+$select-menu-form-margin: $zero-value $main-wrapper-sides-margin;
+$select-menu-form-margin-sm-mobile: 1.25rem 1rem $zero-value;
 
 $photographer-gallery-margin: $photographer-gallery-margin-top $main-wrapper-sides-margin $zero-value;
 $photographer-gallery-margin-tablette: $photographer-gallery-margin-top $main-wrapper-sides-margin-tablette $zero-value;
@@ -19,8 +19,8 @@ $lightbox-modal-content-margin-mobile-in-landscape-orientation: $lightbox-modal-
 
 /* Padding lists */
 
-$photographer-header-padding: $photographer-header-padding-top 3.125rem $photographer-header-padding-bottom;
-$photographer-header-padding-tablette: $photographer-header-padding-top $main-wrapper-sides-margin-tablette $photographer-header-padding-bottom;
+$photographer-banner-padding: $photographer-banner-padding-top 3.125rem $photographer-banner-padding-bottom;
+$photographer-banner-padding-tablette: $photographer-banner-padding-top $main-wrapper-sides-margin-tablette $photographer-banner-padding-bottom;
 
 $select-menu__selected-item-padding: 
     $select-menu__selected-item-vertical-padding
@@ -44,14 +44,14 @@ $select-item-3-padding-sm-mobile: 11px 20px 10px;
 
 /* Grid templates */
 
-$select-menu-section-grid-columns-width: 0.8fr $select-menu-items-width-sm-mobile;
-$select-menu-section-grid-rows-height: 2.5rem 1fr;
+$select-menu-form-grid-columns-width: 0.8fr $select-menu-items-width-sm-mobile;
+$select-menu-form-grid-rows-height: 2.5rem 1fr;
 
-$select-menu-section-grid-template-sm-mobile: $select-menu-section-grid-rows-height / $select-menu-section-grid-columns-width;
+$select-menu-form-grid-template-sm-mobile: $select-menu-form-grid-rows-height / $select-menu-form-grid-columns-width;
 
 /* Grid columns length */
 
-$select-menu-section-grid-columns-width: 4.625rem 10.625rem;
+$select-menu-form-grid-columns-width: 4.625rem 10.625rem;
 
 /* Gap lists */
 
@@ -61,5 +61,5 @@ $photographer-section-gutter-mobile-sm-landscape-orientation: 4.375rem 3rem;
 $photographer-section-gutter: 5rem 10rem;
 $photographer-section-gutter-tablette: 5rem 4rem;
 
-$photographer-header-gutter-sm-computer: $photographer-header-row-gutter 0.8rem;
-$photographer-header-gutter-tablette: $photographer-header-row-gutter 4rem;
+$photographer-banner-gutter-sm-computer: $photographer-banner-row-gutter 0.8rem;
+$photographer-banner-gutter-tablette: $photographer-banner-row-gutter 4rem;

@@ -1,3 +1,5 @@
+import Photographer from "../photographers-data-management/photographer.js";
+
 async function getPhotographers() {
 
     const photographers = fetch("data/photographers.json")

@@ -1,4 +1,8 @@
-class SelectMenu {
+/**
+ * 
+ * @property {HTMLButtonELement} button
+ */
+export default class SelectMenu {
 
     static init(currentPhotographer) {
 
@@ -21,11 +25,13 @@ class SelectMenu {
         this.button.setAttribute("aria-expanded", "true");
        
         this.options = this.optionsContainer.querySelectorAll("li");
-        
-        this.closeCallbackCallCount = 0;
 
         this.activeDescendant = 0;
 
+        this.stringFromKeysInput = "";
+
+        this.clearStringFromKeysInput = null;
+        
         this.registerEventListener();
 
     }
@@ -36,29 +42,31 @@ class SelectMenu {
 
             clickEvent.stopPropagation();
 
-        })
+        });
 
         this.button.addEventListener("click", this.open.bind(this));
+
+        this.button.addEventListener("keydown", this.onKeydown.bind(this));
+        
+        this.optionsContainer.addEventListener("keydown", this.onKeydown.bind(this));
 
         this.options.forEach( (option) => {
         
             option.addEventListener("click", this.selectOption.bind(this));
     
         });
+        
+        document.addEventListener("keydown", this.preventWindowScroll.bind(this));
 
-        document.addEventListener("keyup", this.onKeyup.bind(this));
-            
         document.addEventListener("click", this.close.bind(this));
 
     }
 
     unregisteredEvent() {
 
-        this.options.forEach( (option) => {
-        
-            option.removeEventListener("click", this.selectOption.bind(this));
-    
-        });
+        this.optionsContainer.removeEventListener("keydown", this.onKeydown.bind(this));
+
+        document.removeEventListener("keydown", this.preventWindowScroll);
 
     }
     
@@ -67,15 +75,15 @@ class SelectMenu {
         const optionsContainerDOM = `
         <ul class="select-items select-hide" 
             role="listbox"
-            tabindex="0" 
+            tabindex="-1" 
             aria-labelledby="select-menu-label" 
             aria-activedescendant="popularity">
-            <li id="popularité" role="option" aria-selected="true">
+            <li id="popularity" role="option" aria-selected="true">
                 Popularité
                 <span class="fas fa-chevron-up select-menu__arrow"></span>
             </li>
             <li id="date" role="option" aria-selected="false">Date</li>
-            <li id="titre" role="option" aria-selected="false">Titre</li>
+            <li id="title" role="option" aria-selected="false">Titre</li>
         </ul>`;
 
         this.container.innerHTML += optionsContainerDOM;
@@ -86,69 +94,122 @@ class SelectMenu {
 
     }
 
-    onKeyup(event) {
-        
-        event.preventDefault();
+    /**
+     * 
+     * @param {KeyboardEvent} keyboardEvent
+     */
+    onKeydown(keyboardEvent) {
 
-        event.stopPropagation();
+        if (keyboardEvent.defaultPrevented) {
 
-        if (event.key === "Enter" && event.currentTarget.nodeName === this.button.nodeName) {
+            return;
 
-            if (!this.isAlreadyInstantiate) {
-
-                new SelectMenu(this.currentPhotographer);
-
-            }
-
-        } else if (event.key === "Enter" && event.currentTarget.nodeName === this.options.nodeName) {
-
-            this.selectOption(event, this.currentPhotographer);
-
-        } else if (event.key === "Escape") {
-
-            this.close(event);
-        
-        } else if (event.key === "ArrowUp" && document.activeElement === this.optionsContainer) {
-
-            this.removeFocusIndicatorOfOption();
-
-            this.optionsContainer.setAttribute("aria-activedescendant", `${this.options[this.activeDescendant].id}`);
-
-            this.options[this.activeDescendant].classList.add("active-option");
-
-            if (this.activeDescendant === 0) {
-
-                this.activeDescendant = 2;
-
-            } else {
-
-                this.activeDescendant--;
-
-            }
-                
-        } else if (event.key === "ArrowDown" && document.activeElement === this.optionsContainer) {
-
-            this.removeFocusIndicatorOfOption();
-
-            this.optionsContainer.setAttribute("aria-activedescendant", `${this.options[this.activeDescendant].id}`);
-
-            this.options[this.activeDescendant].classList.add("active-option");
-
-            if (this.activeDescendant === 3) {
-
-                this.activeDescendant = 0;
-
-            } else {
-
-                this.activeDescendant++;
-
-            }
         }
+
+        switch (keyboardEvent.key) {
+        
+            case "Enter":
+                
+                if (keyboardEvent.currentTarget === this.button) {
+
+                    if (!this.isAlreadyInstantiate) {
+
+                        new SelectMenu(this.currentPhotographer);
+
+                    } else {
+
+                        this.open(keyboardEvent);
+
+                    }
+                }
+                
+                if (keyboardEvent.currentTarget === this.optionsContainer) {
+
+                    this.selectOption(keyboardEvent, this.currentPhotographer);
+
+                    this.button.focus();
+                }
+
+                break;
+
+            case "Escape":
+
+                this.close(keyboardEvent);
+
+                this.button.focus();
+
+                break;
+            
+            case "ArrowUp": 
+            
+                this.moveFocusTo("previous");
+
+                break;
+
+            case "ArrowDown":
+                
+                this.moveFocusTo("next");
+
+                break;
+
+            case "Tab":
+                
+                this.close(keyboardEvent);
+
+                this.button.focus();
+
+                return;
+
+            case "CapsLock":
+
+                this.typeAhead(keyboardEvent.key)
+
+                break;
+                
+            default:
+
+                break;
+
+        }
+
+        /*  
+            After the SHIFT key was pressed search if a printable character was pressed
+            in combination with it and compare the first letter of the option label 
+            with this printable character. If it match give the corresponding option 
+            the focus.
+        */
+        if (keyboardEvent.shiftKey) {
+
+            this.typeAhead(keyboardEvent.key);
+
+        } else {
+
+            /* 
+                Same here but in the case when the SHIFT key wasn't pressed and only 
+                the printable character was pressed.
+            */
+           this.typeAhead(keyboardEvent.key);
+
+        }
+
+        if (keyboardEvent.currentTarget !== this.button) {
+
+            keyboardEvent.preventDefault();
+
+        }
+
     }
 
+    /**
+     * @param {PointerEvent | KeyboardEvent} event
+     */
     open(event) {
+        
+        if(!event.defaultPrevented) {
 
-        event.preventDefault();
+            event.preventDefault();
+
+        }
 
         event.stopPropagation();
 
@@ -166,9 +227,13 @@ class SelectMenu {
 
     close(event) {
 
-        event.preventDefault();
+        if ([this.optionsContainer, this.options, this.button, this.container].includes(event.target)) {
 
-        event.stopPropagation();
+            /* event.preventDefault(); */
+
+            event.stopPropagation();
+
+        }
 
         if (!this.optionsContainer.classList.contains("select-hide")) {
 
@@ -177,9 +242,21 @@ class SelectMenu {
             this.button.setAttribute("aria-expanded", "false");
 
             this.unregisteredEvent();
-
-            /* document.removeEventListener("keydown", this.close); */
         
+        }
+
+    }
+
+    preventWindowScroll(event) {
+
+        if (document.activeElement === this.optionsContainer) {
+
+            if(event.key === "ArrowUp" || event.key === "ArrowDown") {
+
+                event.preventDefault();
+
+            }
+
         }
 
     }
@@ -190,7 +267,7 @@ class SelectMenu {
 
             if (option.classList.contains("active-option")) {
                 
-                option.classList.remove("active-option");
+                option.removeAttribute("class");
 
             }
 
@@ -201,15 +278,9 @@ class SelectMenu {
 
     sortMediaCards(currentPhotographer, media, sortBy) {
 
-        if(sortBy !== undefined) {
-
-            this.currentFilter = sortBy;
-
-        }
-
         switch (sortBy) {
 
-            case "Popularité":
+            case "popularity":
                 
                 SelectMenu.sortByPopularity(media);
                 
@@ -217,7 +288,7 @@ class SelectMenu {
 
                 break;
 
-            case "Titre":
+            case "title":
                             
                 SelectMenu.sortByTitle(media);
                 
@@ -225,7 +296,7 @@ class SelectMenu {
 
                 break;
             
-            case "Date":
+            case "date":
                 
                 SelectMenu.sortByDate(media);
                 
@@ -235,7 +306,7 @@ class SelectMenu {
         
             default:
                 
-                break;
+                return;
                 
         }
 
@@ -326,23 +397,140 @@ class SelectMenu {
         LikeButton.init(currentPhotographer);
     }
 
+    /**
+     * Move the visible focus in the direction of the next or previous option.
+     * 
+     * @param {String} elementDirection can be set to "next" or "previous"
+     */
+    moveFocusTo(elementDirection) {
+
+        if(document.activeElement === this.optionsContainer) {
+
+            this.removeFocusIndicatorOfOption();
+
+            if (elementDirection === "next") {
+
+                if (this.activeDescendant < 2) {
+
+                    this.activeDescendant++;
+
+                }
+
+            } else if (elementDirection === "previous") {
+
+                if (this.activeDescendant > 0) {
+
+                    this.activeDescendant--;
+
+                }
+
+            }
+
+            this.optionsContainer.setAttribute("aria-activedescendant", `${this.options[this.activeDescendant].id}`);
+
+            this.options[this.activeDescendant].classList.add("active-option");
+        }
+
+    }
+
+    /**
+     * @license W3C-Software-License (Possibility to type multiple characters in rapid succession for select an option was made with the clearTimeout portion of the findItemToFocus() method of this document : https://www.w3.org/TR/wai-aria-practices-1.1/examples/listbox/js/listbox.js)
+     * 
+     * @param {KeyboardEvent.key} key
+     */
+    typeAhead(key) {
+
+        /*  */
+        const printableCharacters = ["a", "b", "c", "d", "f", "g",
+        "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", 
+        "t", "u", "v", "w", "x", "y", "z", "<", ">", "à", "â", "é", 
+        "ê", "è", "ç", "î", "ô", "ù", "û"];
+
+        let character = key.toLowerCase();
+
+        if (printableCharacters.includes(character)) {
+
+            this.stringFromKeysInput += character;
+
+            if(this.clearStringFromKeysInput) {
+
+                clearInterval(this.clearStringFromKeysInput);
+                this.clearStringFromKeysInput = null;
+
+            }
+
+            this.clearStringFromKeysInput = setTimeout(() => {
+
+                this.stringFromKeysInput = "";
+                this.clearStringFromKeysInput = null;
+
+            }, 500);
+            
+            for (let index = 0; index < this.options.length; index++) {
+
+                let optionText = this.options[index].innerText;
+
+                const optionTextCaseInsensitive = optionText.toLowerCase();
+            
+                if (optionTextCaseInsensitive.startsWith(this.stringFromKeysInput)) {
+
+                    this.removeFocusIndicatorOfOption();
+
+                    this.activeDescendant = index;
+
+                    this.optionsContainer.setAttribute("aria-activedescendant", `${this.options[this.activeDescendant].id}`);
+
+                    this.options[this.activeDescendant].classList.add("active-option");
+
+                    break;
+
+                }
+
+            }
+
+        }
+
+    }
+
     selectOption(event) {
 
-        event.preventDefault();
+        /* event.preventDefault(); */
 
         event.stopPropagation();
+        
+        var selectedOption = HTMLLIElement;
 
-        this.sortMediaCards(this.currentPhotographer, this.currentPhotographer.media, event.currentTarget.innerText);
+        var optionsList = Array.prototype.slice.call(this.options);
 
-        this.options.forEach( (option) => {
+        if (event.currentTarget === this.optionsContainer) {
+
+            selectedOption = event.currentTarget.querySelector(".active-option");
+
+        } else {
+
+            selectedOption = event.currentTarget;
+
+        }
+
+        optionsList.forEach( (option) => {
 
             option.setAttribute("aria-selected", "false");
 
-        })
+            option.classList.remove("active-option");
 
-        document.getElementById(`${this.currentFilter.toLowerCase()}`).setAttribute("aria-selected", `true`);
+        });
 
-        this.button.innerHTML = `${this.currentFilter} <span class="fas fa-chevron-down select-menu__arrow"></span>`;
+        this.activeDescendant = optionsList.indexOf(selectedOption);
+
+        this.optionsContainer.setAttribute("aria-activedescendant", selectedOption.id);
+
+        selectedOption.setAttribute("aria-selected", `true`);
+
+        selectedOption.classList.add("active-option");
+
+        this.sortMediaCards(this.currentPhotographer, this.currentPhotographer.media, selectedOption.id);
+
+        this.button.innerHTML = `${selectedOption.innerText} <span class="fas fa-chevron-down select-menu__arrow"></span>`;
 
         this.close(event);
 

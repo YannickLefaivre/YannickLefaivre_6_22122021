@@ -36,7 +36,16 @@ button {
 
     &:hover,
     &:focus {
-        outline: normal dotted;
         background-color: $secondary-background-color;
     }
+
+    &:focus-visible {
+        outline: thin dotted;
+    }
+}
+
+.screen-reader-only {
+    position: absolute;
+    top: 0;
+    left: -100%;
 }

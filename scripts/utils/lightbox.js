@@ -1,8 +1,11 @@
+import ATVisibility from "./atVisibility.js";
+import TrapTabKey from "./trapTabKey.js"
+
 /**
-    Code largely made using Grafikart's tutorial on creating Lightbox in JS Vanilla.
-    The tutorial can be found here: https://grafikart.fr/tutoriels/lightbox-javascript-1224
+    Code made by follow Grafikart's tutorial on creating Lightbox in JS Vanilla.
+    @tutorial The tutorial can be found here: https://grafikart.fr/tutoriels/lightbox-javascript-1224
 */
-class Lightbox {
+export default class Lightbox {
 
     static init() {
 
@@ -18,24 +21,22 @@ class Lightbox {
                 const mediaType = event.currentTarget.firstElementChild;
                 const mediaTitle = event.currentTarget.parentElement.querySelector(".thumbnail-card-details__title").innerText;
 
-                new Lightbox(mediaLink, links, mediaType, mediaTitle);
+                new Lightbox(mediaLink, links, mediaType, mediaTitle, mediaLink.getAttribute("alt"));
             });
 
         });
     }
     
-    constructor(mediaLink, linksOfAllMedia, mediaType, mediaTitle) {
+    constructor(mediaLink, linksOfAllMedia, mediaType, mediaTitle, mediaDescription) {
         
         this.modalOverlay = this.buildDOM(mediaLink);
         this.modalBody = this.modalOverlay.querySelector(".lightbox-modal-content");
 
-        this.loadMediaAndItTitle(mediaLink, mediaType, mediaTitle);
+        this.loadMediaAndItTitle(mediaLink, mediaType, mediaTitle, mediaDescription);
         this.linksOfAllMedia = linksOfAllMedia;
 
         // Previously focused element before the modal was opened
         this.focusedElementBeforeModal = document.activeElement;
-
-        this.firstAndLastFocusableElements();
 
         this.button = this.modalOverlay.querySelector(".close-button");
         
@@ -49,7 +50,7 @@ class Lightbox {
         document.addEventListener("keyup", this.onKeyup);
     }
 
-    loadMediaAndItTitle(currentMediaLink, mediaType, mediaTitle) {
+    loadMediaAndItTitle(currentMediaLink, mediaType, mediaTitle, mediaDescription) {
 
         this.currentMediaLink = null;
 
@@ -72,7 +73,7 @@ class Lightbox {
                 tabindex="0"
                 class="close-up-view__media"
                 src="${currentMediaURL}"
-                alt="${mediaTitle}"
+                alt="${mediaDescription}"
             />`;
 
         }
@@ -117,6 +118,12 @@ class Lightbox {
         event.preventDefault();
 
         this.modalOverlay.classList.add("modal--close");
+
+        ATVisibility.toggleATVisibilityFor(this.modalOverlay);
+
+        ATVisibility.toggleMainContentATVisibility();
+
+        ATVisibility.toggleWebsiteHeaderATVisibility();
 
         document.body.classList.remove("main-wrapper--modal-open");
 
@@ -203,10 +210,6 @@ class Lightbox {
 
     buildDOM() {
 
-        const websiteHeader = document.querySelector(".website-header");
-
-        const mainContent = document.getElementById("main");
-
         const modalOverlay = document.getElementById("lightbox");
         
         modalOverlay.classList.remove("modal--close");
@@ -247,9 +250,11 @@ class Lightbox {
 
         const modalBody = document.querySelector(".lightbox-modal-content")
 
-        websiteHeader.setAttribute("aria-hidden", "true");
-        
-        mainContent.setAttribute("aria-hidden", "true");
+        ATVisibility.toggleATVisibilityFor(modalOverlay);
+
+        ATVisibility.toggleWebsiteHeaderATVisibility();
+
+        ATVisibility.toggleMainContentATVisibility();
 
         modalOverlay.querySelector(".close-button").addEventListener("click", this.close.bind(this));
         modalOverlay.querySelector(".next-button").addEventListener("click", this.next.bind(this));

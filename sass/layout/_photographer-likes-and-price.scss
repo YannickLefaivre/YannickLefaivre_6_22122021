@@ -6,12 +6,8 @@
     bottom: 0;
 
     display: flex;
-    justify-content: space-around;
     align-items: center;
 
-    font-size: $photograph-profil__location-font-size;
-
-    color: $default-text-color;
     background-color: $secondary-background-color;
 
     border-radius: $small-beveled-border;
@@ -20,7 +16,21 @@
 
     @include from-computer-and-less {
         @include set-size($photographer-likes-and-price-size-computer);
+    }
 
-        font-size: $photograph-profil__location-font-size-tablette;
+    p {
+        width: 100%;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        font-size: $photograph-profil__location-font-size;
+
+        color: $default-text-color;
+
+        @include from-computer-and-less {
+            font-size: $photograph-profil__location-font-size-tablette;
+        }
     }
 }
