@@ -77,9 +77,9 @@ export default class Photographer {
         if (media instanceof Video) {
 
             mediaSource = `${mediaDirectoryPath}/videos/${media.video}`;
-            mediaOuterHTML = `
-            <video>
-                <source src="${mediaSource}" type="video/mp4" />
+            mediaOuterHTML =` 
+            <video aria-label="${media.description}">
+                <source src="${mediaSource}" type="video/mp4"" />
 
                 Votre navigateur ne prend pas en charge le contenu video en HTML5.
             </video>`;
@@ -102,7 +102,7 @@ export default class Photographer {
                     ${media.title}
                 </h3>
 
-                <button class="like-button" aria-label="likes">
+                <button class="like-button sr-only-container" aria-label="${media.likes} likes">
                     <span class="like-button__number-of-likes">${media.likes}</span>
                     <span class="like-button__icon fas fa-heart" aria-hidden="true"></span>
                 </button>
@@ -131,14 +131,14 @@ export default class Photographer {
 
     }
 
-    getFooterInfosDOM() {
+    getComplementaryInfosDOM() {
 
         this.totalOfLikes = this.calculateTotalOfLikes();
 
         const footerInfos = `
-        <p>
+        <p class="sr-only-container">
             <span id="total-of-likes">
-                ${this.totalOfLikes} <span class="fas fa-heart" aria-label="likes"></span>
+                ${this.totalOfLikes} <span class="sr-only-container__elements">J'aime</span> <span class="fas fa-heart"></span>
             </span>
 
             <span>

@@ -1,3 +1,6 @@
+import Lightbox from "./lightbox.js";
+import LikeButton from "./likeButton.js";
+
 /**
  * 
  * @property {HTMLButtonELement} button
@@ -122,6 +125,10 @@ export default class SelectMenu {
 
                     }
                 }
+
+                break;
+
+            case " ":  
                 
                 if (keyboardEvent.currentTarget === this.optionsContainer) {
 
@@ -381,8 +388,11 @@ export default class SelectMenu {
     updatePhotographerGallery(currentPhotographer) {
 
         const photographerGallery = document.querySelector(".photographer-gallery");
+        const photographerGalleryHeading = document.getElementById("photographer-gallery-heading");
 
         photographerGallery.innerHTML = "";
+
+        photographerGallery.appendChild(photographerGalleryHeading);
 
         currentPhotographer.media.forEach( (media) => {
     

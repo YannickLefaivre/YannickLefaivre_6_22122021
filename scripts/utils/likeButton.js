@@ -2,17 +2,11 @@ export default class LikeButton {
 
     static init(currentPhotographer) {
 
-        const likeIcons = document.querySelectorAll(".like-button__icon");
+        const likeButtons = document.querySelectorAll(".like-button");
 
-        likeIcons.forEach( (likeIcon) => {
+        likeButtons.forEach( (likeButton) => {
 
-            likeIcon.addEventListener("click", (event) => {
-
-                LikeButton.run(event, currentPhotographer);
-
-            });
-
-            likeIcon.addEventListener("keydown", (event) => {
+            likeButton.addEventListener("click", (event) => {
 
                 LikeButton.run(event, currentPhotographer);
 
@@ -37,15 +31,21 @@ export default class LikeButton {
 
     }
 
+    /**
+     * @param {MouseEvent | KeyboardEvent} event 
+     */
     static addLikes(event) {
 
-        const numberOflikes = event.currentTarget.previousElementSibling;
+        const numberOflikes = event.currentTarget.firstElementChild;
+        const likeButton = event.currentTarget;
     
         var currentNumberOfLikes = parseInt(numberOflikes.innerText);
     
         currentNumberOfLikes++;
     
         numberOflikes.innerText = `${currentNumberOfLikes}`;
+        
+        likeButton.setAttribute("aria-label", `${currentNumberOfLikes} likes`);
     
     }
     
@@ -53,9 +53,9 @@ export default class LikeButton {
     
         currentPhotographer.media.forEach( (media) => {
     
-            const mediaTitle = event.currentTarget.parentElement.previousElementSibling.innerText;
+            const mediaTitle = event.currentTarget.previousElementSibling.innerText;
     
-            const updatedNumberOfLikesString = event.currentTarget.previousElementSibling.innerText;
+            const updatedNumberOfLikesString = event.currentTarget.firstElementChild.innerText;
     
             const updatedNumberOfLikesInt = parseInt(updatedNumberOfLikesString);
     
@@ -75,7 +75,7 @@ export default class LikeButton {
 
         currentPhotographer.totalOfLikes = currentPhotographer.calculateTotalOfLikes();
 
-        totalOfLikesParagraph.innerText = `${currentPhotographer.totalOfLikes}`;
+        totalOfLikesParagraph.innerHTML = `${currentPhotographer.totalOfLikes} <span class="sr-only-container__elements">J'aime</span> <span class="fas fa-heart"></span>`;
 
     }
 

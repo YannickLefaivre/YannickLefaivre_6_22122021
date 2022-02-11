@@ -72,7 +72,7 @@ function getCurrentPhotographer(photographersData) {
     return currentPhotographer;
 }
 
-function displayPhotographerBanner(currentPhotographer) {
+function displayBanner(currentPhotographer) {
 
     const photographerBanner = document.querySelector(".photographer-banner");
     const bannerInfosDOM = currentPhotographer.getBannerInfosDOM();
@@ -97,11 +97,11 @@ function displayMediaCards(currentPhotographer) {
 
 }
 
-function displayPhotographerFooter(currentPhotographer) {
+function displayTotalOfLikesAndPrice(currentPhotographer) {
 
     const photographerFooter = document.querySelector(".photographer-likes-and-price");
 
-    const footerInfosDOM = currentPhotographer.getFooterInfosDOM();
+    const footerInfosDOM = currentPhotographer.getComplementaryInfosDOM();
 
     photographerFooter.innerHTML = footerInfosDOM;
 
@@ -110,11 +110,11 @@ function displayPhotographerFooter(currentPhotographer) {
 
 async function displayData(currentPhotographer) {
 
-    displayPhotographerBanner(currentPhotographer);
+    displayBanner(currentPhotographer);
 
     displayMediaCards(currentPhotographer);
 
-    displayPhotographerFooter(currentPhotographer);
+    displayTotalOfLikesAndPrice(currentPhotographer);
     
     return "finished";
 

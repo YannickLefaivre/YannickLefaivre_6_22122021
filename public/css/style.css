@@ -446,12 +446,6 @@ button:focus-visible {
   outline: thin dotted;
 }
 
-.screen-reader-only {
-  position: absolute;
-  top: 0;
-  left: -100%;
-}
-
 body {
   font-family: "DM Sans", sans-serif;
   font-style: normal;
@@ -504,6 +498,16 @@ button,
 select {
   font-weight: bold;
   color: white;
+}
+
+.sr-only-container {
+  position: relative;
+  overflow: hidden;
+}
+.sr-only-container__elements {
+  position: absolute;
+  top: 0;
+  left: -400%;
 }
 
 .logo {

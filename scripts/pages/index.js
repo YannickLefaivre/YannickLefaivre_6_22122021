@@ -19,7 +19,8 @@ async function getPhotographers() {
     
 }
 
-async function displayData(photographers) {
+/* Display the card of every photographers on the home page. */
+function displayData(photographers) {
 
     const photographersSection = document.querySelector(".photographer-section");
 

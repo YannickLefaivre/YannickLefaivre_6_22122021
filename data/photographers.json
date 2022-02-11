@@ -64,7 +64,7 @@
 			"likes": 62,
 			"date": "2011-12-08",
 			"price": 55,
-			"descirption": "Une jeune femme est vêtue d'un sweat-shirt et pantalon jaune et porte une paire de chaussures blanches à talon haut. Elle prend la pose sur le bord d'un terrain de basket."
+			"description": "Une jeune femme est vêtue d'un sweat-shirt et pantalon jaune et porte une paire de chaussures blanches à talon haut. Elle prend la pose sur le bord d'un terrain de basket."
 		},
 		{
 			"id": 8520927,
@@ -74,7 +74,7 @@
 			"likes": 11,
 			"date": "2011-11-06",
 			"price": 55,
-			"descirption": "Une femme blonde habillé d'un haut et d'un bas au motif forestier prend la pose accroupie au milieu d'un pont."
+			"description": "Une femme blonde habillé d'un haut et d'un bas au motif forestier prend la pose accroupie au milieu d'un pont."
 		},
 		{
 			"id": 9025895,
@@ -94,7 +94,7 @@
 			"likes": 69,
 			"date": "2018-02-22",
 			"price": 55,
-			"descirption": "À l’extérieure, de l’allé centrale d’un mariage avec les chaises sur les côtés disposer en ranger. Au bout de l’allé, il y a un belvédère et au centre de celui-ci une table avec deux chaises."
+			"description": "À l’extérieure, de l’allé centrale d’un mariage avec les chaises sur les côtés disposer en ranger. Au bout de l’allé, il y a un belvédère et au centre de celui-ci une table avec deux chaises."
 		},
 		{
 			"id": 2053494,
@@ -114,7 +114,7 @@
 			"likes": 33,
 			"date": "2019-06-12",
 			"price": 55,
-			"descirption": "Vue du plafond métallique éclairé par une lumière bronzée d’une salle décoré pour un anniversaire. Deux ballons gonflables formes le nombre 18."
+			"description": "Vue du plafond métallique éclairé par une lumière bronzée d’une salle décoré pour un anniversaire. Deux ballons gonflables formes le nombre 18."
 		},
 		{
 			"id": 8328953,
@@ -124,7 +124,7 @@
 			"likes": 24,
 			"date": "2011-12-08",
 			"price": 100,
-			"descirption": "Turnround d'une sculpture de cheval en bois."
+			"description": "Vidéo d'un turn a round d'une sculpture de cheval en bois."
 		},
 		{
 			"id": 7502053,
@@ -134,7 +134,7 @@
 			"likes": 88,
 			"date": "2007-05-07",
 			"price": 55,
-			"descirption": "Graffiti d'un personnage dessiné à partir d'un triangle sur le mur d'un immeuble."
+			"description": "Graffiti d'un personnage dessiné à partir d'un triangle sur le mur d'un immeuble."
 		},
 		{
 			"id": 8523492,
@@ -154,7 +154,7 @@
 			"likes": 75,
 			"date": "2019-11-25",
 			"price": 55,
-			"descirption": "Un graffiti simpliste sur un mur de pigeons rouges et bleus avec un bec jaune."
+			"description": "Sur un mur, on a dessiné un graffiti simpliste de pigeons rouges et de pigeons bleus ayant un bec jaune."
 		},
 
 		{
@@ -165,7 +165,7 @@
 			"likes": 52,
 			"date": "2013-02-30",
 			"price": 70,
-			"descirption": "Une équipe d'aviron à huit formes le chiffre huit avec leurs pagaies."
+			"description": "Une équipe d'aviron à huit formes le chiffre huit avec leurs pagaies."
 		},
 		{
 			"id": 92758372,
@@ -175,7 +175,7 @@
 			"likes": 58,
 			"date": "2018-07-17",
 			"price": 70,
-			"descirption": "Deux mannequins forme des ailes avec leur bras."
+			"description": "Deux mannequins forme des ailes avec leur bras."
 		},
 		{
 			"id": 32958383,
@@ -185,7 +185,7 @@
 			"likes": 11,
 			"date": "2019-08-12",
 			"price": 70,
-			"descirption": "Une femme à la peau mate, portant des lunettes de soleil est vêtu d'une robe longue et porte des baskets. Elle descend des escaliers."
+			"description": "Une femme à la peau mate, portant des lunettes de soleil est vêtu d'une robe longue et porte des baskets. Elle descend des escaliers."
 		},
 		{
 			"id": 928587383,
@@ -215,7 +215,7 @@
 			"likes": 52,
 			"date": "2019-07-18",
 			"price": 70,
-			"descirption": "Une musicienne sur la scène d’un festivale avec son clavier et sa bouteille d’eau par terre. Elle test son clavier."
+			"description": "Une musicienne sur la scène d’un festivale avec son clavier et sa bouteille d’eau par terre. Elle test son clavier."
 		},
 		{
 			"id": 87367293,
@@ -225,7 +225,7 @@
 			"likes": 23,
 			"date": "2018-02-22",
 			"price": 70,
-			"descirption": "Une femme à la coupe afro, vêtu d’un haut à frange et d’un jean bleu. Chante le micro à la main. Derrière elle se trouve une table où est posé le matériel sonore ainsi que le nom et le logo du festival."
+			"description": "Une femme à la coupe afro, vêtu d’un haut à frange et d’un jean bleu. Chante le micro à la main. Derrière elle se trouve une table où est posé le matériel sonore ainsi que le nom et le logo du festival."
 		},
 		{
 			"id": 593834784,
@@ -245,7 +245,7 @@
 			"likes": 52,
 			"date": "2016-06-12",
 			"price": 70,
-			"descirption": "Un chien de la race border collie jouant avec sa laisse sur le sable, au bord de la plage."
+			"description": "Un chien de la race border collie jouant avec sa laisse sur le sable, au bord de la plage."
 		},
 		{
 			"id": 394583434,

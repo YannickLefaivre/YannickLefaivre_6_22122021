@@ -26,7 +26,7 @@
 	</head>
 
 	<body class="main-wrapper">
-		<header class="website-header website-header--photograph-page" aria-label="Website header" aria-hidden="false">
+		<header class="website-header website-header--photograph-page" aria-label="En-tête du site web" aria-hidden="false">
 			<nav
 				class="website-header-navigation-section website-header-navigation-section--photograph-page"
 			>
@@ -41,7 +41,7 @@
 		</header>
 
 		<main id="main" aria-hidden="false">
-			<header class="photographer-banner" aria-label="Photographer page banner">
+			<header class="photographer-banner" aria-label="Bannière de la page du ou de la photographe">
 			</header>
 
 			<aside class="photographer-likes-and-price">
@@ -60,13 +60,19 @@
 						aria-labelledby="select-menu-label select-menu-trigger"
 					>
 						Popularité
-						<span class="fas fa-chevron-down select-menu__arrow" aria-hidden="true"></span>
+						<span class="fas fa-chevron-down select-menu__arrow"></span>
 					</button>
 				</div>
 			</form>
 
-			<section id="photographer-gallery" class="photographer-gallery">
-				<h2 class="screen-reader-only" id="photographer-gallery__heading">Photos et vidéos</h2>
+			<section 
+				id="photographer-gallery" 
+				class="photographer-gallery sr-only-container" 
+				aria-labelledby="photographer-gallery-heading"
+				>
+				<h2 class="sr-only-container__elements" id="photographer-gallery-heading">
+					Galerie des travaux du ou de la photographe
+				</h2>
 			</section>
 		</main>
 

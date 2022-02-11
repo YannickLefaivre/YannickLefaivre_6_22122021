@@ -71,7 +71,7 @@ export default class ContactForm {
                         required
                     />
 
-                    <p class="form-data__error-message hidden-content">  </p>
+                    <p id="error-message-first-name-input" class="form-data__error-message hidden-content">  </p>
                 </div>
 
                 <div id="data-form-last-name" class="form-data">
@@ -85,7 +85,7 @@ export default class ContactForm {
                         required
                     />
 
-                    <p class="form-data__error-message hidden-content">  </p>
+                    <p id="error-message-last-name" class="form-data__error-message hidden-content">  </p>
                 </div>
 
                 <div id="data-form-email" class="form-data form-data--email">
@@ -99,7 +99,7 @@ export default class ContactForm {
                         required
                     />
 
-                    <p class="form-data__error-message hidden-content"></p>
+                    <p id="error-message-email" class="form-data__error-message hidden-content"></p>
                 </div>
 
                 <div id="data-form-message" class="form-data form-data--message">
@@ -110,12 +110,12 @@ export default class ContactForm {
                         id="message"
                         name="message"
                         placeholder="Tapez votre message dans ce champs."
-                        required 
+                        required
                         cols="30" 
                         rows="10" 
                     ></textarea>
 
-                    <p class="form-data__error-message hidden-content"></p>
+                    <p id="error-message-message" class="form-data__error-message hidden-content"></p>
                 </div>
 
                 <button type="submit" class="button submit-button" value="Submit" formnovalidate>Envoyer</button>
@@ -164,6 +164,9 @@ export default class ContactForm {
         this.messageField = document.getElementById("data-form-message");
 
         this.firstNameInput = document.getElementById("first-name");
+        this.lastNameInput = document.getElementById("last-name");
+        this.emailInput = document.getElementById("email");
+        this.messageInput = document.getElementById("message");
         
     }
 
@@ -210,8 +213,8 @@ export default class ContactForm {
         return inputValue;
       
     }
-    
-    displayErrorMessage(concernedField, errorMessageToDisplay) {
+
+    displayErrorMessage(concernedField, concernedControl, errorMessageToDisplay) {
 
         const errorMessageParagraph = concernedField.querySelector(".form-data__error-message");
 
@@ -220,10 +223,11 @@ export default class ContactForm {
             const contentContainer = this.element.querySelector(".contact-modal-content");
 
             errorMessageParagraph.classList.toggle("hidden-content");
-
-            errorMessageParagraph.setAttribute("aria-hidden", "false");
             
             errorMessageParagraph.textContent = errorMessageToDisplay;
+
+            concernedControl.setAttribute("aria-invalid", "true");
+            concernedControl.setAttribute("aria-describedby", `${errorMessageParagraph.id}`);
     
             contentContainer.classList.add("contact-modal-content--error-message-visible");
 
@@ -242,9 +246,9 @@ export default class ContactForm {
         contentContainer.classList.remove("contact-modal-content--error-message-visible");
 
     }
-      
-    deleteErrorMessage(concernedField) {
-        
+
+    deleteErrorMessage(concernedField, concernedControl) {
+
         const errorMessageParagraph = concernedField.querySelector(".form-data__error-message");
         const allErrorMessageParagraphs = document.querySelectorAll(".form-data__error-message");
 
@@ -254,6 +258,8 @@ export default class ContactForm {
 
             concernedField.querySelector(".form-data__error-message").classList.toggle("hidden-content");
 
+            concernedControl.removeAttribute("aria-invalid");
+            concernedControl.removeAttribute("aria-descridedby");
         }
 
         for (let i = 0; i < allErrorMessageParagraphs.length - 1; i++) {
@@ -285,7 +291,7 @@ export default class ContactForm {
 
         var fieldName = "";
 
-        if(nameInput === "first-name") {
+        if(nameInput.id === "first-name") {
 
             fieldName = "Prénom";
 
@@ -298,15 +304,15 @@ export default class ContactForm {
         var errorMessage = `Veuillez entrer au minimum 2 lettres ou plus dans le champ ${fieldName}.`;
         
       
-        if(!namePattern.test(this.getInputValue(nameInput)) || this.getInputValue(nameInput) === 0) {
+        if(!namePattern.test(this.getInputValue(nameInput.id)) || this.getInputValue(nameInput.id) === 0) {
       
-          this.displayErrorMessage(nameField, errorMessage);
+          this.displayErrorMessage(nameField, nameInput, errorMessage);
       
           return false;
 
         } else {
 
-          this.deleteErrorMessage(nameField);
+          this.deleteErrorMessage(nameField, nameInput);
       
         }
       
@@ -327,13 +333,13 @@ export default class ContactForm {
        
         if(!emailPattern.test(emailInputValue) || emailInputValue.length === 0) {
       
-          this.displayErrorMessage(this.emailField, "Veuillez saisir une adresse électronique valide.");
+          this.displayErrorMessage(this.emailField, this.emailInput, "Veuillez saisir une adresse électronique valide.");
       
           return false;
       
         } else {
       
-            this.deleteErrorMessage(this.emailField);
+            this.deleteErrorMessage(this.emailField, this.emailInput);
       
         }
       
@@ -345,13 +351,13 @@ export default class ContactForm {
 
         if(this.getInputValue("message").length === 0) {
 
-            this.displayErrorMessage(this.messageField, "Vous devez laisser un message.");
+            this.displayErrorMessage(this.messageField, this.messageInput, "Vous devez laisser un message.");
 
             return false;
 
         } else {
 
-            this.deleteErrorMessage(this.messageField);
+            this.deleteErrorMessage(this.messageField, this.messageInput);
 
         }
 
@@ -366,15 +372,15 @@ export default class ContactForm {
         let dataIsSubmittable = "";
 
         if (!this.validateNameField(
-            "first-name",
+            this.firstNameInput,
             this.firstNameField)) {
-
+            
             dataIsSubmittable = "No";
 
         }
 
         if (!this.validateNameField(
-            "last-name",
+            this.lastNameInput,
             this.lastNameField)) {
 
             dataIsSubmittable = "No";
@@ -388,7 +394,7 @@ export default class ContactForm {
         }
 
         if (!this.validateMessageField()) {
-            
+
             dataIsSubmittable = "No";
 
         }

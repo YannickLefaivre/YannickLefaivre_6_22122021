@@ -18,10 +18,12 @@ export default class Lightbox {
                 event.preventDefault();
                 
                 const mediaLink = event.currentTarget;
+
                 const mediaType = event.currentTarget.firstElementChild;
+
                 const mediaTitle = event.currentTarget.parentElement.querySelector(".thumbnail-card-details__title").innerText;
 
-                new Lightbox(mediaLink, links, mediaType, mediaTitle, mediaLink.getAttribute("alt"));
+                new Lightbox(mediaLink, links, mediaType, mediaTitle);
             });
 
         });
@@ -50,7 +52,7 @@ export default class Lightbox {
         document.addEventListener("keyup", this.onKeyup);
     }
 
-    loadMediaAndItTitle(currentMediaLink, mediaType, mediaTitle, mediaDescription) {
+    loadMediaAndItTitle(currentMediaLink, mediaType, mediaTitle) {
 
         this.currentMediaLink = null;
 
@@ -59,14 +61,25 @@ export default class Lightbox {
         const currentMediaURL = currentMediaLink.getAttribute("href");
 
         let media = "";
+        let mediaDescription = "";
 
         if (mediaType instanceof HTMLVideoElement) {
+            
+            mediaDescription = mediaType.getAttribute("aria-label");
 
             media = `
-            <video tabindex="0" controls class="close-up-view__media" src="${currentMediaURL}" aria-labelledby="media-title"
-        ></video>`
+            <video 
+                tabindex="0" 
+                controls 
+                class="close-up-view__media" 
+                src="${currentMediaURL}" 
+                aria-label="${mediaDescription}"
+            >
+            </video>`;
 
         } else {
+
+            mediaDescription = mediaType.getAttribute("alt");
 
             media = `
             <img
@@ -81,7 +94,7 @@ export default class Lightbox {
         const mediaAndTitle = `
         ${media}
         
-        <p id="media-title" class="close-up-view__title">${mediaTitle}</p>`;
+        <p id="media-title" class="close-up-view__title" lang="en">${mediaTitle}</p>`;
 
         this.currentMediaLink = currentMediaLink;
 
@@ -219,19 +232,19 @@ export default class Lightbox {
             <div class="close-up-view">
             </div>
             
-            <a href="#" class="lightbox-navigation-button previous-button" aria-label="Previous-image">
+            <a href="#" class="lightbox-navigation-button previous-button" aria-label="média précédent">
                 <span
                     class="lightbox-navigation-button__icon fas fa-chevron-left"
                 ></span>
             </a>
 
-            <a href="#" class="lightbox-navigation-button next-button" aria-label="Next-image">
+            <a href="#" class="lightbox-navigation-button next-button" aria-label="média suivante">
                 <span
                     class="lightbox-navigation-button__icon fas fa-chevron-right"
                 ></span>
             </a>
 
-            <button id="close-button" class="close-button" aria-label="Close dialog">
+            <button id="close-button" class="close-button" aria-label="Fermer la dialogue">
                 <svg
                     aria-hidden="true"
                     class="close-button__icon"
